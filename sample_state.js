@@ -8,41 +8,45 @@ Sample State
         username: 'kevin',
         img_url: "random_url",
         playlist: [12,3,5,67,8],
-        friends: [2,3]
+        friend_ids: [2,3]
         },
       2: {
         id: 2 ,
         username: "chris",
         img_url: "derpderp_url",
         playlist: [1,23,4,5],
-        friends: [1,3]
+        friend_ids: [1,3]
       },
       3: {
         id: 3,
         username "sunny",
         img_url: "afljriogjajaieurl",
         playlist: [1,3,4,5,6],
-        friends: [1,2]
+        friend_ids: [1,2]
       }
     },
 
     playlist: {
       1: {
+        title: "the best love songs",
         id: 1,
         songs: [1,2,3,4,5],
         user_id: 3
       },
       3: {
+        title: "the life of a lie",
         id: 3,
         songs: [1,2,3,4,5],
         user_id: 3
       },
       5: {
+        title: "the broken love",
         id: 5,
         songs: [1,2,3,4,5],
         user_id: 1
       },
       6: {
+        title: "kpop only",
         id: 6,
         songs: [1,2,3,4,5],
         user_id: 2
@@ -53,12 +57,12 @@ Sample State
     albums: {
       1: {
         id: 1,
-        songs: [1,2],
+        song_ids: [1,2],
         img_url: "goodboys_url"
       },
       2: {
         id: 2,
-        songs: [4,5],
+        song_ids: [4,5],
         img_url: "bored_url"
       }
 
@@ -138,7 +142,7 @@ Sample State
   },
 
   ui: {
-    loading{
+    loading: {
       [true, false]
     },
     errors: {
