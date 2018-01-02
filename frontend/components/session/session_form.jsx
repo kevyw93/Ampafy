@@ -50,21 +50,26 @@ class SessionForm extends React.Component {
       sign = <Link to="/login">LOG IN</Link>;
       buttonholder = 'SIGN UP';
     }
+
     return (
       <div className="form-container">
+        <h1 className="logo">Sandrafy</h1>
 
       <form className="form" onSubmit={this.handleSubmit}>
-        <h1 className="logo">Sandrafy</h1>
+
+
 
         <br />
       <h1 className="form-top">{buttonholder} or {sign} </h1>
-        {this.renderErrors()}
+      {this.renderErrors()}
 
+        <div className="input-container">
           <input className="username-password-input" type="text" value={this.state.username} placeholder={'Username'} onChange={this.handleChange("username")} />
 
           <br/>
 
-        <input className="username-password-input" type="password" value={this.state.password}  placeholder={'Password'} onChange={this.handleChange("password")} />
+          <input className="username-password-input" type="password" value={this.state.password}  placeholder={'Password'} onChange={this.handleChange("password")} />
+      </div>
           <br />
         <button className="login-signup-button">{buttonholder}</button>
 
