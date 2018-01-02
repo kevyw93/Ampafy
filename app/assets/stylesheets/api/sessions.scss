@@ -5,17 +5,31 @@
 .logo {
   font-size: 40px;
   text-align: center;
+  border-bottom: 1px solid #d9dadc;
+  padding: 4%;
 }
 
 .form-container {
   margin-top: 25px;
+  @media screen and (max-width: 767px){
+    .logo {
+      font-size: 20px;
+    }
+  }
+  height: inherit;
+  border: 1px solid black;
 }
+
+.input-container {
+  margin-top: 10%;
+
+}
+
 
 
 .form {
   display: flex;
-  margin: 0 auto;
-  border: 1px solid black;
+  margin: 20px auto;
   max-width: 450px;
   h1{
     align-self: center;
@@ -41,14 +55,22 @@
   font-weight: 500;
   line-height: 1;
   padding: 11px 32px 9px;
+  @media screen and (min-width: 767px) {
+    align-self: flex-end;
+    width: 30%;
+  }
 }
-
 .login-signup-button:hover{
   background-color: #1ed760;
 }
 
-
-
+.form-top{
+  border: 1px solid lightblue;
+  background-color: lightblue;
+  border-radius: 500px;
+  color: white;
+  padding: 1px 10px 3px;
+}
 
 
 .username-password-input {
@@ -56,6 +78,7 @@
   height: 40px;
   width: 100%;
   margin-top: 10px;
+  margin-bottom: 20px;
   padding: 6px 12px;
   font-size: 16px;
   box-sizing: border-box;
