@@ -58,42 +58,6 @@
  	border-spacing: 0;
  }
 
-/* real stuff starts here
-*/
-.logo {
-  font-size: 40px;
-  text-align: center;
-}
-
-.form-container {
-  display: flex;
-  justify-content: space-around;
-}
-
-.form {
-  height: 100%;
-  border: 1px solid black;
-  align: center;
-}
-.login-signup-button {
-  background-color: #1db954;
-  color: white;
-  border-radius: 500px;
-  border: 1px solid #1db954;
-  min-width: 160px;
-}
-
-.form input::placeholder{
-  color: grey;
-  font-size: 20px;
-}
-
-btn {
-  cursor: pointer;
-}
-.username-password-input {
-  border: 1px solid #d9dadc;
-  height: 40px;
-  padding: 6px 12px;
-  font-size: 16px;
-}
+ button {
+   cursor: pointer;
+ }

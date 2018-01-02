@@ -6,14 +6,14 @@ class Api::UsersController < ApplicationController
       login(@user)
       render json: @user
     else
-      render json: @user.errors.full_messages
+      render json: @user.errors.full_messages, status: 406
     end
   end
 
   def show
       @user = User.find(params[:id])
   end
-  
+
   private
 
   def user_params
