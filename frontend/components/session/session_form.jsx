@@ -41,29 +41,32 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    let buttonholder;
     let sign;
     if (this.props.formType === "login") {
-      sign = <Link to="/signup">SignUp instead</Link>;
+      sign = <Link to="/signup">SIGN UP</Link>;
+      buttonholder = 'LOG IN';
     }else {
-      sign = <Link to="/login">LogIn instead</Link>;
+      sign = <Link to="/login">LOG IN</Link>;
+      buttonholder = 'SIGN UP';
     }
     return (
-      <div>
+      <div className="form-container">
 
-      <form onSubmit={this.handleSubmit}>
-        Welcome to BenchBnB!
+      <form className="form" onSubmit={this.handleSubmit}>
+        <h1 className="logo">Sandrafy</h1>
+
         <br />
-        Please {this.props.formType} or {sign}
+      <h1 className="form-top">{buttonholder} or {sign} </h1>
         {this.renderErrors()}
-        <label>Username
-          <input type="text" value={this.state.username} onChange={this.handleChange("username")} />
-        </label>
 
-        <label>Password
-          <input type="password" value={this.state.password} onChange={this.handleChange("password")} />
-        </label>
+          <input className="username-password-input" type="text" value={this.state.username} placeholder={'Username'} onChange={this.handleChange("username")} />
 
-        <input type="submit" />
+          <br/>
+
+        <input className="username-password-input" type="password" value={this.state.password}  placeholder={'Password'} onChange={this.handleChange("password")} />
+          <br />
+        <button className="login-signup-button">{buttonholder}</button>
 
       </form>
     </div>

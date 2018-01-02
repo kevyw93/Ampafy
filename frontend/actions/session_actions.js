@@ -1,6 +1,7 @@
-import * as ApiUtil from "../util/session_api_util";
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+import * as ApiUtil from "../util/session_api_util";
+
 
 export const receiveCurrentUser = (currentUser) => {
   return {
@@ -17,10 +18,11 @@ export const receiveErrors = (errors) => {
 };
 
 export const login = (user) => {
+  debugger
   return dispatch => {
     return ApiUtil.login(user).then(
-      resources => dispatch(receiveCurrentUser(resources)),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+      (existUser) => dispatch(receiveCurrentUser(existUser)),
+      (errors) => dispatch(receiveErrors(errors.responseJSON))
     );
   };
 };
@@ -28,8 +30,8 @@ export const login = (user) => {
 export const signup = (user) => {
   return dispatch => {
     return ApiUtil.signup(user).then(
-      resources => dispatch(receiveCurrentUser(resources)),
-      errors => dispatch(receiveErrors(errors.responseJSON))
+      (newUser) => dispatch(receiveCurrentUser(newUser)),
+      (errors) => dispatch(receiveErrors(errors.responseJSON))
     );
   };
 };
@@ -37,7 +39,7 @@ export const signup = (user) => {
 export const logout = () => {
   return dispatch => {
     return ApiUtil.logout().then(
-      resources => dispatch(receiveCurrentUser(null))
+      () => dispatch(receiveCurrentUser(null))
     );
   };
 };
