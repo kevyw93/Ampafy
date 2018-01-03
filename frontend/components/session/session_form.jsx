@@ -34,17 +34,7 @@ class SessionForm extends React.Component {
     };
   }
 
-  renderErrors () {
-    return (
-      <ul>
-        {this.props.errors.map((error, i) =>(
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+
 
   render() {
     let buttonholder;
@@ -59,24 +49,29 @@ class SessionForm extends React.Component {
       sign = <Link to="/login">LOG IN</Link>;
       buttonholder = 'Already have an account?';
     }
+    let creds;
+    if (this.props.errors.creds) {
+      creds = <h1 className="top-error">{this.props.errors.creds}</h1>;
+    }
 
     return (
       <div className="form-container">
         <h1 className="logo">Sandrafy</h1>
 
       <form className="form" onSubmit={this.handleSubmit}>
-
-
-
-        <h1 className="errors">{this.renderErrors()}</h1>
+          {creds}
         <br />
-
         <div className="input-container">
           <input className="username-password-input" type="text" value={this.state.username} placeholder={'Username'} onChange={this.handleChange("username")} />
+        <br/>
+          <h1 className="errors">{this.props.errors.username}</h1>
 
           <br/>
 
           <input className="username-password-input" type="password" value={this.state.password}  placeholder={'Password'} onChange={this.handleChange("password")} />
+        <br />
+      <h1 className="errors">{this.props.errors.password}</h1>
+
       </div>
           <br />
 
