@@ -10,14 +10,12 @@
 }
 
 .form-container {
-  margin-top: 25px;
   @media screen and (max-width: 767px){
     .logo {
       font-size: 20px;
     }
   }
-  height: inherit;
-  border: 1px solid black;
+  height: 100vh;
 }
 
 .input-container {
@@ -25,12 +23,33 @@
 
 }
 
+.guest-signin-button {
+  background-color: blue;
+  color: white;
+  border-radius: 500px;
+  border: 1px solid blue;
+  min-width: 160px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 11px 32px 9px;
+  font-family: sans-serif;
+  @media screen and (min-width: 767px) {
+    align-self: center;
+    width: 30%;
+  }
+  :hover{
+    background-color: blue;
+  }
+}
 
 
 .form {
   display: flex;
   margin: 20px auto;
   max-width: 450px;
+  min-width: 180px;
+  padding: 10px 10px;
   h1{
     align-self: center;
   }
@@ -45,6 +64,11 @@
 
 }
 
+.errors {
+  text-align: center;
+  font-family: sans-serif;
+}
+
 .login-signup-button {
   background-color: #1db954;
   color: white;
@@ -52,11 +76,12 @@
   border: 1px solid #1db954;
   min-width: 160px;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1;
   padding: 11px 32px 9px;
+  font-family: sans-serif;
   @media screen and (min-width: 767px) {
-    align-self: flex-end;
+    align-self: center;
     width: 30%;
   }
 }
@@ -64,13 +89,13 @@
   background-color: #1ed760;
 }
 
-.form-top{
-  border: 1px solid lightblue;
-  background-color: lightblue;
+.form-bot{
+
   border-radius: 500px;
-  color: white;
+  color: black;
   padding: 1px 10px 3px;
 }
+
 
 
 .username-password-input {
