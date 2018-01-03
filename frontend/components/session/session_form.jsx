@@ -7,7 +7,7 @@ class SessionForm extends React.Component {
     this.state = { 'username': "", 'password': "" };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-
+    this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
   componentWillReceiveProps(nextProps){
@@ -20,6 +20,12 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm({user: user});
+  }
+
+  handleGuestLogin(e){
+    e.preventDefault();
+    const user = Object.assign({'username':'user', 'password':'password'});
+    this.props.login({user: user});
   }
 
   handleChange(field){
@@ -42,13 +48,16 @@ class SessionForm extends React.Component {
 
   render() {
     let buttonholder;
+    let butt;
     let sign;
     if (this.props.formType === "login") {
       sign = <Link to="/signup">SIGN UP</Link>;
-      buttonholder = 'LOG IN';
+      butt = 'LOG IN';
+      buttonholder = "Don't have an account?";
     }else {
+      butt = 'SIGN UP';
       sign = <Link to="/login">LOG IN</Link>;
-      buttonholder = 'SIGN UP';
+      buttonholder = 'Already have an account?';
     }
 
     return (
@@ -59,9 +68,8 @@ class SessionForm extends React.Component {
 
 
 
+        <h1 className="errors">{this.renderErrors()}</h1>
         <br />
-      <h1 className="form-top">{buttonholder} or {sign} </h1>
-      {this.renderErrors()}
 
         <div className="input-container">
           <input className="username-password-input" type="text" value={this.state.username} placeholder={'Username'} onChange={this.handleChange("username")} />
@@ -71,7 +79,12 @@ class SessionForm extends React.Component {
           <input className="username-password-input" type="password" value={this.state.password}  placeholder={'Password'} onChange={this.handleChange("password")} />
       </div>
           <br />
-        <button className="login-signup-button">{buttonholder}</button>
+
+          <button className="guest-signin-button" onClick={this.handleGuestLogin} >GUEST LOGIN</button>
+        <br />
+          <button className="login-signup-button">{butt}</button>
+        <br />
+      <h1 className="form-bot">{buttonholder} {sign} </h1>
 
       </form>
     </div>
