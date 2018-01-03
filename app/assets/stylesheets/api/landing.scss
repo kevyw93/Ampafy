@@ -26,7 +26,7 @@
   align-self: center;
   font-size: 14px;
   font-family: proxima_nova,Helvetica Neue,Helvetica,Arial,sans-serif;
-  color: grey;
+  color: white;
   text-transform: uppercase;
 
   letter-spacing: 1px;
@@ -54,8 +54,10 @@
   letter-spacing: 1px;
 }
 
+
+
 .button-container {
-  margin-left: 20px;
+  margin-left: 7%;
   display:flex;
   justify-content: center;
   flex-direction: column;
@@ -63,11 +65,11 @@
 }
 .side-container {
   margin: 40px 40px;
-  border-left: 1px solid grey;
   height: 100vh;
   width: 100%;
 }
 .side-words {
+  border-left: 1px solid grey;
   height: 100%;
   color: white;
 
@@ -79,5 +81,6 @@
 
 .landing {
   display: flex;
-  background-image: url('https://images3.alphacoders.com/853/85305.jpg')
+  background-image: url('https://images3.alphacoders.com/853/85305.jpg');
+  background-color: rgba(0,0,0,.5);
 }

@@ -1,7 +1,9 @@
 class User < ApplicationRecord
-  validates :username, :session_token, presence: true, uniqueness: true
+  validates :username, presence: {message: "Username can not be blank"}, uniqueness: true
+  validates :session_token, presence: true, uniqueness: true
   validates :password_digest, presence: true
-  validates :password, length: {minimum: 6, allow_nil: true}
+  validates :password, length: {minimum: 6, allow_nil: true, message: "Password must be at least 6 characters"}
+
 
   after_initialize :ensure_session_token
 

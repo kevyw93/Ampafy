@@ -9,6 +9,15 @@
   padding: 4%;
 }
 
+.top-error {
+  margin: 0 auto;
+  background-color: #FF9A00; //orange
+  width: 420px;
+  padding: 22px 15px;
+  text-align: center;
+  color: white;
+}
+
 .form-container {
   @media screen and (max-width: 767px){
     .logo {

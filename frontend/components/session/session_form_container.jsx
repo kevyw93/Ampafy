@@ -4,9 +4,10 @@ import {logout, login, signup} from "../../actions/session_actions";
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
+
   return {
     loggedIn: Boolean(state.session.currentUser),
-    errors: Object.values(state.errors.session),
+    errors: state.errors.session,
     formType: ownProps.location.pathname.slice(1)
   };
 };
