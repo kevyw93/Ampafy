@@ -1,39 +1,83 @@
 .landing-signup {
-
   background-color: #1db954;
   color: white;
   border-radius: 500px;
   border: 1px solid #1db954;
+  width: 255px;
+  height: 35px;
   text-align: center;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 490;
   line-height: 1;
   padding: 11px 32px 9px;
-  font-family: sans-serif;
+  font-family: proxima_nova,Helvetica Neue,Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+  margin-bottom: 37px;
+}
+.landing .button-container .logo {
+  border-bottom: none;
+  color: white;
 }
 
 .loggedin{
   display: inline-block;
   align-self: center;
+  font-size: 14px;
+  font-family: proxima_nova,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: grey;
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
 }
 
+
 .landing-login{
-  background-color: #1db954;
-  color: white;
+  margin-top: 37px;
+  background-color: white;
+  color: black;
   border-radius: 500px;
-  border: 1px solid #1db954;
+  border: 1px solid black;
+  width: 255px;
+  height: 35px;
   text-align: center;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 490;
   line-height: 1;
+  height: 30px;
   padding: 11px 32px 9px;
-  font-family: sans-serif;
+  font-family: proxima_nova,Helvetica Neue,Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  word-spacing: 3px;
+  letter-spacing: 1px;
 }
 
 .button-container {
-  margin: 30% 20px;
-  width: 200px;
+  margin-left: 20px;
   display:flex;
+  justify-content: center;
   flex-direction: column;
   box-sizing: border-box;
+}
+.side-container {
+  margin: 40px 40px;
+  border-left: 1px solid grey;
+  height: 100vh;
+  width: 100%;
+}
+.side-words {
+  height: 100%;
+  color: white;
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.landing {
+  display: flex;
+  background-image: url('https://images3.alphacoders.com/853/85305.jpg')
 }
