@@ -1,15 +1,13 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import LoggedIn from './logged_in';
+import {Redirect} from 'react-router-dom';
 
 const Landing = (props) => {
 
   if (props.currentUser) {
     return (
-    <div>
-      <LoggedIn props={props} />
-      <button onClick={props.logout}>Logout</button>
-    </div>
+      <Redirect to='/browse' />
   );
   }else {
     return (
