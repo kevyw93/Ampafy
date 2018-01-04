@@ -1,5 +1,6 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
+import TopNavBarContainer from '../nav_bars/top_nav_bar_container';
 
 class LoggedIn extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class LoggedIn extends React.Component {
         <header>
           Hi Welcome {this.props.currentUser.username}
         </header>
+        <TopNavBarContainer />
         <button onClick={this.props.logout}>LogOut</button>
 
       </div>
