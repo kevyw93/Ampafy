@@ -10,12 +10,15 @@ class LoggedIn extends React.Component {
 
   render() {
     return (
-      <div>
-        <header>
-          Hi Welcome {this.props.currentUser.username}
-        </header>
-        <TopNavBarContainer />
+      <div className="container" >
+      
+        <div className="top-nav" ><TopNavBarContainer /></div>
+
+      <footer>
+        Hi Welcome {this.props.currentUser.username}
+
         <button onClick={this.props.logout}>LogOut</button>
+      </footer>
 
       </div>
     );
