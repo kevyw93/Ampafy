@@ -14,7 +14,12 @@ class SessionForm extends React.Component {
     if(nextProps.loggedIn){
       this.props.history.push('/');
     }
+    if (this.props.match.path !== nextProps.match.path) {
+      this.props.clearErrors();
+    }
   }
+
+
 
   handleSubmit(e){
     e.preventDefault();

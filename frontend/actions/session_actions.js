@@ -19,7 +19,7 @@ export const receiveErrors = (errors) => {
 };
 
 export const login = (user) => {
-  
+
   return dispatch => {
     return ApiUtil.login(user).then(
       (existUser) => dispatch(receiveCurrentUser(existUser)),
