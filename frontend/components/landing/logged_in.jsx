@@ -1,18 +1,20 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 
 class LoggedIn extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props.props;
   }
 
-  render() {
 
+  render() {
     return (
       <div>
         <header>
-          Hi Welcome {this.state.currentUser.username}
+          Hi Welcome {this.props.currentUser.username}
         </header>
+        <button onClick={this.props.logout}>LogOut</button>
+
       </div>
     );
   }
