@@ -1,5 +1,5 @@
 {
-  "name": "Saundrafy",
+  "name": "Ampafy",
   "private": true,
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -33,13 +33,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kevyw93/Saundrafy.git"
+    "url": "git+https://github.com/kevyw93/Ampafy.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kevyw93/Saundrafy/issues"
+    "url": "https://github.com/kevyw93/Ampafy/issues"
   },
-  "homepage": "https://github.com/kevyw93/Saundrafy#readme"
+  "homepage": "https://github.com/kevyw93/Ampafy#readme"
 }
