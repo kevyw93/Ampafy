@@ -99,3 +99,20 @@
   background-image: url('https://images3.alphacoders.com/853/85305.jpg');
   background-color: rgba(0,0,0,.5);
 }
+
+.words {
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: center;
+
+}
+
+.before {
+  width: 20px;
+  border-top: 1px solid white;
+}
+.after {
+  width: 20px;
+  border-top: 1px solid white;
+}

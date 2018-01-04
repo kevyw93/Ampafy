@@ -17,7 +17,11 @@ const Landing = (props) => {
           <div className="button-container">
             <h1 className="logo"><img></img>Sandrafy</h1>
             <Link className="landing-signup" to="/signup">Sign Up</Link>
+          <div className="words">
+            <span className="before"></span>
             <h1 className="loggedin">Already have an Account</h1>
+          <span className="after"></span>
+          </div>
             <Link className="landing-login" to="/login">Log In</Link>
           </div>
 
