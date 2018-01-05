@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103210800) do
+ActiveRecord::Schema.define(version: 20180104165152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(version: 20180103210800) do
     t.string "author", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "album_cover_file_name"
+    t.string "album_cover_content_type"
+    t.integer "album_cover_file_size"
+    t.datetime "album_cover_updated_at"
   end
 
   create_table "playlist_taggings", force: :cascade do |t|
@@ -34,10 +38,13 @@ ActiveRecord::Schema.define(version: 20180103210800) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.string "song_file_name"
     t.string "song_content_type"
     t.integer "song_file_size"
     t.datetime "song_updated_at"
+=======
+>>>>>>> CRUDsongs/playlist
   end
 
   create_table "songs", force: :cascade do |t|
@@ -45,6 +52,13 @@ ActiveRecord::Schema.define(version: 20180103210800) do
     t.integer "album_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
+=======
+    t.string "audio_file_name"
+    t.string "audio_content_type"
+    t.integer "audio_file_size"
+    t.datetime "audio_updated_at"
+>>>>>>> CRUDsongs/playlist
   end
 
   create_table "users", force: :cascade do |t|
