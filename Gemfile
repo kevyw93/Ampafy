@@ -33,6 +33,7 @@ gem 'pry-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
+gem 'paperclip', '~> 5.0.0.beta1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -55,7 +56,6 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'annotate'
-  gem 'paperclip', '~> 5.0.0.beta1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
