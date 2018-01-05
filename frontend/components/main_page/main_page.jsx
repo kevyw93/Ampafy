@@ -13,14 +13,16 @@ class MainPage extends React.Component {
     const albs = Object.values(this.props.albums).map(
       alb => <ul className="albums">
         <li>{alb.title}</li>
-      <li>
-        <div className='album-hover'>
+      <li >
+        <img className="album-img" src={alb.album_img} />
 
-          <img className="album-img" src={alb.album_img} />
-        </div>
         </li>
-      </ul>);
+        <li>
 
+        </li>
+      </ul>
+    );
+    debugger
     return(
       <div>
         {albs}
