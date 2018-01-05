@@ -110,7 +110,7 @@
 
 .month {
   border: 1px solid #d9dadc;
-  padding: 7px;
+  padding: 6px 12px;
   background-color: white;
   width: 170px;
   line-height: 1;
@@ -120,13 +120,16 @@
   font-weight: 0;
   color: grey;
 }
-
+.dob{
+  margin-top: 20px;
+  color: grey;
+}
 .day-year {
   width: 100px;
   line-height: 1;
   border: 1px solid #d9dadc;
   border-radius: 2px;
-  padding: 7px;
+  padding: 6px 12px;
   margin-left: 23px;
 }
 
@@ -137,7 +140,6 @@
   height: 40px;
   width: 100%;
   margin-top: 10px;
-  margin-bottom: 20px;
   padding: 6px 12px;
   font-size: .9375em;
   box-sizing: border-box;
