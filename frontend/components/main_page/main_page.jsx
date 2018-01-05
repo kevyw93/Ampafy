@@ -10,9 +10,9 @@ class MainPage extends React.Component {
   }
 
   render() {
-    debugger
     const albs = Object.values(this.props.albums).map(alb => <ul>{alb.title}</ul>);
 
+    debugger
     return(
       <div>
         {albs}
