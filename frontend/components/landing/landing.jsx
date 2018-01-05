@@ -29,10 +29,12 @@ const Landing = (props) => {
           </div>
 
           <div className="side-container">
-            <h1>Get Sandrafied with the right music.</h1>
-            <h2>Best Songs Out There Especially to KTV</h2>
-            <h3><img></img>Search and discover how to be sandrafy</h3>
-            <h3><img></img>Create playlist of your favorite music</h3>
+            <div className="inner-side-container">
+              <h1 className="side-top-words">Get Sandrafied with the right music.</h1>
+            <h2 className="side-middle-words">Best Songs Out There Especially to KTV</h2>
+              <h3 className="check-image-words"><img src="https://open.scdn.co/static/images/checkmark.png" ></img>Search and discover how to be sandrafy</h3>
+              <h3 className="check-image-words"><img src="https://open.scdn.co/static/images/checkmark.png" ></img>Create playlist of your favorite music</h3>
+            </div>
           </div>
 
         </div>

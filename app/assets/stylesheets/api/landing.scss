@@ -89,7 +89,15 @@
   align-items: center;
   padding-left: 100px;
 }
-
+.check-image-words {
+  font-size: 20px;
+}
+.side-top-words {
+  font-size: 40px;
+}
+.side-middle-words {
+  font-size: 25px;
+}
 
 .landing {
   display: flex;
@@ -98,6 +106,7 @@
   width: 100vw;
   background-image: url('https://images3.alphacoders.com/853/85305.jpg');
   background-color: rgba(0,0,0,.5);
+  min-width: 1000px;
 }
 
 .words {
@@ -107,6 +116,7 @@
   justify-content: center;
 
 }
+
 
 .before {
   width: 20px;
