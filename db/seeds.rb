@@ -14,7 +14,8 @@ album1.album_cover = alb_img
 album1.save!
 
 
-song_1 = File.open('../Ampafy_Seed/Songs/Machine_Gun_Kelly_X_Ambassadors_Bebe_Rexha_-_Home_from_Bright_The_Album_Music_Video[Mp3Converter.net].mp3')
+song_1 = File.open('../Ampafy_Seed/Songs/Ed_Sheeran_-_Perfect_Official_Music_Video[Mp3Converter.net].mp3')
+
 song1 = Song.new(title: 'Home', album_id: album1.id)
 song1.audio = song_1
 song1.save!
