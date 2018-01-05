@@ -1,0 +1,33 @@
+// Place all the styles related to the albums controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// .album-img {
+//   width: 200px;
+//   height: 200px;
+//   border: 1px solid black;
+// }
+//
+.album-hover{
+  background-image: url("http://www.pngmart.com/files/3/Play-Button-PNG-Transparent.png");
+  opacity: 0;
+  height: 200px;
+  overflow: hidden;
+  align-items: center;
+}
+
+.album-hover:hover{
+  background-image: url(http://www.pngmart.com/files/3/Play-Button-PNG-Transparent.png);
+  opacity: 1;
+  height: 200px;
+  overflow: hidden;
+  align-item: center;
+}
+
+.album-img {
+  display: flex;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    background-image: url("https://is5-ssl.mzstatic.com/image/thumb/Music1/v4/64/3a/1a/643a1a76-8fd1-3ce5-2433-1b05d19602ba/dj.qtjkodwa.jpg/1200x630bb.jpg");
+
+}
