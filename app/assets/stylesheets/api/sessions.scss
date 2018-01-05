@@ -29,7 +29,6 @@
 
 .input-container {
   margin-top: 10%;
-
 }
 
 .guest-signin-button {
@@ -38,11 +37,11 @@
   border-radius: 500px;
   border: 1px solid blue;
   min-width: 160px;
-  font-size: 12px;
+  font-size: .9375em;
   font-weight: 700;
   line-height: 1;
   padding: 11px 32px 9px;
-  font-family: sans-serif;
+  font-family: Circular,Helvetica,Arial,sans-serif;
   @media screen and (min-width: 767px) {
     align-self: center;
     width: 30%;
@@ -67,7 +66,8 @@
   }
   input::placeholder{
     color: grey;
-    font-size: 20px;
+    font-size: .9375em;
+    font-family: Circular,Helvetica,Arial,sans-seri;
   }
   flex-direction: column;
 
@@ -75,7 +75,7 @@
 
 .errors {
   text-align: center;
-  font-family: sans-serif;
+  font-family: Circular,Helvetica,Arial,sans-serif;
 }
 
 .login-signup-button {
@@ -84,11 +84,11 @@
   border-radius: 500px;
   border: 1px solid #1db954;
   min-width: 160px;
-  font-size: 12px;
+  font-size: .9375em;
   font-weight: 700;
   line-height: 1;
   padding: 11px 32px 9px;
-  font-family: sans-serif;
+  font-family: Circular,Helvetica,Arial,sans-serif;
   @media screen and (min-width: 767px) {
     align-self: center;
     width: 30%;
@@ -104,6 +104,32 @@
   color: black;
   padding: 1px 10px 3px;
 }
+.date-input{
+  align-content: center;
+}
+
+.month {
+  border: 1px solid #d9dadc;
+  padding: 7px;
+  background-color: white;
+  width: 170px;
+  line-height: 1;
+  font-size: .9375em;
+  font-family: Circular,Helvetica,Arial,sans-serif;
+  border-radius: 2px;
+  font-weight: 0;
+  color: grey;
+}
+
+.day-year {
+  width: 100px;
+  line-height: 1;
+  border: 1px solid #d9dadc;
+  border-radius: 2px;
+  padding: 7px;
+  margin-left: 23px;
+}
+
 
 
 .username-password-input {
@@ -113,6 +139,10 @@
   margin-top: 10px;
   margin-bottom: 20px;
   padding: 6px 12px;
-  font-size: 16px;
+  font-size: .9375em;
   box-sizing: border-box;
+  border-radius: 2px;
+}
+.date-input {
+  display:flex;
 }

@@ -10,7 +10,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video, button, input {
+time, mark, audio, video, button, input, select {
  margin: 0;
  padding: 0;
  border: 0;
@@ -19,6 +19,11 @@ time, mark, audio, video, button, input {
  vertical-align: baseline;
  text-decoration: none;
  outline: 0;
+ background-image:none;
+ background-color:transparent;
+ -webkit-box-shadow: none;
+ -moz-box-shadow: none;
+ box-shadow: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
