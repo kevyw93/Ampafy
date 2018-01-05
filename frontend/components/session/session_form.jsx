@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
 
     return (
       <div className="form-container">
-        <h1 className="logo">Sandrafy</h1>
+        <h1 className="logo">Ampafy</h1>
 
       <form className="form" onSubmit={this.handleSubmit}>
           {creds}
