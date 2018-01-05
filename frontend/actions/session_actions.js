@@ -4,6 +4,7 @@ import * as ApiUtil from "../util/session_api_util";
 
 
 export const receiveCurrentUser = (currentUser) => {
+  
   return {
     type: RECEIVE_CURRENT_USER,
     currentUser
