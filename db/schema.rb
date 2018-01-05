@@ -38,13 +38,6 @@ ActiveRecord::Schema.define(version: 20180104165152) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
-    t.string "song_file_name"
-    t.string "song_content_type"
-    t.integer "song_file_size"
-    t.datetime "song_updated_at"
-=======
->>>>>>> CRUDsongs/playlist
   end
 
   create_table "songs", force: :cascade do |t|
@@ -52,13 +45,10 @@ ActiveRecord::Schema.define(version: 20180104165152) do
     t.integer "album_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
-=======
     t.string "audio_file_name"
     t.string "audio_content_type"
     t.integer "audio_file_size"
     t.datetime "audio_updated_at"
->>>>>>> CRUDsongs/playlist
   end
 
   create_table "users", force: :cascade do |t|
