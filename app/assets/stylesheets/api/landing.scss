@@ -21,9 +21,11 @@
 }
 .wrapper-opacity {
   height: inherit;
-  display:flex;
   width: 100%;
-  background-color: rgba(0,0,0,0.5)
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  margin: auto auto;
+  justify-content: center;
 }
 
 .loggedin{
@@ -60,12 +62,13 @@
 
 
 .button-container {
-  margin: 0 40px;
   height: 100%;
   display:flex;
   justify-content: center;
   flex-direction: column;
   box-sizing: border-box;
+  margin-left: 40px;
+  margin-right: 30px;
 }
 .right-border {
   margin: auto 0;
@@ -74,13 +77,17 @@
 }
 .side-container {
   height: 100%;
-  width: 100%;
+  width: 750px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: white;
   text-wrap: normal;
+}
+.text{
+  margin-left: 40px;
+  white-space: nowrap;
 }
 .side-words {
   color: white;
