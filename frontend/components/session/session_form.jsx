@@ -29,25 +29,26 @@ class SessionForm extends React.Component {
   handleGuestLogin(e){
     e.preventDefault();
     const user = {'username':'user', 'password':'password'};
-    const username = {
-      strings: [user.username],
-      typeSpeed:50
-    };
-    const password = {
-      strings: [user.username],
-      typeSpeed:40
-    };
-    this.setState({
-      typeUsername: setTimeout(() => {
-        new Typed('.username-input', username);
-      }, 30),
-      typedPassword: setTimeout(() => {
-        new Typed('.password-input', password);
-      },900),
-      typeSubmit: setTimeout(() => {
-        this.props.login({user:user});
-      },3000)
-    });
+    // const username = {
+    //   strings: [user.username],
+    //   typeSpeed:50
+    // };
+    // const password = {
+    //   strings: [user.username],
+    //   typeSpeed:40
+    // };
+    // this.setState({
+    //   typeUsername: setTimeout(() => {
+    //     new Typed('.username-input', username);
+    //   }, 30),
+    //   typedPassword: setTimeout(() => {
+    //     new Typed('.password-input', password);
+    //   },900),
+    //   typeSubmit: setTimeout(() => {
+    //     this.props.login({user:user});
+    //   },3000)
+    // });
+     this.props.login({user:user});
   }
 
   handleChange(field){

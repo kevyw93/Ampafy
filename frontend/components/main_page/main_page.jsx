@@ -1,15 +1,15 @@
 import React from 'react';
 import AlbumContainer from '../album/album_container';
 import {Link, Route} from 'react-router-dom';
+import FeatureContainer from './feature_container';
+// import SideNavBarContainer from '../nav_bars/side_nav_bar_container';
 
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentWillMount() {
-    this.props.getAllAlbums();
-  }
+
 
 
 
@@ -27,14 +27,10 @@ class MainPage extends React.Component {
     // <Link to='/browse/discover'>Discover</Link>
     // <NavBar>
     // <Route path ="/browse/discover" component={Discover} />
-    debugger
-    const albs = Object.values(this.props.albums).map(
-      alb => <li><Link to={`/album/${alb.id}`}><img className="album-img" src={alb.album_img} /></Link></li>
-    );
     return(
-      <div>
-        <Route path="/album/:id" component={AlbumContainer} />
-        {albs}
+      <div className="main-page">
+        <FeatureContainer />
+      {/* <SideNavBarContainer /> */}
       </div>
     );
   }

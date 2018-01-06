@@ -13,9 +13,6 @@ class LoggedIn extends React.Component {
     return (
       <div className="container" >
 
-        <div className="top-nav" >
-          <TopNavBarContainer />
-        </div>
 
         <div>
           <MainPageContainer />

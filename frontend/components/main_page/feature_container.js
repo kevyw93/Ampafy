@@ -1,9 +1,9 @@
 import {connect} from "react-redux";
-import MainPage from './main_page';
+import Feature from './feature';
 import { getAllAlbums } from "../../actions/album_actions";
 import { fetchSong } from "../../actions/song_actions";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     albums: state.albums
   };
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
+export default connect(mapStateToProps, mapDispatchToProps)(Feature);
