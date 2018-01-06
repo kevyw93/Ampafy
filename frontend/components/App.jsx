@@ -5,12 +5,14 @@ import LandingContainer from "./landing/landing_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import {Switch, Route} from 'react-router-dom';
 import LoggedInContainer from './logged_in/logged_in_container';
+import AlbumContainer from './album/album_container';
 
 const App = () => {
   return (
     <div>
       <Switch>
         <ProtectedRoute path='/browse' component={LoggedInContainer} />
+        <Route path="/album/:id" component={AlbumContainer} />
         <Route exact path="/" component={LandingContainer} />
         <AuthRoute path='/login' component={SessionFormContainer} />
         <AuthRoute path='/signup' component={SessionSignupContainer} />

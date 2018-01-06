@@ -8,7 +8,7 @@ export const receiveAllAlbums = (albums) => {
     albums
   };
 };
-export const receiveAlbums = (album) => {
+export const receiveAlbum = (album) => {
   return {
     type: RECEIVE_ALBUM,
     album
@@ -19,6 +19,14 @@ export const getAllAlbums = () => {
   return dispatch => {
     return ApiUtil.getAllAlbums().then(
       (albums) => dispatch(receiveAllAlbums(albums))
+    );
+  };
+};
+
+export const getAlbum = (id) => {
+  return dispatch => {
+    return ApiUtil.getAlbum(id).then(
+      (album) => dispatch(receiveAlbum(album))
     );
   };
 };
