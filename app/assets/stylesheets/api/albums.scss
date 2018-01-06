@@ -7,38 +7,3 @@
 //   border: 1px solid black;
 // }
 //
-.album-hover {
-
-}
-// .album-img, .hover-play-button{
-//   width:100%;
-//   height:100%;
-//
-//   // opacity:0;
-//
-// }
-
-.album-img {
-  width: 200px;
-  height: 200px;
-  border: 1px solid black;
-
-}
-
-.hover-play-button {
-  left: 0;
-  visibility: hidden;
-  width: 50px;
-  height: 50px;
-  background-position:top left;
-  background-repeat: no-repeat;
-  background-size:100%;
-  position:absolute;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  &:hover {
-    visibility: visible;
-  }
-}

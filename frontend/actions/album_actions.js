@@ -24,6 +24,7 @@ export const getAllAlbums = () => {
 };
 
 export const getAlbum = (id) => {
+  debugger
   return dispatch => {
     return ApiUtil.getAlbum(id).then(
       (album) => dispatch(receiveAlbum(album))

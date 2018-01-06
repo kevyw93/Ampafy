@@ -6,14 +6,13 @@ import { fetchSong } from "../../actions/song_actions";
 const mapStateToProps = (state, ownProps) => {
   debugger
   return {
-    // id: ownProps.match.params
+    albumId: parseInt(ownProps.match.params.id),
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getAlbum: (id) => dispatch(getAlbum(id)),
-    fetchSong: (id) => dispatch(fetchSong(id))
   };
 };
 

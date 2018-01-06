@@ -9,10 +9,10 @@ class TopNavBar extends React.Component {
 
   render() {
     return(
-      <div>
-        <Link to='/browse/feature'>Feature</Link>
-        <Link to='/browse/discover'>Discover</Link>
-        <Link to='/browse/random'>Random</Link>
+      <div className="nav_bars">
+        <Link className="nav-links" to='/browse/feature'>Feature</Link>
+        <Link className="nav-links" to='/browse/discover'>Discover</Link>
+        <Link className="nav-links" to='/browse/random'>Random</Link>
       </div>
     );
   }
