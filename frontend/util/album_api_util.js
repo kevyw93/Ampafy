@@ -5,9 +5,3 @@ export const getAllAlbums = (data) => {
     data
   });
 };
-
-export const fetchSong = (id) => {
-  return $.ajax({
-    type: 'get'
-  });
-};
