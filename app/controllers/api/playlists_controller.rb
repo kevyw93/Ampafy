@@ -2,7 +2,6 @@ class Api::PlaylistsController < ApplicationController
 
   def show
     @playlist = Playlist.find(params[:id])
-    render json: @playlist
   end
 
   def create
@@ -21,7 +20,6 @@ class Api::PlaylistsController < ApplicationController
 
   def index
     @playlists = Playlist.all
-    render json: @playlist
   end
 
   def update
