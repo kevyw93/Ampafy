@@ -9,10 +9,12 @@ class Album extends React.Component {
 
 
  componentWillMount(){
+   debugger
     this.props.getAlbum(this.props.albumId);
  }
 
   render(){
+    debugger
     let alb;
     if (this.props.album) {
       alb =

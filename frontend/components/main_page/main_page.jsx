@@ -34,9 +34,10 @@ class MainPage extends React.Component {
       <div className="main-page">
         <Switch>
           <Route exact path="/browse/album/:id" component={AlbumContainer} />
-          <Route exact path='/browse' component={FeatureContainer} />
+          <Route exact path='/browse/feature' component={FeatureContainer} />
           {/* <Route exact path='/browse/discover' component={DiscoverContainer} /> */}
         </Switch>
+        <button type="submit" onSubmit={}></button>
       </div>
     );
   }

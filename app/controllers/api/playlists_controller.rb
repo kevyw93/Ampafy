@@ -7,7 +7,7 @@ class Api::PlaylistsController < ApplicationController
   def create
     @playlist = Playlist.new(playlist_params)
     if @playlist.save
-      render json: @playlist
+      render json: :show
     else
       render json: ['A name is needed in order to save a playlist']
     end
@@ -25,7 +25,7 @@ class Api::PlaylistsController < ApplicationController
   def update
     @playlist = Playlist.find(params[:id])
     if @playlist.update(playlist_params)
-      render json: @playlist
+      render json: :show
     else
       render json: ["You haven't put in the neccessary information"]
     end
