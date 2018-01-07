@@ -8,17 +8,17 @@ class Album extends React.Component {
 
 
 
- componentWillMount(){
-   this.props.getAlbum(this.props.albumId);
-   debugger
- }
+ // componentWillMount(){
+ //   this.props.getAlbum(this.props.albumId);
+ //   debugger
+ // }
 
   render(){
     debugger
     return (
       <ul className="albums">
-        {/* <li>{this.props.albums.title}</li> */}
-        hello
+        <li>{this.props.album.title}</li>
+        {/* hello */}
       </ul>
     );
   }
