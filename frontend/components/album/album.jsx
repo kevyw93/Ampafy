@@ -8,18 +8,29 @@ class Album extends React.Component {
 
 
 
- // componentWillMount(){
- //   this.props.getAlbum(this.props.albumId);
- //   debugger
- // }
+ componentWillMount(){
+    this.props.getAlbum(this.props.albumId);
+ }
 
   render(){
+    let alb;
     debugger
+    if (this.props.album) {
+      alb =
+      (
+        <div>
+          <img src={this.props.album.album_img} />
+          {this.props.album.title}
+          
+        </div>
+      );
+
+    }
     return (
-      <ul className="albums">
-        <li>{this.props.album.title}</li>
+      <div className="albums">
+        {alb}
         {/* hello */}
-      </ul>
+      </div>
     );
   }
 

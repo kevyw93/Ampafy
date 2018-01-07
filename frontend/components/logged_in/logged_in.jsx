@@ -1,5 +1,5 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Route} from 'react-router-dom';
 import TopNavBarContainer from '../nav_bars/top_nav_bar_container';
 import MainPageContainer from '../main_page/main_page_container';
 
@@ -20,7 +20,7 @@ class LoggedIn extends React.Component {
 
 
         <div className="logg-main">
-          <MainPageContainer />
+          <Route component={MainPageContainer} />
         </div>
 
 

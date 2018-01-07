@@ -12,6 +12,8 @@ class Feature extends React.Component {
   componentWillMount() {
     this.props.getAllAlbums();
   }
+
+
   // handleClick(e){
   //   e.preventDefault();
   //   this.props.history.push(`/browse/albums/${this.album.id}`);
@@ -19,6 +21,7 @@ class Feature extends React.Component {
 
   render() {
 
+    // have a key error here 
     const albs = Object.values(this.props.albums).map(
       alb =>
       (<li className="single-album">
