@@ -14,14 +14,13 @@ class Album extends React.Component {
 
   render(){
     let alb;
-    debugger
     if (this.props.album) {
       alb =
       (
         <div>
           <img src={this.props.album.album_img} />
           {this.props.album.title}
-          
+
         </div>
       );
 

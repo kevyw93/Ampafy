@@ -21,7 +21,7 @@ class Feature extends React.Component {
 
   render() {
 
-    // have a key error here 
+    // have a key error here
     const albs = Object.values(this.props.albums).map(
       alb =>
       (<li className="single-album">
@@ -31,11 +31,12 @@ class Feature extends React.Component {
         <h1 className="alb-title">{alb.title}</h1>
       </li>)
     );
+    debugger
     return(
       <div className="feature">
-      <div className="top-nav">
-        <TopNavBarContainer />
-      </div>
+        <div className="top-nav">
+          <TopNavBarContainer />
+        </div>
 
         <div className="all-albums">
 
