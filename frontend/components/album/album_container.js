@@ -4,13 +4,15 @@ import { getAlbum } from "../../actions/album_actions";
 import { fetchSong } from "../../actions/song_actions";
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+
   return {
-    album: getAlbum(parseInt(ownProps.match.params.id)),
+    albumId: parseInt(ownProps.match.params.id),
+    album: state.albums
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
+  debugger
   return {
     getAlbum: (id) => dispatch(getAlbum(id)),
   };

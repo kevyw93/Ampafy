@@ -2,6 +2,7 @@ import React from 'react';
 import AlbumContainer from '../album/album_container';
 import {Link, Route, Switch} from 'react-router-dom';
 import FeatureContainer from './feature_container';
+import DiscoverContainer from './discover_container';
 // import SideNavBarContainer from '../nav_bars/side_nav_bar_container';
 
 class MainPage extends React.Component {
@@ -28,11 +29,13 @@ class MainPage extends React.Component {
     // <NavBar>
     // <Route path ="/browse/discover" component={Discover} />
     // Routes go on this page
+
     return(
       <div className="main-page">
         <Switch>
-          <Route exact path={'/browse'} component={FeatureContainer} />
           <Route exact path="/browse/album/:id" component={AlbumContainer} />
+          <Route exact path='/browse/feature' component={FeatureContainer} />
+          <Route exact path='/browse/discover' component={DiscoverContainer} />
         </Switch>
       </div>
     );
