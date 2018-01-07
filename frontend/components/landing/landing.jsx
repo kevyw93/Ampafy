@@ -6,7 +6,7 @@ const Landing = (props) => {
 
   if (props.currentUser) {
     return (
-      <Redirect to='/browse' />
+      <Redirect to='/browse/feature' />
   );
   }else {
     return (
