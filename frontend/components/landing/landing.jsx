@@ -14,7 +14,7 @@ const Landing = (props) => {
         <div className="wrapper-opacity">
 
           <div className="button-container">
-            <h1 className="logo"><img></img>Sandrafy</h1>
+            <h1 className="logo"><img></img>Ampafy</h1>
             <Link className="landing-signup" to="/signup">Sign Up</Link>
           <div className="words">
             <span className="before"></span>
@@ -30,9 +30,9 @@ const Landing = (props) => {
           <div className="side-container">
             <div className="inner-side-container">
               <div className="text">
-              <h1 className="side-top-words">Get Sandrafied with the right music.</h1>
+              <h1 className="side-top-words">Get Ampafied with the right music.</h1>
               <h2 className="side-middle-words">Best Songs Out There Especially to KTV</h2>
-              <h3 className="check-image-words"><img src="https://open.scdn.co/static/images/checkmark.png" ></img>Search and discover how to be sandrafy</h3>
+            <h3 className="check-image-words"><img src="https://open.scdn.co/static/images/checkmark.png" ></img>Search and discover how to be Ampafied</h3>
               <h3 className="check-image-words"><img src="https://open.scdn.co/static/images/checkmark.png" ></img>Create playlist of your favorite music</h3>
             </div>
             </div>

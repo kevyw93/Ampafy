@@ -1,11 +1,15 @@
-.top-nav{
-  display: flex;
-  justify-content: center;
-  background-color:inherit;
-}
+// .top-nav{
+//   justify-content: center;
+//   background-color:inherit;
+// }
 
 .container {
-  border: 1px solid black;
-  height: 100vh;
-  width: 100vw;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(rgb(7, 61, 92), rgb(4, 6, 2) 85%) ;
+}
+.logg-main {
+  width: 80%;
+  border: 1px solid red;
 }
