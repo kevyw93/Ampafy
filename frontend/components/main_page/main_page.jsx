@@ -31,8 +31,8 @@ class MainPage extends React.Component {
     return(
       <div className="main-page">
         <Switch>
-          <FeatureContainer />
-          <Route path="/browse/album/:id" component={AlbumContainer} />
+          <Route exact path={'/browse'} component={FeatureContainer} />
+          <Route exact path="/browse/album/:id" component={AlbumContainer} />
         </Switch>
       </div>
     );

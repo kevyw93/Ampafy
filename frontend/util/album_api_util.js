@@ -6,7 +6,6 @@ export const getAllAlbums = () => {
 };
 
 export const getAlbum = (id) => {
-  debugger
   return $.ajax({
     type: 'get',
     url: `api/albums/${id}`

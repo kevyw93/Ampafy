@@ -6,7 +6,7 @@ import { fetchSong } from "../../actions/song_actions";
 const mapStateToProps = (state, ownProps) => {
   debugger
   return {
-    albumId: parseInt(ownProps.match.params.id),
+    album: getAlbum(parseInt(ownProps.match.params.id)),
   };
 };
 
