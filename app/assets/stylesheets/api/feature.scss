@@ -1,8 +1,12 @@
 .feature {
   border: 1px solid blue;
-  width: 100%;
   height: 100%;
+
 }
+// linear-gradient(rgb(48, 74, 80), rgb(51, 45, 48) 88%)
+// linear-gradient(rgb(11, 55, 108), rgb(54, 47, 48) 88%)
+// linear-gradient(rgb(127, 61, 26), rgb(12, 6, 2) 85%)
+// linear-gradient(rgb(7, 61, 92), rgb(4, 36, 29) 85%) blue green
 
 .album-img {
   width: 100%;
@@ -11,6 +15,10 @@
 }
 .alb-title {
   text-align: center;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 14px;
 }
 .top-nav {
   margin-bottom: 40px;
@@ -26,11 +34,10 @@
 }
 .all-albums{
   display: flex;
-  grid-auto-columns: minmax(auto, 20%);
   flex-wrap: wrap;
   flex: flex-start;
   // flex-wrap: wrap;
-  margin: auto 5%;
+  margin: auto auto;
 }
 // .album-hover {
 //

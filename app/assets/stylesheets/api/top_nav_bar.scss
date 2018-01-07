@@ -1,6 +1,8 @@
 .nav_bars {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 10px 5px 5px linear-gradient(rgb(7, 61, 92), rgb(4, 6, 2) 85%);
   .nav-links{
     padding: 0 40px;
     font-size: 20px;
@@ -12,7 +14,7 @@
   }
     height: 30px;
     width: 500px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 10px;
-    border: 1px solid red;
+    // border: 1px solid red;
 }

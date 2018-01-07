@@ -1,6 +1,6 @@
 import React from 'react';
 import AlbumContainer from '../album/album_container';
-import {Link, Route} from 'react-router-dom';
+import {Link, Route, Switch} from 'react-router-dom';
 import FeatureContainer from './feature_container';
 // import SideNavBarContainer from '../nav_bars/side_nav_bar_container';
 
@@ -27,10 +27,13 @@ class MainPage extends React.Component {
     // <Link to='/browse/discover'>Discover</Link>
     // <NavBar>
     // <Route path ="/browse/discover" component={Discover} />
+    // Routes go on this page
     return(
       <div className="main-page">
-        <FeatureContainer />
-      {/* <SideNavBarContainer /> */}
+        <Switch>
+          <FeatureContainer />
+          <Route path="/browse/album/:id" component={AlbumContainer} />
+        </Switch>
       </div>
     );
   }

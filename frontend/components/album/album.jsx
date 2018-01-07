@@ -7,6 +7,7 @@ class Album extends React.Component {
  }
 
 
+
  componentWillMount(){
    this.props.getAlbum(this.props.albumId);
    debugger
@@ -16,8 +17,8 @@ class Album extends React.Component {
     debugger
     return (
       <ul className="albums">
-        <li>{this.props.albums.title}</li>
-
+        {/* <li>{this.props.albums.title}</li> */}
+        hello
       </ul>
     );
   }
