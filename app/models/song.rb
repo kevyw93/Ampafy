@@ -5,6 +5,8 @@ class Song < ApplicationRecord
   size: { in: 0..50.megabytes }
   validates :title, :album_id, presence: true
 
-  has_many :playlists
+  has_many :playlist_taggings
+  has_many :playlists,
+    through: :playlist_taggings
   belongs_to :album
 end

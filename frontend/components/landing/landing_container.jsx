@@ -3,8 +3,9 @@ import Landing from "./landing";
 import {logout} from "../../actions/session_actions";
 
 const mapStateToProps = (state) => {
+  debugger
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.entities.session.currentUser
   };
 };
 

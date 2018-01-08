@@ -1,18 +1,17 @@
-// import {connect} from "react-redux";
-// import Discover from './discover';
-// import { getPlaylist } from "../../actions/";
-// import { fetchSong } from "../../actions/song_actions";
-//
-// const mapStateToProps = (state) => {
-//   return {
-//     albums: state.albums
-//   };
-// };
-//
-// const mapDispatchToProps = (dispatch) => {
-  // return {
-    // fetchSong: (id) => dispatch(fetchSong(id))
-//   };
-// };
+import {connect} from "react-redux";
+import Discover from './discover';
+import { receiveAllPlaylist } from "../../actions/playlist_actions";
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Discover);
+const mapStateToProps = (state) => {
+  return {
+    playlists: state.playlists
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    receiveAllPlaylist: () => dispatch(receiveAllPlaylist())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Discover);

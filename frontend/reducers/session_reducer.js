@@ -4,6 +4,7 @@ import merge from 'lodash/merge';
 const sessionReducer = (state = {currentUser: null}, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
+    debugger
       return Object.assign({}, state, {currentUser: action.currentUser});
     default:
       return state;
