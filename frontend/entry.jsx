@@ -9,8 +9,9 @@ import {fetchSong} from './util/album_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
+  debugger
   if (window.currentUser) {
-    const preloadedState = { session: {currentUser: window.currentUser}};
+    const preloadedState = { entities:{session: {currentUser: window.currentUser}}};
     store = configureStore(preloadedState);
     delete window.currentUser;
   }else {

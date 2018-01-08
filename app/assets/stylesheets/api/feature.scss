@@ -21,9 +21,6 @@
   font-weight: 400;
   font-size: 14px;
 }
-.top-nav {
-  margin-bottom: 40px;
-}
 
 .single-album {
   max-width: 150px;
@@ -36,9 +33,8 @@
 .all-albums{
   display: flex;
   flex-wrap: wrap;
-  flex: flex-start;
-  // flex-wrap: wrap;
-  margin: auto auto;
+  // flex: flex-start;
+  margin: 0 auto;
 }
 // .album-hover {
 //

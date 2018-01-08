@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, Route} from 'react-router-dom';
-import TopNavBarContainer from '../nav_bars/top_nav_bar_container';
+// import TopNavBarContainer from '../nav_bars/top_nav_bar_container';
 
 
 class Feature extends React.Component {
@@ -31,12 +31,12 @@ class Feature extends React.Component {
         <h1 className="alb-title">{alb.title}</h1>
       </li>)
     );
-    
+
     return(
-      <div className="feature">
-        <div className="top-nav">
-          <TopNavBarContainer />
-        </div>
+      // <div className="feature">
+      //   {/* <div className="top-nav">
+      //     <TopNavBarContainer />
+      //   </div> */}
 
         <div className="all-albums">
 
@@ -44,7 +44,7 @@ class Feature extends React.Component {
         </div>
 
 
-      </div>
+      // </div>
     );
   }
 }
