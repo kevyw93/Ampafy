@@ -31,6 +31,7 @@ class Feature extends React.Component {
         <h1 className="alb-title">{alb.title}</h1>
       </li>)
     );
+    
     return(
       <div className="feature">
         <div className="top-nav">
