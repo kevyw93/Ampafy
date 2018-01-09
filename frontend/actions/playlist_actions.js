@@ -17,19 +17,19 @@ export const removePlaylist = (playlist) => {
   };
 };
 
-export const receiveAllPlaylist = (playlists) => {
+export const receiveAllPlaylist = (payload) => {
   return {
     type: RECEIVE_ALL_PLAYLISTS,
-    playlists
+    playlists: payload.playlists
   };
 };
 
 export const createPlaylist = playlist => {
-  
+
   return dispatch => {
     return PlaylistApiUtil.createPlaylist(playlist);
   };
-  
+
 };
 
 export const updatePlaylist = playlist => dispatch => {

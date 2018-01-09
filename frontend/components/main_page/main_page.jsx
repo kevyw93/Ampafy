@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 import FeatureContainer from './feature_container';
-import Modal from 'react-modal';
 import TopNavBarContainer from '../nav_bars/top_nav_bar_container';
 import DiscoverContainer from './discover_container';
 // import SideNavBarContainer from '../nav_bars/side_nav_bar_container';
