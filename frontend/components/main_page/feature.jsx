@@ -39,7 +39,6 @@ class Feature extends React.Component {
       //   </div> */}
 
         <div className="all-albums">
-
           {albs}
         </div>
 

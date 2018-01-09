@@ -1,7 +1,15 @@
-json.extract! @album, :title, :author, :id
-json.songs @album.songs.each do |song|
-  json.extract! song, :id, :title
-  json.audio_url song.audio.url
-  # debugger
+json.album do
+  json.set! @album.id do
+    json.extract! @album, :title, :author, :id
+    json.albumImg @album.album_cover.url
+    json.songIds @album.song_ids
+  end
 end
-json.album_img @album.album_cover.url
+json.songs do
+  @album.songs.each do |song|
+    json.set! song.id do
+      json.extract! song, :id, :title
+      json.audioUrl song.audio.url
+    end
+  end
+end

@@ -1,8 +1,8 @@
-export const RECEIVE_CURRENT_SONGS = 'RECEIVE_CURRENT_SONGS';
+export const RECEIVE_CURRENT_SONG = 'RECEIVE_CURRENT_SONG';
 
-export const receiveCurrentSong = (songs) => {
+export const receiveCurrentSong = (song) => {
   return {
-    type: RECEIVE_CURRENT_SONGS,
-    songs
+    type: RECEIVE_CURRENT_SONG,
+    song
   };
 };
