@@ -8,47 +8,47 @@
 Album.destroy_all
 Song.destroy_all
 
-alb_img1 = File.open(asset_url('Bright.jpg'))
+alb_img1 = File.open('https://s3.amazonaws.com/ampafy-dev/Love-Album.jpg')
 album1 = Album.new(title: 'Bright', author: 'Machine Gun Kelley' )
 album1.album_cover = alb_img1
 album1.save!
 
-alb_img2 = File.open(asset_url('Love-Album.jpg'))
+alb_img2 = File.open('https://s3.amazonaws.com/ampafy-dev/Bright.jpg')
 album2 = Album.new(title: 'Love-Album', author: 'KevCool' )
 album2.album_cover = alb_img2
 album2.save!
 
-alb_img3 = File.open(asset_url('Love-Album.jpg'))
+alb_img3 = File.open('https://s3.amazonaws.com/ampafy-dev/Bright.jpg')
 album3 = Album.new(title: 'Dummy-Album', author: 'KevCool' )
 album3.album_cover = alb_img3
 album3.save!
 
-alb_img4 = File.open(asset_url('Love-Album.jpg'))
+alb_img4 = File.open('https://s3.amazonaws.com/ampafy-dev/Bright.jpg')
 album4 = Album.new(title: 'Dummy-Album2', author: 'KevCool' )
 album4.album_cover = alb_img4
 album4.save!
 
-alb_img5 = File.open(asset_url('Love-Album.jpg'))
+alb_img5 = File.open('https://s3.amazonaws.com/ampafy-dev/Bright.jpg')
 album5 = Album.new(title: 'Dummy-Album3', author: 'KevCool' )
 album5.album_cover = alb_img5
 album2.save!
 
-alb_img6 = File.open(asset_url('Bright.jpg'))
+alb_img6 = File.open('https://s3.amazonaws.com/ampafy-dev/Love-Album.jpg')
 album6 = Album.new(title: 'Bright', author: 'Machine Gun Kelley' )
 album6.album_cover = alb_img6
 album6.save!
 
-alb_img7 = File.open(asset_url('Bright.jpg'))
+alb_img7 = File.open('https://s3.amazonaws.com/ampafy-dev/Love-Album.jpg')
 album7 = Album.new(title: 'Bright', author: 'Machine Gun Kelley' )
 album7.album_cover = alb_img7
 album7.save!
 
-alb_img8 = File.open(asset_url('Bright.jpg'))
+alb_img8 = File.open('https://s3.amazonaws.com/ampafy-dev/Love-Album.jpg')
 album8 = Album.new(title: 'Bright', author: 'Machine Gun Kelley' )
 album8.album_cover = alb_img8
 album8.save!
 
-alb_img9 = File.open(asset_url('Bright.jpg'))
+alb_img9 = File.open('https://s3.amazonaws.com/ampafy-dev/Love-Album.jpg')
 album9 = Album.new(title: 'Bright', author: 'Machine Gun Kelley' )
 album9.album_cover = alb_img9
 album9.save!
