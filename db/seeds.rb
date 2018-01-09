@@ -8,66 +8,54 @@
 Album.destroy_all
 Song.destroy_all
 
-alb_img1 = File.open('https://s3.amazonaws.com/ampafy-dev/Love-Album.jpg')
-album1 = Album.new(title: 'Bright', author: 'Machine Gun Kelley' )
-album1.album_cover = alb_img1
+alb_img1 = open('https://s3.amazonaws.com/ampafy-seeds/Bright.jpg')
+album1 = Album.new(title: 'Bright', author: 'Machine Gun Kelley', album_cover: alb_img1 )
 album1.save!
 
-alb_img2 = File.open('https://s3.amazonaws.com/ampafy-dev/Bright.jpg')
-album2 = Album.new(title: 'Love-Album', author: 'KevCool' )
-album2.album_cover = alb_img2
+alb_img2 = open('https://s3.amazonaws.com/ampafy-seeds/Love-Album.jpg')
+album2 = Album.new(title: 'Love-Album', author: 'KevCool', album_cover: alb_img2 )
 album2.save!
 
-alb_img3 = File.open('https://s3.amazonaws.com/ampafy-dev/Bright.jpg')
-album3 = Album.new(title: 'Dummy-Album', author: 'KevCool' )
-album3.album_cover = alb_img3
+alb_img3 = open('https://s3.amazonaws.com/ampafy-seeds/Love-Album.jpg')
+album3 = Album.new(title: 'Dummy-Album', author: 'KevCool', album_cover: alb_img3 )
 album3.save!
 
-alb_img4 = File.open('https://s3.amazonaws.com/ampafy-dev/Bright.jpg')
-album4 = Album.new(title: 'Dummy-Album2', author: 'KevCool' )
-album4.album_cover = alb_img4
+alb_img4 = open('https://s3.amazonaws.com/ampafy-seeds/Love-Album.jpg')
+album4 = Album.new(title: 'Dummy-Album2', author: 'KevCool', album_cover: alb_img4 )
 album4.save!
 
-alb_img5 = File.open('https://s3.amazonaws.com/ampafy-dev/Bright.jpg')
-album5 = Album.new(title: 'Dummy-Album3', author: 'KevCool' )
-album5.album_cover = alb_img5
+alb_img5 = open('https://s3.amazonaws.com/ampafy-seeds/Love-Album.jpg')
+album5 = Album.new(title: 'Dummy-Album3', author: 'KevCool', album_cover: alb_img5 )
 album2.save!
 
-alb_img6 = File.open('https://s3.amazonaws.com/ampafy-dev/Love-Album.jpg')
-album6 = Album.new(title: 'Bright', author: 'Machine Gun Kelley' )
-album6.album_cover = alb_img6
+alb_img6 = open('https://s3.amazonaws.com/ampafy-seeds/Bright.jpg')
+album6 = Album.new(title: 'Bright', author: 'Machine Gun Kelley', album_cover:alb_img6 )
 album6.save!
 
-alb_img7 = File.open('https://s3.amazonaws.com/ampafy-dev/Love-Album.jpg')
-album7 = Album.new(title: 'Bright', author: 'Machine Gun Kelley' )
-album7.album_cover = alb_img7
+alb_img7 = open('https://s3.amazonaws.com/ampafy-seeds/Bright.jpg')
+album7 = Album.new(title: 'Bright', author: 'Machine Gun Kelley', album_cover:alb_img7 )
 album7.save!
 
-alb_img8 = File.open('https://s3.amazonaws.com/ampafy-dev/Love-Album.jpg')
-album8 = Album.new(title: 'Bright', author: 'Machine Gun Kelley' )
-album8.album_cover = alb_img8
+alb_img8 = open('https://s3.amazonaws.com/ampafy-seeds/Bright.jpg')
+album8 = Album.new(title: 'Bright', author: 'Machine Gun Kelley', album_cover:alb_img8 )
 album8.save!
 
-alb_img9 = File.open('https://s3.amazonaws.com/ampafy-dev/Love-Album.jpg')
-album9 = Album.new(title: 'Bright', author: 'Machine Gun Kelley' )
-album9.album_cover = alb_img9
+alb_img9 = open('https://s3.amazonaws.com/ampafy-seeds/Bright.jpg')
+album9 = Album.new(title: 'Bright', author: 'Machine Gun Kelley', album_cover:alb_img9)
 album9.save!
 
 
 
 # SONGS
 
-song_1 = File.open('https://s3.amazonaws.com/AMPAFY-DEV/songs/audios/000/000/026/original/Ed_Sheeran_-_Perfect_Official_Music_Video_Mp3Converter.net_.mp3')
-song1 = Song.new(title: 'Ed-sheeran', album_id: album1.id)
-song1.audio = song_1
+song_1 = open('https://s3.amazonaws.com/ampafy-seeds/World_Gone_Mad.mp3')
+song1 = Song.new(title: 'Ed-sheeran', album_id: album1.id, audio: song_1)
 song1.save!
 
-song_2 = File.open('https://s3.amazonaws.com/AMPAFY-DEV/songs/audios/000/000/027/original/Home.mp3')
-song2 = Song.new(title: 'Home', album_id: album1.id)
-song2.audio = song_2
+song_2 = open('https://s3.amazonaws.com/ampafy-seeds/Home.mp3')
+song2 = Song.new(title: 'Home', album_id: album1.id, audio: song_2)
 song2.save!
 
-song_3 = File.open('https://s3.amazonaws.com/AMPAFY-DEV/songs/audios/000/000/028/original/World_Gone_Mad.mp3')
-song3 = Song.new(title: 'World_Gone_Mad', album_id: album1.id)
-song3.audio = song_3
+song_3 = open('https://s3.amazonaws.com/ampafy-seeds/World_Gone_Mad.mp3')
+song3 = Song.new(title: 'World_Gone_Mad', album_id: album1.id, audio: song_3)
 song3.save!
