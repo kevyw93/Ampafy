@@ -1,0 +1,25 @@
+.play-button{
+  height: 32px;
+  width: 32px;
+  margin: auto auto;
+}
+.pause-button{
+  height: 32px;
+  width: 32px;
+  margin: auto auto;
+}
+
+.player-outer-container{
+  display: flex;
+  height: 100%;
+
+}
+
+.player-inner-container {
+  margin: auto auto;
+  display: flex;
+  width: 600px;
+  height: 60px;
+  border: 1px solid blue;
+  justify-content: center;
+}

@@ -22,17 +22,26 @@ componentDidMount(){
 
 render(){
 
-  let songs = this.props.songs.map(song =>{
-    return (<SongComponent handleAdd={this.handleAdd}
+  let songs = this.props.songs.map((song,idx) =>{
+    return (<SongComponent key={idx} handleAdd={this.handleAdd}
       author={this.props.album.author} song={song} />);
   });
 
   let alb;
   if (this.props.album) {
-    alb = <div className="album-pic-container"><img className="albums-single-album-img" src={this.props.album.albumImg} /></div>;
+    alb =
+      <div className="album-pic-container">
+        <div className="alb-img-container">
+          <img className="albums-single-album-img" src={this.props.album.albumImg} />
+        </div>
+        <div className="album-details-container">
+          <div className="album-title">{this.props.album.title}</div>
+        <h1 className="alb-img-container">{this.props.album.author}</h1>
+        </div>
+      </div>;
   }
     return (
-      <div className="">
+      <div className="album-outmost-container">
         {alb}
         {songs}
       </div>

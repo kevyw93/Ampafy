@@ -10,13 +10,28 @@
 
 
 .albums-single-album-img {
-  height: 157px;
-  width: 157px;
+  height: auto;
+  max-width: 226px;
 
 }
 
 .album-pic-container {
-  margin: 30px;
+  margin-left: 50px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+}
+.album-details-container {
+  margin-left: 30px;
+
+}
+
+.alb-title {
+  font-size: 40px;
+
+}
+.album-outmost-container{
+  height: 100vh;
 }
 
 // .albums-single-album {
@@ -33,7 +48,8 @@
   flex-direction: column;
 }
 .album-title{
-  font-size: 25px;
+  font-size: 35px;
   font-weight: 800;
+  font-family: sans-serif;
 
 }
