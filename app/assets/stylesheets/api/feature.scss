@@ -1,0 +1,67 @@
+.feature {
+  border: 1px solid blue;
+  height: 100%;
+  width: 100%;
+  overflow:scroll;
+}
+// linear-gradient(rgb(48, 74, 80), rgb(51, 45, 48) 88%)
+// linear-gradient(rgb(11, 55, 108), rgb(54, 47, 48) 88%)
+// linear-gradient(rgb(127, 61, 26), rgb(12, 6, 2) 85%)
+// linear-gradient(rgb(7, 61, 92), rgb(4, 36, 29) 85%) blue green
+
+.album-img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+.alb-title {
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.single-album {
+  max-width: 150px;
+  height: 150px;
+  border: 1px solid green;
+  padding: 5px;
+  margin-left: 20px;
+  margin-bottom: 40px;
+}
+.all-albums{
+  display: flex;
+  flex-wrap: wrap;
+  // flex: flex-start;
+  margin: 0 auto;
+}
+// .album-hover {
+//
+// }
+// .album-img, .hover-play-button{
+//   width:100%;
+//   height:100%;
+//
+//   // opacity:0;
+//
+// }
+
+
+// .hover-play-button {
+//   left: 0;
+//   visibility: hidden;
+//   width: 50px;
+//   height: 50px;
+//   background-position:top left;
+//   background-repeat: no-repeat;
+//   background-size:100%;
+//   position:absolute;
+//   -webkit-transition: all 0.4s ease;
+//   -moz-transition: all 0.4s ease;
+//   -o-transition: all 0.4s ease;
+//   transition: all 0.4s ease;
+//   &:hover {
+//     visibility: visible;
+//   }
+// }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import Typed from 'typed.js';
 
 class SessionForm extends React.Component {
   constructor (props) {
@@ -21,14 +22,34 @@ class SessionForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
+    
     const user = Object.assign({}, this.state);
     this.props.processForm({user: user});
   }
 
   handleGuestLogin(e){
     e.preventDefault();
-    const user = Object.assign({'username':'user', 'password':'password'});
-    this.props.login({user: user});
+    const user = {'username':'user', 'password':'password'};
+    // const username = {
+    //   strings: [user.username],
+    //   typeSpeed:50
+    // };
+    // const password = {
+    //   strings: [user.username],
+    //   typeSpeed:40
+    // };
+    // this.setState({
+    //   typeUsername: setTimeout(() => {
+    //     new Typed('.username-input', username);
+    //   }, 30),
+    //   typedPassword: setTimeout(() => {
+    //     new Typed('.password-input', password);
+    //   },900),
+    //   typeSubmit: setTimeout(() => {
+    //     this.props.login({user:user});
+    //   },3000)
+    // });
+     this.props.login({user:user});
   }
 
   handleChange(field){
@@ -57,13 +78,13 @@ class SessionForm extends React.Component {
       <form className="form" onSubmit={this.handleSubmit}>
           {creds}
           <div className="input-container">
-          <input className="username-password-input" type="text" value={this.state.username} placeholder={'Username'} onChange={this.handleChange("username")} />
+          <input className="username-input" type="text" value={this.state.username} placeholder={'Username'} onChange={this.handleChange("username")} />
           <br/>
           <h1 className="errors">{this.props.errors.username}</h1>
 
           <br/>
 
-          <input className="username-password-input" type="password" value={this.state.password}  placeholder={'Password'} onChange={this.handleChange("password")} />
+          <input className="password-input" type="password" value={this.state.password}  placeholder={'Password'} onChange={this.handleChange("password")} />
           <br />
           <h1 className="errors">{this.props.errors.password}</h1>
 

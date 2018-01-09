@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class SessionSignup extends React.Component {
   constructor (props) {
     super(props);
-    this.state = { 'username': "", 'password': "" };
+    this.state = { 'username': "", "usernameConf": "", "name": "", 'password': "" };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
@@ -22,7 +22,11 @@ class SessionSignup extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm({user: user});
+    if (this.state.username === this.state.usernameConf) {
+      this.props.signup({user: user});
+    }else {
+      this.props.errors.push('email do not match');
+    }
   }
 
   handleGuestLogin(e){
@@ -51,7 +55,6 @@ class SessionSignup extends React.Component {
       creds = <h1 className="top-error">{this.props.errors.creds}</h1>;
     }
 
-
     return (
       <div className="form-container">
         <h1 className="logo">Ampafy</h1>
@@ -61,7 +64,7 @@ class SessionSignup extends React.Component {
             <input className="username-password-input" type="text" value={this.state.username} placeholder='Email' onChange={this.handleChange("username")} />
             <h1 className="errors">{this.props.errors.username}</h1>
             <br/>
-          <input className="username-password-input" type="text" placeholder='Confirm Email' onChange={this.handleChange("email")} />
+          <input className="username-password-input" type="text" placeholder='Confirm Email' value={this.state.usernameConf} onChange={this.handleChange("usernameConf")} />
             <h1 className="errors">{this.props.errors.username}</h1>
             <br />
           <input type="text" className="username-password-input" placeholder='What do you want to be called?' />
@@ -96,7 +99,7 @@ class SessionSignup extends React.Component {
           </div>
           <br />
 
-          <button className="guest-signin-button" onClick={this.handleGuestLogin} >GUEST LOGIN</button>
+          {/* <button className="guest-signin-button" onClick={this.handleGuestLogin} >GUEST LOGIN</button> */}
           <br />
           <button className="login-signup-button">{butt}</button>
           <br />
