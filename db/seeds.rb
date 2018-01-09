@@ -8,7 +8,7 @@
 Album.destroy_all
 Song.destroy_all
 
-alb_img1 = File.open(asset_url(asset_url('Bright.jpg'))
+alb_img1 = File.open(asset_url('Bright.jpg'))
 album1 = Album.new(title: 'Bright', author: 'Machine Gun Kelley' )
 album1.album_cover = alb_img1
 album1.save!
