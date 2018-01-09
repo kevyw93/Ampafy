@@ -9,17 +9,22 @@
 //
 
 
-.albums-single-album-pic {
+.albums-single-album-img {
   height: 157px;
   width: 157px;
 
 }
 
-.albums-single-album {
-  display:flex;
-  flex-direction: row;
-  margin: 20px 30px;
+.album-pic-container {
+  margin: 30px;
 }
+
+// .albums-single-album {
+//   display:flex;
+//   flex-direction: row;
+//   margin: 20px 30px;
+// }
+
 
 .album-details {
   margin-left: 40px;

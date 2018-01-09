@@ -12,8 +12,9 @@ class Song extends React.Component {
   }
   handlePlay(div) {
     return () => {
-      div.play()
-    }
+      div.play();
+    };
+
 
   }
 

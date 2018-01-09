@@ -3,7 +3,9 @@ import {Redirect, Route} from 'react-router-dom';
 import MainPageContainer from '../main_page/main_page_container';
 import {Switch} from 'react-router-dom';
 import AlbumContainer from '../album/album_container';
-import SongContainer from '../songs/song_container';
+import PlayerContainer from '../player/player_container';
+
+// import SongContainer from '../songs/song_container';
 
 class LoggedIn extends React.Component {
   constructor(props) {
@@ -14,19 +16,25 @@ class LoggedIn extends React.Component {
   render() {
     return (
       <div className="container" >
-        <div>
-          Hi Welcome {this.props.currentUser.username}
+        <div className="innerContainer">
+          <div>
+            Hi Welcome {this.props.currentUser.username}
 
-          <button onClick={this.props.logout}>LogOut</button>
-      </div>
+            <button onClick={this.props.logout}>LogOut</button>
+          </div>
 
 
-        <div className="logg-main">
-          <Switch>
-            <Route exact path="/browse/album/:id" component={AlbumContainer} />
-            <Route path="/browse/song/:id" component={SongContainer} />
-            <Route component={MainPageContainer} />
-          </Switch>
+          <div className="logg-main">
+            <Switch>
+              <Route exact path="/browse/album/:id" component={AlbumContainer} />
+              {/* <Route path="/browse/song/:id" component={SongContainer} /> */}
+              <Route component={MainPageContainer} />
+            </Switch>
+
+          </div>
+        </div>
+        <div className="player">
+          <PlayerContainer />
         </div>
 
 

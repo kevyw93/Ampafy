@@ -1,62 +1,44 @@
 import React from 'react';
 import Player from '../player/player';
+import SongComponent from './song_component';
 
 class Album extends React.Component {
 
  constructor(props) {
    super(props);
+   this.handleAdd = this.handleAdd.bind(this);
  }
 
+handleAdd(song) {
+
+  return e => this.props.receiveCurrentSong(song);
+}
 
 
- componentWillMount(){
-   this.props.getAlbum(this.props.albumId);
- }
+componentDidMount(){
+  this.props.getAlbum(parseInt(this.props.match.params.id));
+
+}
 
 render(){
 
+  let songs = this.props.songs.map(song =>{
+    return (<SongComponent handleAdd={this.handleAdd}
+      author={this.props.album.author} song={song} />);
+  });
+
+  let alb;
   if (this.props.album) {
-    let songs;
-    if (this.props.album.songs) {
-      songs = this.props.album.songs.map(
-        (song,idx) => {
-          return (<div>
-            <li>
-              {song.title}
-            </li>
-            <li>
-              <button onClick={this.handlePlay(idx)}>{song.title}</button>
-            </li>
-            <li>
-              {song.id}
-            </li>
-          </div>);
-        } );
-    }
+    alb = <div className="album-pic-container"><img className="albums-single-album-img" src={this.props.album.albumImg} /></div>;
+  }
     return (
-      <div>
-      <div className="albums-single-album">
-        <img className="albums-single-album-pic"src={this.props.album.album_img} />
-        <div className="album-details">
-          <h1 className="album-title">
-          {this.props.album.title}
-          </h1>
-          <h1>
-          {this.props.album.author}
-          </h1>
-        </div>
-      </div>
-        <div>
-          {songs}
-        </div>
+      <div className="">
+        {alb}
+        {songs}
       </div>
     );
 
-  }else {
-    return null;
-  }
 }
-
 
 }
 

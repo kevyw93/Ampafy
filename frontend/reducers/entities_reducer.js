@@ -8,7 +8,7 @@ const entitiesReducer = combineReducers({
   session: sessionReducer,
   albums: albumReducer,
   playlists: playlistReducer,
-  song: songReducer
+  songs: songReducer
 });
 
 export default entitiesReducer;
