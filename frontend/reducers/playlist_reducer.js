@@ -5,12 +5,15 @@ const playlistReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_PLAYLIST:
-      newState = Object.assign({}, state, action.entities.playlist);
+    
+      newState = Object.assign({}, state, action.playlist);
     case RECEIVE_ALL_PLAYLISTS:
-      return action.entities.playlists;
+    
+      return action.playlists;
     case REMOVE_PLAYLIST:
+    
       newState = Object.assign({}, state);
-      delete newState[action.entities.playlist];
+      delete newState[action.playlist];
     default:
       return state;
 

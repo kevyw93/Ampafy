@@ -1,7 +1,9 @@
 import React from 'react';
 import {Redirect, Route} from 'react-router-dom';
-import TopNavBarContainer from '../nav_bars/top_nav_bar_container';
 import MainPageContainer from '../main_page/main_page_container';
+import {Switch} from 'react-router-dom';
+import AlbumContainer from '../album/album_container';
+import SongContainer from '../songs/song_container';
 
 class LoggedIn extends React.Component {
   constructor(props) {
@@ -20,7 +22,11 @@ class LoggedIn extends React.Component {
 
 
         <div className="logg-main">
-          <Route component={MainPageContainer} />
+          <Switch>
+            <Route exact path="/browse/album/:id" component={AlbumContainer} />
+            <Route path="/browse/song/:id" component={SongContainer} />
+            <Route component={MainPageContainer} />
+          </Switch>
         </div>
 
 

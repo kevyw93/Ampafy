@@ -4,6 +4,7 @@ import { getAllAlbums } from "../../actions/album_actions";
 import { fetchSong } from "../../actions/song_actions";
 
 const mapStateToProps = (state) => {
+  
   return {
     albums: state.entities.albums
   };

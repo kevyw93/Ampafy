@@ -1,4 +1,5 @@
 export const createPlaylist = (data) => {
+  
   return $.ajax({
     type: 'post',
     url: 'api/playlists',

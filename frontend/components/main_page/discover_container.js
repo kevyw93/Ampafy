@@ -1,16 +1,17 @@
 import {connect} from "react-redux";
 import Discover from './discover';
-import { receiveAllPlaylist } from "../../actions/playlist_actions";
+import { fetchAllPlaylist } from "../../actions/playlist_actions";
 
 const mapStateToProps = (state) => {
+
   return {
-    playlists: state.playlists
+    playlists: state.entities.playlists.playlist
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    receiveAllPlaylist: () => dispatch(receiveAllPlaylist())
+    fetchAllPlaylist: () => dispatch(fetchAllPlaylist())
   };
 };
 

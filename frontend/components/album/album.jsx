@@ -1,4 +1,5 @@
 import React from 'react';
+import Player from '../player/player';
 
 class Album extends React.Component {
 
@@ -9,31 +10,52 @@ class Album extends React.Component {
 
 
  componentWillMount(){
-
-    this.props.getAlbum(this.props.albumId);
+   this.props.getAlbum(this.props.albumId);
  }
 
-  render(){
-    
-    let alb;
-    if (this.props.album) {
-      alb =
-      (
-        <div>
-          <img src={this.props.album.album_img} />
-          {this.props.album.title}
+render(){
 
-        </div>
-      );
-
+  if (this.props.album) {
+    let songs;
+    if (this.props.album.songs) {
+      songs = this.props.album.songs.map(
+        (song,idx) => {
+          return (<div>
+            <li>
+              {song.title}
+            </li>
+            <li>
+              <button onClick={this.handlePlay(idx)}>{song.title}</button>
+            </li>
+            <li>
+              {song.id}
+            </li>
+          </div>);
+        } );
     }
     return (
-      <div className="albums">
-        {alb}
-        {/* hello */}
+      <div>
+      <div className="albums-single-album">
+        <img className="albums-single-album-pic"src={this.props.album.album_img} />
+        <div className="album-details">
+          <h1 className="album-title">
+          {this.props.album.title}
+          </h1>
+          <h1>
+          {this.props.album.author}
+          </h1>
+        </div>
+      </div>
+        <div>
+          {songs}
+        </div>
       </div>
     );
+
+  }else {
+    return null;
   }
+}
 
 
 }

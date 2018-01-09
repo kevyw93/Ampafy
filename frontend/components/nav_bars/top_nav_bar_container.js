@@ -9,6 +9,12 @@ const mapStateToProps = (state) => {
   };
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createPlaylist: (newPlaylist) => dispatch(createPlaylist(newPlaylist))
+  };
+};
 
 
-export default connect(mapStateToProps)(TopNavBar);
+
+export default connect(mapStateToProps, mapDispatchToProps)(TopNavBar);
