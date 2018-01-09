@@ -1,3 +1,2 @@
-json.set! song.id do
-  song.extract!
-end
+json.extract! @song, :id, :title
+json.audioUrl @song.audio.url

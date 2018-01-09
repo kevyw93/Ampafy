@@ -8,10 +8,11 @@ export const receiveAllAlbums = (albums) => {
     albums
   };
 };
-export const receiveAlbums = (album) => {
+export const receiveAlbum = (payload) => {
   return {
     type: RECEIVE_ALBUM,
-    album
+    album: payload.album,
+    songs: payload.songs
   };
 };
 
@@ -19,6 +20,15 @@ export const getAllAlbums = () => {
   return dispatch => {
     return ApiUtil.getAllAlbums().then(
       (albums) => dispatch(receiveAllAlbums(albums))
+    );
+  };
+};
+
+export const getAlbum = (id) => {
+
+  return dispatch => {
+    return ApiUtil.getAlbum(id).then(
+      (payload) => dispatch(receiveAlbum(payload))
     );
   };
 };

@@ -6,9 +6,11 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import {Switch, Route} from 'react-router-dom';
 import LoggedInContainer from './logged_in/logged_in_container';
 
+
 const App = () => {
   return (
     <div>
+
       <Switch>
         <ProtectedRoute path='/browse' component={LoggedInContainer} />
         <Route exact path="/" component={LandingContainer} />
