@@ -5,11 +5,12 @@ import {login, signup, logout} from './util/session_api_util';
 import {getAlbum, getAllAlbums} from './actions/album_actions';
 import Root from "./components/root";
 import {fetchSong} from './util/album_api_util';
+import {createPlaylist} from './util/playlist_api_util';
 
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
-  debugger
+
   if (window.currentUser) {
     const preloadedState = { entities:{session: {currentUser: window.currentUser}}};
     store = configureStore(preloadedState);
@@ -21,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getAlbum = getAlbum;
   window.fetchSong = fetchSong;
   window.getAllAlbums = getAllAlbums;
+  window.createPlaylist = createPlaylist;
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
+  window.audio = document.getElementById('audio');
 });

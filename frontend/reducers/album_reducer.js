@@ -7,7 +7,7 @@ const albumReducer = (state = {}, action) => {
 
       return action.albums;
     case RECEIVE_ALBUM:
-
+      
       return Object.assign({}, state, action.album);
     default:
 

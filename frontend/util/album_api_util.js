@@ -6,7 +6,7 @@ export const getAllAlbums = () => {
 };
 
 export const getAlbum = (id) => {
-  
+
   return $.ajax({
     type: 'get',
     url: `api/albums/${id}`
@@ -14,6 +14,7 @@ export const getAlbum = (id) => {
 };
 
 export const fetchSong = (id) => {
+  
   return $.ajax({
     type: 'get',
     url: `api/songs/${id}`,

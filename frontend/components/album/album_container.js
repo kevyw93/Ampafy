@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     albumId: parseInt(ownProps.match.params.id),
-    album: state.albums
+    album: state.entities.albums
   };
 };
 

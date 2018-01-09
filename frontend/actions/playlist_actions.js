@@ -1,7 +1,7 @@
 export const RECEIVE_PLAYLIST = 'RECEIVE_PLAYLIST';
 export const REMOVE_PLAYLIST = 'REMOVE_PLAYLIST';
 export const RECEIVE_ALL_PLAYLISTS = 'RECEIVE_ALL_PLAYLISTS';
-import PlaylistApiUtil from '../util/playlist_api_util';
+import * as PlaylistApiUtil from '../util/playlist_api_util';
 
 export const receivePlaylist = (playlist) => {
   return {
@@ -24,10 +24,12 @@ export const receiveAllPlaylist = (playlists) => {
   };
 };
 
-export const createPlaylist = playlist => dispatch => {
-  return PlaylistApiUtil.createPlaylist(playlist).then(
-    (newPlaylist) => dispatch(receivePlaylist(newPlaylist))
-  );
+export const createPlaylist = playlist => {
+  
+  return dispatch => {
+    return PlaylistApiUtil.createPlaylist(playlist);
+  };
+  
 };
 
 export const updatePlaylist = playlist => dispatch => {
