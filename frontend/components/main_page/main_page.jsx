@@ -3,6 +3,7 @@ import {Link, Route, Switch} from 'react-router-dom';
 import FeatureContainer from './feature_container';
 import TopNavBarContainer from '../nav_bars/top_nav_bar_container';
 import DiscoverContainer from './discover_container';
+import PlaylistShowContainer from '../playlist/playlist_container';
 // import SideNavBarContainer from '../nav-bars/side_nav-bar_container';
 
 class MainPage extends React.Component {
@@ -39,6 +40,7 @@ class MainPage extends React.Component {
         <Switch>
           <Route exact path='/browse/feature' component={FeatureContainer} />
           <Route exact path='/browse/discover' component={DiscoverContainer} />
+          <Route path='/browse/playlist/:id' component={PlaylistShowContainer} />
         </Switch>
       </div>
 

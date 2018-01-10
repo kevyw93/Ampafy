@@ -1,20 +1,32 @@
 import {connect} from "react-redux";
-import PlaylistShow from './discover';
-import { fetchAllPlaylist, deletePlaylist, updatePlaylist } from "../../actions/playlist_actions";
+import PlaylistShow from './playlist_show';
+import { fetchPlaylist, fetchPlaylistSongs, deletePlaylist, updatePlaylist } from "../../actions/playlist_actions";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state,ownProps) => {
+  let playlist;
+  let songs = [];
+  
 
+    playlist = state.entities.playlists[ownProps.match.params.id];
+    if (playlist) {
+      
+      songs = playlist.songIds.map(songId => state.entities.songs[songId]);
+    }
+
+  
   return {
-    playlists: state.entities.playlists.playlist
+    playlist,
+    songs
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchAllPlaylist: () => dispatch(fetchAllPlaylist()),
+    fetchPlaylist: (id) => dispatch(fetchPlaylist(id)),
+    fetchPlaylistSongs: (songs) => dispatch(fetchPlaylistSongs(songs)),
     deletePlaylist: (id) => dispatch(deletePlaylist(id)),
     updatePlaylist: (playlist) => dispatch(updatePlaylist(playlist))
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Discover);
+export default connect(mapStateToProps, mapDispatchToProps)(PlaylistShow);

@@ -25,6 +25,7 @@ class Feature extends React.Component {
     const albs = Object.values(this.props.albums).map(
       alb =>
       (<li className="single-album">
+
         <Link to={`/browse/album/${alb.id}`}>
           <img className="album-img" src={alb.album_img} />
         </Link>
@@ -39,7 +40,10 @@ class Feature extends React.Component {
       //   </div> */}
 
         <div className="all-albums">
-          {albs}
+
+
+            {albs}
+
         </div>
 
 

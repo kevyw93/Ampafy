@@ -10,10 +10,11 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require_tree
  *= require_self
  */
 
- @import 'reset/reset.scss';
+ /* @import 'reset/reset.scss';
  @import 'util/variables.scss';
  @import 'api/albums.scss';
  @import 'api/feature.scss';
@@ -26,7 +27,7 @@
  @import 'api/sessions.scss';
  @import 'api/songs.scss';
  @import 'api/top_nav_bar.scss';
- @import 'api/users.scss';
+ @import 'api/users.scss'; */
 
  #root{
    width: 100vw;

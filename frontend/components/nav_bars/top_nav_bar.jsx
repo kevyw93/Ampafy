@@ -10,7 +10,7 @@ class TopNavBar extends React.Component {
     this.state = {title: '', user_id: parseInt(this.props.currentUser.id), bool: false};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    debugger
+
 
   }
   //so topnavbar has 3 things feature blah blah
@@ -26,7 +26,7 @@ class TopNavBar extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let newPlaylist = {playlist: {title: this.state.title, user_id: this.state.user_id}};
-    debugger
+
     this.props.createPlaylist(newPlaylist);
     let newState = Object.assign({}, this.state);
     newState.bool = false;

@@ -1,12 +1,15 @@
 export const RECEIVE_PLAYLIST = 'RECEIVE_PLAYLIST';
 export const REMOVE_PLAYLIST = 'REMOVE_PLAYLIST';
 export const RECEIVE_ALL_PLAYLISTS = 'RECEIVE_ALL_PLAYLISTS';
+export const RECEIVE_PLAYIST_SONGS = 'RECEIVE_PLAYIST_SONGS';
 import * as PlaylistApiUtil from '../util/playlist_api_util';
+import * as SongApiUtil from "../util/song_api_util";
 
-export const receivePlaylist = (playlist) => {
+export const receivePlaylist = (payload) => {
   return {
     type: RECEIVE_PLAYLIST,
-    playlist
+    playlist: payload.playlist,
+    songs: payload.songs
   };
 };
 
@@ -24,8 +27,25 @@ export const receiveAllPlaylist = (payload) => {
   };
 };
 
+export const fetchPlaylistSongs = (songs) => {
+  return {
+    type: RECEIVE_PLAYIST_SONGS,
+    songs
+  };
+};
+
+
+
+export const addSongToPlaylist = (post) => {
+  return dispatch => {
+    return SongApiUtil.SongToPlaylist(post).then(
+      (payload) => dispatch(receivePlaylist(payload))
+    );
+  };
+};
+
+
 export const createPlaylist = playlist => {
-  debugger
   return dispatch => {
     return PlaylistApiUtil.createPlaylist(playlist).then(
       (newPlaylist) => dispatch(receivePlaylist(newPlaylist))

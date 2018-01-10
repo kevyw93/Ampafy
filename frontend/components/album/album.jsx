@@ -1,12 +1,17 @@
 import React from 'react';
 import Player from '../player/player';
 import SongComponent from './song_component';
+import Modal from 'react-modal';
+import PlaylistDropDown from '../playlist/playlist_drop_down';
 
 class Album extends React.Component {
 
  constructor(props) {
    super(props);
    this.handleAdd = this.handleAdd.bind(this);
+   this.handleAddSong = this.handleAddSong.bind(this);
+   this.handleOpenClose = this.handleOpenClose.bind(this);
+   this.state = {bool: false};
  }
 
 handleAdd(index) {
@@ -16,14 +21,47 @@ handleAdd(index) {
 
 componentDidMount(){
   this.props.getAlbum(parseInt(this.props.match.params.id));
+  this.props.fetchAllPlaylist();
 
+}
+
+
+handleOpenClose() {
+  let modalMod = this.state.bool;
+  modalMod = modalMod ? false : true;
+  this.setState({ bool: modalMod });
+}
+
+handleAddSong(songId, playlistId) {
+  return e => {this.props.addSongToPlaylist(
+    {playlist_tagging:{song_id: songId, playlist_id: playlistId}});
+    this.handleOpenClose();
+  };
 }
 
 render(){
 
   let songs = this.props.songs.map((song,idx) =>{
-    return (<SongComponent key={idx} handleAdd={this.handleAdd(idx)}
-      author={this.props.album.author} song={song} />);
+    return (
+      <div>
+        <SongComponent key={idx}
+          handleAdd={this.handleAdd(idx)}
+          author={this.props.album.author}
+          song={song} /><button onClick={this.handleOpenClose}>Three button</button>
+        <Modal
+            isOpen={this.state.bool}
+            className="playlist-drop-down"
+          >
+            <PlaylistDropDown
+              key={idx}
+              playlists={this.props.playlists}
+              songId={song.id}
+              handleAddSong={this.handleAddSong}
+              handleOpenClose={this.handleOpenClose}
+            />
+
+        </Modal>
+      </div>);
   });
 
   let alb;

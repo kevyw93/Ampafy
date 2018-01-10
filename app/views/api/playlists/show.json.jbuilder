@@ -1,5 +1,8 @@
-json.set! @playlist.id do
-  json.extract! @playlist, :title, :id
+json.playlist do
+  json.set! @playlist.id do
+    json.extract! @playlist, :title, :id
+    json.songIds @playlist.song_ids
+  end
 end
 json.songs do
   @playlist.songs.each do |song|
