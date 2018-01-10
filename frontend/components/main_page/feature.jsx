@@ -40,9 +40,11 @@ class Feature extends React.Component {
       //   </div> */}
 
         <div className="all-albums">
-
-
+          <div className="inner-albs">
             {albs}
+
+          </div>
+
 
         </div>
 
