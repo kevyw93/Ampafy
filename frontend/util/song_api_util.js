@@ -6,16 +6,16 @@ export const fetchSong = (id) => {
   });
 };
 
-export const fetchArraySongs = (songIds) => {
-  let songs = [];
-  for (var i = 0; i < songIds.length; i++) {
-
-    songs.push($.ajax({
-      type: 'get',
-      url:`api/songs/${songIds[i]}`
-    })
-  );
-  }
-  return songs;
-
+export const addSongToPlaylist = (post) => {
+  return $.ajax({
+    type: 'post',
+    url: `api/playlist_taggings`,
+    data: post
+  });
+};
+export const deleteSongFromPlaylist = (post) => {
+  return $.ajax({
+    type: 'post',
+    url: `api/playlist_taggings/${post.id}`,
+  });
 };

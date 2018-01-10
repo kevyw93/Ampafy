@@ -12,6 +12,7 @@ const Landing = (props) => {
     return (
       <div className="landing">
         <div className="wrapper-opacity">
+        {/* <div className="wrapper"> */}
 
           <div className="button-container">
             <h1 className="logo"><img></img>Ampafy</h1>
@@ -36,7 +37,8 @@ const Landing = (props) => {
               <h3 className="check-image-words"><img src="https://open.scdn.co/static/images/checkmark.png" ></img>Create playlist of your favorite music</h3>
             </div>
             </div>
-          </div>
+            </div>
+          {/* </div> */}
 
         </div>
       </div>

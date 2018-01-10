@@ -1,47 +1,55 @@
-$spot-black: #101010;
-$spot-green: #1ed760;
-
-.feature {
-  border: 1px solid blue;
-  height: 100%;
-  width: 100%;
-  overflow:scroll;
-}
-
-// linear-gradient(rgb(48, 74, 80), rgb(51, 45, 48) 88%)
-// linear-gradient(rgb(11, 55, 108), rgb(54, 47, 48) 88%)
-// linear-gradient(rgb(127, 61, 26), rgb(12, 6, 2) 85%)
-// linear-gradient(rgb(7, 61, 92), rgb(4, 36, 29) 85%) blue green
-
-.album-img {
-  width: 100%;
-  height: 100%;
-  border: 1px solid black;
-}
-.alb-title {
-  margin-top: 10px;
-  text-align: center;
-  color: white;
-  font-family: sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-}
-
-.single-album {
-  width: 15%;
-  margin-right: 1%;
-  margin-bottom: 50px;
-
-  &:last-child {
-    margin-right: 0;
-  }
-}
-.all-albums{
-  display: flex;
-  flex-wrap: wrap;
-  width: 70%;
-  margin: 0 16%;
-}
+// $spot-black: #101010;
+// $spot-green: #1ed760;
+//
+// .feature {
+//   border: 1px solid blue;
+//   height: 100%;
+//   width: 100%;
+//   overflow:scroll;
+// }
+//
+// // linear-gradient(rgb(48, 74, 80), rgb(51, 45, 48) 88%)
+// // linear-gradient(rgb(11, 55, 108), rgb(54, 47, 48) 88%)
+// // linear-gradient(rgb(127, 61, 26), rgb(12, 6, 2) 85%)
+// // linear-gradient(rgb(7, 61, 92), rgb(4, 36, 29) 85%) blue green
+//
+// .album-img {
+//   width: 100%;
+//   height: 100%;
+//   border: 1px solid black;
+// }
+// .alb-title {
+//   margin-top: 10px;
+//   text-align: center;
+//   color: white;
+//   font-family: sans-serif;
+//   font-weight: 400;
+//   font-size: 14px;
+// }
+//
+// .single-album {
+//   width:  157px;
+//   height: 157px;
+//   // width: 15%;
+//   margin-right: 1%;
+//   margin-bottom: 50px;
+//
+//   &:last-child {
+//     margin-right: 0;
+//   }
+// }
+// .all-albums{
+//   display: flex;
+//   flex-wrap: wrap;
+//   width: 85%;
+//   margin: 0 12%;
+//   background-color: grey;
+// }
+// .inner-all-albs{
+//   background-color: blue;
+//   display:flex;
+//   width: 70%;
+// }
 // .album-hover {
 //
 // }
@@ -71,3 +79,8 @@ $spot-green: #1ed760;
 //     visibility: visible;
 //   }
 // }
+
+
+
+
+// REAL CSS
