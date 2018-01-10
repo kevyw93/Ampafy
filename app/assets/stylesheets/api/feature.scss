@@ -1,9 +1,13 @@
+$spot-black: #101010;
+$spot-green: #1ed760;
+
 .feature {
   border: 1px solid blue;
   height: 100%;
   width: 100%;
   overflow:scroll;
 }
+
 // linear-gradient(rgb(48, 74, 80), rgb(51, 45, 48) 88%)
 // linear-gradient(rgb(11, 55, 108), rgb(54, 47, 48) 88%)
 // linear-gradient(rgb(127, 61, 26), rgb(12, 6, 2) 85%)
@@ -15,6 +19,7 @@
   border: 1px solid black;
 }
 .alb-title {
+  margin-top: 10px;
   text-align: center;
   color: white;
   font-family: sans-serif;
@@ -23,18 +28,19 @@
 }
 
 .single-album {
-  max-width: 150px;
-  height: 150px;
-  border: 1px solid green;
-  padding: 5px;
-  margin-left: 20px;
-  margin-bottom: 40px;
+  width: 15%;
+  margin-right: 1%;
+  margin-bottom: 50px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 .all-albums{
   display: flex;
   flex-wrap: wrap;
-  // flex: flex-start;
-  margin: 0 auto;
+  width: 70%;
+  margin: 0 16%;
 }
 // .album-hover {
 //

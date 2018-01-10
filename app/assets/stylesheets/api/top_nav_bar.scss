@@ -1,19 +1,44 @@
-.nav_bars {
+$text-grey: #ababaf;
+$spot-green: #1ed760;
+.nav-bars {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
   box-shadow: 10px 5px 5px linear-gradient(rgb(7, 61, 92), rgb(4, 6, 2) 85%);
   .nav-links{
     padding: 0 40px;
-    font-size: 20px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
     font-weight: 300;
-    color: grey;
+    color: $text-grey;
+    text-transform: uppercase;
+    transition: color,0.6s;
     &:hover {
-      color:blue;
+      color:white;
+    }
+  }
+  button{
+    background: $spot-green;
+    font-size: 0.7rem;
+    font-weight: light;
+    text-transform: uppercase;
+    width: 150px;
+    height: 30px;
+    border-radius: 17.5px;
+    letter-spacing: 1px;
+    position: absolute;
+    right: 0;
+    &:hover{
+      width: 155px;
+      font-size: 0.73rem;
+      background: lighten($spot-green, 5%);
     }
   }
     height: 30px;
-    width: 500px;
     margin: 20px auto;
     padding: 10px;
     // border: 1px solid red;

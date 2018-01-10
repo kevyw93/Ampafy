@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, Route} from 'react-router-dom';
-// import TopNavBarContainer from '../nav_bars/top_nav_bar_container';
+// import TopNavBarContainer from '../nav-bars/top_nav-bar_container';
 
 
 class Feature extends React.Component {

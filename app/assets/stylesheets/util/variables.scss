@@ -1,0 +1,30 @@
+$spot-black: #101010;
+$spot-green: #1ed760;
+$iphone-width: 340px;
+// $fontify: 'Montserrat', sans-serif;
+
+%flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+%flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+%flex-between {
+  justify-content: space-between;
+}
+
+@mixin pad($padding) {
+  padding-top: $padding;
+  padding-bottom: $padding;
+  padding-left: $padding;
+  padding-right: $padding;
+}

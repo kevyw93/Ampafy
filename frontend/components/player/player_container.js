@@ -5,7 +5,6 @@ import { receiveCurrentSong } from "../../actions/player_actions";
 import _ from 'lodash';
 
 const mapStateToProps = (state,ownProps) => {
-  debugger
   return {
     songs: state.player || []
   };
