@@ -38,8 +38,8 @@ class MainPage extends React.Component {
           <TopNavBarContainer />
         </div>
         <Switch>
-          <Route exact path='/browse/feature' component={FeatureContainer} />
-          <Route exact path='/browse/discover' component={DiscoverContainer} />
+          <Route exact path='/browse/albums' component={FeatureContainer} />
+          <Route exact path='/browse/playlists' component={DiscoverContainer} />
           <Route path='/browse/playlist/:id' component={PlaylistShowContainer} />
         </Switch>
       </div>
