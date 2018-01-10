@@ -7,9 +7,10 @@ class TopNavBar extends React.Component {
     super(props);
     // this.bool();
     this.handleOpenClose = this.handleOpenClose.bind(this);
-    this.state = {title: '', user_id: 2, bool: false};
+    this.state = {title: '', user_id: parseInt(this.props.currentUser.id), bool: false};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    debugger
 
   }
   //so topnavbar has 3 things feature blah blah
@@ -19,12 +20,13 @@ class TopNavBar extends React.Component {
   handleOpenClose() {
     let modalMod = this.state.bool;
     modalMod = modalMod ? false : true;
-    this.setState({ title:'', bool: modalMod });
+    this.setState({ title:'',user_id: parseInt(this.props.currentUser.id), bool: modalMod });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     let newPlaylist = {playlist: {title: this.state.title, user_id: this.state.user_id}};
+    debugger
     this.props.createPlaylist(newPlaylist);
     let newState = Object.assign({}, this.state);
     newState.bool = false;
@@ -39,12 +41,14 @@ class TopNavBar extends React.Component {
 
   render() {
     return(
-      <div className="nav_bars">
+
+      <div className="nav-bars">
         <Link className="nav-links" to='/browse/feature'>Feature</Link>
         <Link className="nav-links" to='/browse/discover'>Discover</Link>
         <Link className="nav-links" to='/browse/random'>Random</Link>
       <button onClick={this.handleOpenClose}>New Playlist</button>
       <div className="playlist-modal">
+
       <Modal
           isOpen={this.state.bool}
           className="playlist-modal"

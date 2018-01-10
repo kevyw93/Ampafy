@@ -23,6 +23,7 @@ class Discover extends React.Component {
     if (this.props.playlists) {
       playlist = this.props.playlists.map(play =>
 
+// onHover
         <div key={play.id}>
           {play.id}
           <img src="https://i.ebayimg.com/images/g/K-oAAMXQLw1R0v2T/s-l300.gif" />
@@ -34,7 +35,7 @@ class Discover extends React.Component {
       );
     }
     return(
-      <div>
+      <div id="playlists" style={{ background: 'linear-gradient(darkslategrey, black)' }}>
         {playlist}
       </div>
     );

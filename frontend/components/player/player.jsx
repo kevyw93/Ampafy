@@ -4,66 +4,49 @@ class Player extends React.Component{
   constructor(props) {
     super(props);
     const audio = document.createElement("audio");
-    this.state = { audio: audio, play: true };
+    this.state = {audio};
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
-
-    // this.handlePlayPause = this.handPlayPause();
-    debugger
+    this.changeSong = this.changeSong.bind(this);
   }
+  // go to reducer and add a reducer with idx and array of songs from albums/ playlist
 
   componentWillReceiveProps(nextProps) {
-    debugger
     if ((this.props.songs.length < 1) || nextProps.songs[0].audioUrl !== this.props.songs[0].audioUrl) {
       this.state.audio.setAttribute('src', nextProps.songs[0].audioUrl);
+      this.state.audio.addEventListener('ended', this.changeSong);
       this.state.audio.load();
       this.state.audio.play();
     }
   }
   play() {
-    // let newState = Object.assign({}, this.state);
-    // newState.play = true;
-    // this.setState(newState);
-    // this.state.play = true;
-    // debugger
     this.state.audio.play();
   }
 
   pause() {
-    // let newState = Object.assign({}, this.state);
-    // newState.play = false;
-    // this.setState(newState);
+
     this.state.audio.pause();
   }
-  handlePlayPause(){
-    // let newState = Object.assign({}, this.state);
-    // if (newState.play) {
-    //   newState.play = false;
-    //   // this.setState(newState);
-    //
-    // }else {
-    //   newState.play = true;
-    // }
+
+  changeSong() {
+    this.props.playNextSong();
+    // playnextsong will increment till the end
+    /**
+     * 1. remove song that has finished playing
+     * 2. if next song exists play next song (componentWillReceiveProps)
+     * 3. play no songs (remove audio)?
+     */
   }
 
 
   render(){
-    // let songs;
-    // if (this.props.songs.length > 0) {
-    //
-    //   songs = <audio src={this.props.songs[0].audioUrl} autoPlay={this.state.play}></audio>;
-    // }
+
     let playbutton;
     let pausebutton = <button onClick={this.pause}><img className="play-button"src="https://image.freepik.com/free-icon/pause-button-outline_318-40569.jpg" /></button>;
 
-
-      debugger
       playbutton = <button onClick={this.play} ><img className="pause-button"src="http://soundshareapp.com/assets/images/tours/play-button.png" /></button>;
     return(
       <div className="player-outer-container">
-        {/* {songs}
-        <div className="player-inner-container">
-        </div> */}
         {playbutton}
         {pausebutton}
       </div>

@@ -1,3 +1,6 @@
+$spot-black: #101010;
+$spot-green: #1ed760;
+$spot-slate: #313138;
 .main-page{
   display:flex;
   border: 1px solid black;
@@ -8,6 +11,6 @@
 .right-side{
   display: flex;
   flex-direction: column;
-}
-.top-nav {
+  // background: linear-gradient($spot-slate, black);
+  width: 100%;
 }

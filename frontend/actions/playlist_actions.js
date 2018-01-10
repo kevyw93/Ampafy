@@ -25,9 +25,11 @@ export const receiveAllPlaylist = (payload) => {
 };
 
 export const createPlaylist = playlist => {
-
+  debugger
   return dispatch => {
-    return PlaylistApiUtil.createPlaylist(playlist);
+    return PlaylistApiUtil.createPlaylist(playlist).then(
+      (newPlaylist) => dispatch(receivePlaylist(newPlaylist))
+    );
   };
 
 };

@@ -9,9 +9,8 @@ class Album extends React.Component {
    this.handleAdd = this.handleAdd.bind(this);
  }
 
-handleAdd(song) {
-
-  return e => this.props.receiveCurrentSong(song);
+handleAdd(index) {
+  return e => this.props.receiveCurrentSong(this.props.songs[index]);
 }
 
 
@@ -23,7 +22,7 @@ componentDidMount(){
 render(){
 
   let songs = this.props.songs.map((song,idx) =>{
-    return (<SongComponent key={idx} handleAdd={this.handleAdd}
+    return (<SongComponent key={idx} handleAdd={this.handleAdd(idx)}
       author={this.props.album.author} song={song} />);
   });
 
