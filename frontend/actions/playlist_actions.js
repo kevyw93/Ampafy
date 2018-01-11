@@ -9,7 +9,7 @@ export const receivePlaylist = (payload) => {
   return {
     type: RECEIVE_PLAYLIST,
     playlist: payload.playlist,
-    songs: payload.songs
+    songs: payload.songs,
   };
 };
 
