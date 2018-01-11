@@ -5,6 +5,7 @@ import { fetchSong } from "../../actions/song_actions";
 import { receiveCurrentSong } from "../../actions/player_actions";
 import * as selector from '../../util/selector';
 import { fetchAllPlaylist, addSongToPlaylist} from "../../actions/playlist_actions";
+import {receiveModalSong} from '../../actions/ui_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let album = state.entities.albums[ownProps.match.params.id];
@@ -15,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     album,
     songs: songs || [],
-    playlists: Object.values(state.entities.playlists)
+    playlists: Object.values(state.entities.playlists),
+    isThreeDots: state.ui.isThreeDots
   };
 };
 
@@ -25,7 +27,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchSong: (songs) => dispatch(fetchSong(songs)),
     receiveCurrentSong: (song) => dispatch(receiveCurrentSong(song)),
     addSongToPlaylist: (payload) => dispatch(addSongToPlaylist(payload)),
-    fetchAllPlaylist: () => dispatch(fetchAllPlaylist())
+    fetchAllPlaylist: () => dispatch(fetchAllPlaylist()),
+    receiveModalSong: () => dispatch(receiveModalSong())
   };
 };
 

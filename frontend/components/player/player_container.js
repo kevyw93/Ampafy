@@ -5,8 +5,10 @@ import { receiveCurrentSong } from "../../actions/player_actions";
 import _ from 'lodash';
 
 const mapStateToProps = (state,ownProps) => {
+
   return {
-    songs: state.player || []
+    song: state.entities.songs[state.player]
+
   };
 };
 

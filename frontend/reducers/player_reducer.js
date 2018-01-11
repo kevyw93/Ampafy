@@ -16,7 +16,7 @@ const playerReducer = (state = [], action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_CURRENT_SONG:
-      return [action.song];
+      return action.song;
     case ADD_ALBUM_PLAYLIST:
       return Object.values(action.songs).sort((a,b) => spaceship(a.id, b.id));
 

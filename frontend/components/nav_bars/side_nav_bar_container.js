@@ -1,18 +1,18 @@
-import {connect} from 'react-router';
+import {connect} from 'react-redux';
 import SideNavBar from './side_nav_bar';
-// import {logout} from
+import {logout} from '../../actions/session_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  
   return {
-    s
+    user: state.entities.session.currentUser
   };
 };
 
-const mapDispatchToProps = () => {
-  return{
-
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logout: () => dispatch(logout())
   };
 };
 
