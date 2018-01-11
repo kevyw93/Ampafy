@@ -12,9 +12,9 @@ class Player extends React.Component{
   // go to reducer and add a reducer with idx and array of songs from albums/ playlist
 
   componentWillReceiveProps(nextProps) {
-    if ((this.props.songs.length < 1) || nextProps.songs[0].audioUrl !== this.props.songs[0].audioUrl) {
-      this.state.audio.setAttribute('src', nextProps.songs[0].audioUrl);
-      this.state.audio.addEventListener('ended', this.changeSong);
+    if (!this.props.song || nextProps.song.audioUrl !== this.props.song.audioUrl) {
+      this.state.audio.setAttribute('src', nextProps.song.audioUrl);
+      // this.state.audio.addEventListener('ended', this.changeSong);
       this.state.audio.load();
       this.state.audio.play();
     }

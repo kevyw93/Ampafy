@@ -1,5 +1,5 @@
 import React from 'react';
-import Song from '../album/song_component';
+import Song from '../album/song_index';
 import {Redirect} from 'react-router-dom';
 
 class PlaylistShow extends React.Component {
@@ -26,7 +26,7 @@ class PlaylistShow extends React.Component {
     let songs;
     if (this.props.playlist) {
       title = this.props.playlist.title;
-      
+
 
       songs = this.props.songs.map(song => <div>{song.title}</div>);
 
