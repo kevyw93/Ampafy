@@ -60,12 +60,11 @@ $spot-green: #1ed760;
   align-self: center;
   width: 100%;
   height: 300px;
-  background-color:pink;
   display: flex;
   align-items: center;
 }
 .form-in-modal{
-  background-color: red;
+  background-color: darkslategrey;
   height: 157px;
   display: flex;
   align-items: center;
@@ -81,16 +80,30 @@ $spot-green: #1ed760;
   border: 1px solid green;
   border-radius: 200px;
   padding: 7px;
+  margin-left: 5%;
   font-size: 12px;
   font-family: sans-serif;
   font-weight: 100px;
   color: white;
   letter-spacing: 2px;
 }
-.playlist-input-container{
+.cancel{
+  background: white;
+  border: 1px solid white;
+  border-radius: 125px;
+  width: 125px;
+  color: black;
+}
+.sub-btn-container{
   display: flex;
+  width: 50%;
+  align-self:center;
+  justify-content: center;
+}
+.playlist-input-container{
   flex-direction: column;
   margin-left: 5%;
+  display:flex;
 }
 .form-input {
   height: 56px;
@@ -104,14 +117,27 @@ $spot-green: #1ed760;
   // work on the opacity and transparency
   position: fixed;
   display:flex;
-  justify-content: center;
+  margin-bottom:60%;
   left: 0;
   right: 0;
-  background-color: grey;
+  opacity: 0.9;
+  background-color:grey;
+
+  // background-color: grey;
+}
+.x-sign{
+  display:flex;
+  flex-direction: column;
+}
+.pic-of-x{
+  margin-top: -100%;
 }
 .outer-playlist-modal{
+  position: fixed;
  top:0;
  bottom:0;
  left:0;
  right: 0;
+ opacity: 0.6;
+ background: rgba(0,0,0,0.9);
 }

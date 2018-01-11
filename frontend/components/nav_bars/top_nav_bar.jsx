@@ -64,9 +64,14 @@ class TopNavBar extends React.Component {
         >
           <div className="form-modal-outer-container">
             <div className="form-modal-inner-container">
+              <button onClick={this.handleOpenClose}>
+                <div className="x-sign">
+                  <div className="pic-of-x"><img src="https://www.shareicon.net/data/128x128/2015/12/18/689374_button_512x512.png" /></div>
+
+                </div>
+                </button>
               <h1 className="top-of-form">Create new Playlist</h1>
 
-            <button onClick={this.handleOpenClose}>Close</button>
               <form className="form-in-modal" onSubmit={this.handleSubmit}>
                 <div className="playlist-input-container">
                   <h3 className="input-top">Playlist Name</h3>
@@ -74,7 +79,10 @@ class TopNavBar extends React.Component {
                   placeholder="Start typing..."
                   value={this.state.title}
                   onChange={this.handleChange('title')} />
-                  <button className="form-sub-btn">Create</button>
+                <div className="sub-btn-container">
+                  <button className="cancel" onClick={this.handleOpenClose}>Cancel</button>
+                <button className="form-sub-btn">Create</button>
+            </div>
                 </div>
 
               </form>
