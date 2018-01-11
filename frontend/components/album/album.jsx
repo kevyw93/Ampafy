@@ -50,7 +50,17 @@ render(){
           song={song} /><button onClick={this.handleOpenClose}>Three button</button>
         <Modal
             isOpen={this.state.bool}
-            className="playlist-drop-down"
+            ariaHideApp={false}
+            className={{
+              base: 'playlist-drop-down',
+              afterOpen: 'playlist-drop-down_after-open',
+              beforeClose: 'playlist-drop-down_before-close'
+            }}
+            overlayClassName={{
+              base: 'playlist-drop-down',
+              afterOpen: 'playlist-drop-down_after-open',
+              beforeClose: 'playlist-drop-down_before-close'
+            }}
           >
             <PlaylistDropDown
               key={idx}

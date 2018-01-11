@@ -16,7 +16,7 @@ class PlaylistDropDown extends React.Component {
         <div onClick= {this.props
             .handleAddSong(this.props.songId, playlist.id)}>
           {playlist.title}
-          <button onClick={this.props.handleOpenClose}>close</button>
+          <button onClick={this.props.handleOpenClose(this.key)}>close</button>
         </div>
       );
     }

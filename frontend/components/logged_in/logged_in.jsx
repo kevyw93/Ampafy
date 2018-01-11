@@ -10,12 +10,23 @@ import PlayerContainer from '../player/player_container';
 class LoggedIn extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
 
   render() {
+    let backgroundColor;
+    if (this.props.history.location.pathname === '/browse/albums') {
+      backgroundColor = "#313d30";
+    }else if(this.props.history.location.pathname === '/browse/playlists'){
+      backgroundColor = "#142444"
+    }else if(this.props.history.location.pathname.includes('browse/playlist')){
+      backgroundColor = "#106c5b";
+    }else if(this.props.history.location.pathname.includes('browse/album')){
+      backgroundColor = "red";
+    }
     return (
-      <div className="container" >
+      <div style={{background: `linear-gradient(${backgroundColor}, black)`}} className="container" >
         <div className="innerContainer">
           <div>
             Hi Welcome {this.props.currentUser.username}

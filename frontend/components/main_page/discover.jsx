@@ -4,16 +4,12 @@ import {Link} from 'react-router-dom';
 class Discover extends React.Component {
   constructor(props){
     super(props);
-    this.handleDelete = this.handleDelete.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchAllPlaylist();
   }
 
-  handleDelete(playlistId) {
-    return e => this.props.deletePlaylist(playlistId);
-  }
 
 
   render() {
@@ -22,20 +18,20 @@ class Discover extends React.Component {
       playlist = this.props.playlists.map(play =>
 
 // onHover
-        <div key={play.id}>
+        <li className="single-album">
           <Link to={`/browse/playlist/${play.id}`}>
-            <img src="https://i.ebayimg.com/images/g/K-oAAMXQLw1R0v2T/s-l300.gif" />
+            <img className="album-img" src="https://i.ebayimg.com/images/g/K-oAAMXQLw1R0v2T/s-l300.gif" />
           </Link>
-          {play.id}
-          {play.title}
-          <button onClick={this.handleDelete(play.id)}>Delete</button>
-        </div>
+          <h1 className="alb-title">{play.title}</h1>
+      </li>
 
       );
     }
     return(
-      <div id="playlists" style={{ background: 'linear-gradient(darkslategrey, black)' }}>
-        {playlist}
+      <div className="all-albums" >
+        <div className="inner-albs">
+          {playlist}
+        </div>
       </div>
     );
   }
