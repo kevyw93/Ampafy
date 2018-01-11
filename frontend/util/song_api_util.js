@@ -14,7 +14,6 @@ export const fetchAllSongs = () => {
 };
 
 export const addSongToPlaylist = (post) => {
-  debugger
   return $.ajax({
     type: 'post',
     url: `api/playlist_taggings`,

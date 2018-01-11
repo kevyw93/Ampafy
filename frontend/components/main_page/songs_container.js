@@ -4,7 +4,7 @@ import {fetchAllSongs} from '../../actions/song_actions';
 import { receiveCurrentSong } from "../../actions/player_actions";
 
 const mapStateToProps = (state) => {
-  debugger
+  
   return {
     songs: Object.values(state.entities.songs) || []
   };

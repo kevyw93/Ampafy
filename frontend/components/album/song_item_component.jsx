@@ -40,12 +40,15 @@ class SongItemComponent extends React.Component{
         : null;
 
     return(
-      <div>
-
-        <button onClick={this.handleAdd()}>{this.props.song.title}</button>
-        <h1>{this.props.author}</h1>
-      <button onClick={this.handleOpenClose}>modal</button>
+      <div className="song-list">
+        <div onClick={this.handleAdd()}>
+          <h1 className="song-title">{this.props.index + 1}. {this.props.song.title}</h1>
+          <h1 className="song-author">{this.props.author}</h1>
+        </div>
+        <div className="modal-button">
+          <button onClick={this.handleOpenClose}><img className="three-dots" src="https://ncphn.org.au/wp-content/themes/ncphn/img/three-dots.png"/></button>
         {form}
+        </div>
           {/* <PlaylistDropDownContainer handleAddSong={this.handleAddSong} handleOpenClose={this.handleOpenClose} /> */}
 
           {/* <PlaylistDropDown
@@ -54,7 +57,6 @@ class SongItemComponent extends React.Component{
             handleAddSong={this.handleAddSong}
             handleOpenClose={this.handleOpenClose}
           /> */}
-
 
       </div>
     );

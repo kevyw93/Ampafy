@@ -53,7 +53,7 @@ class Player extends React.Component{
     let title;
     if (this.props.song) {
       title = this.props.song.title;
-      debugger
+
     }
     return(
       <div className="player-outer-container">

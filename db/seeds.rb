@@ -26,7 +26,7 @@ album4.save!
 
 alb_img5 = 'https://s3.amazonaws.com/ampafy-seeds/albumCoverSeeds/Fat-Freddys-Drop-Blackbird.jpg'
 album5 = Album.new(title: 'Crazy', author: 'Sunny', album_cover:alb_img5 )
-album2.save!
+album5.save!
 
 alb_img6 = 'https://s3.amazonaws.com/ampafy-seeds/albumCoverSeeds/inside-the-weeknd-starboy-full-size.jpg'
 album6 = Album.new(title: 'Numb', author: 'Chris', album_cover:alb_img6 )
@@ -48,22 +48,12 @@ album9.save!
 
 # SONGS
 
-song_1 = 'https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/Ed_Sheeran_-_Happier_Music_Video%5BMp3Converter.net%5D.mp3'
-song1 = Song.new(title: 'Shapes of You', album_id: album2.id, audio: song_1)
-song1.save!
+
 
 song_2 = 'https://s3.amazonaws.com/ampafy-seeds/Home.mp3'
-song2 = Song.new(title: 'Home', album_id: album1.id, audio: song_2)
+song2 = Song.new(title: 'Home', album_id: album2.id, audio: song_2)
 song2.save!
 
-song_3 = 'https://s3.amazonaws.com/AMPAFY-DEV/songs/audios/000/000/028/original/World_Gone_Mad.mp3'
+song_3 = 'https://s3.amazonaws.com/ampafy-seeds/World_Gone_Mad.mp3'
 song3 = Song.new(title: 'World_Gone_Mad', album_id: album1.id, audio: song_3)
 song3.save!
-
-song_4 = 'https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/Taylor_Swift_-_Bad_Blood_ft_Kendrick_Lamar%5BMp3Converter.net%5D.mp3'
-song4 = Song.new(title: 'Bad-Blood', album_id: album3.id, audio: song_4)
-song4.save!
-
-song_5 = 'https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/MV_BTS%E1%84%87%E1%85%A1%E1%86%BC%E1%84%90%E1%85%A1%E1%86%AB%E1%84%89%E1%85%A9%E1%84%82%E1%85%A7%E1%86%AB%E1%84%83%E1%85%A1%E1%86%AB_FIRE_%E1%84%87%E1%85%AE%E1%86%AF%E1%84%90%E1%85%A1%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B3%E1%84%82%E1%85%A6%5BMp3Converter.net%5D.mp3'
-song5 = Song.new(title: 'Fire', album_id: album3.id, audio: song_5)
-song5.save!
