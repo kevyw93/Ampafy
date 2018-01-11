@@ -4,4 +4,8 @@ class Api::SongsController < ApplicationController
     @song = Song.find(params[:id])
   end
 
+  def index
+    @songs = Song.all
+  end
+
 end

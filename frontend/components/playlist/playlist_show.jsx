@@ -5,6 +5,7 @@ import {Redirect} from 'react-router-dom';
 class PlaylistShow extends React.Component {
   constructor(props){
     super(props);
+    this.handleAdd = this.handleAdd.bind(this);
   }
 
   componentDidMount(){
@@ -18,6 +19,9 @@ class PlaylistShow extends React.Component {
       this.props.history.push('/browse/playlists');
     };
   }
+  handleAdd(songId) {
+    return e => this.props.receiveCurrentSong(songId);
+  }
 
 
 
@@ -28,7 +32,7 @@ class PlaylistShow extends React.Component {
       title = this.props.playlist.title;
 
 
-      songs = this.props.songs.map(song => <div>{song.title}</div>);
+      songs = this.props.songs.map(song => <div onClick={this.handleAdd(song.id)} >{song.title}</div>);
 
       return (
         <div>

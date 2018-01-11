@@ -4,8 +4,7 @@ import FeatureContainer from './feature_container';
 import TopNavBarContainer from '../nav_bars/top_nav_bar_container';
 import DiscoverContainer from './discover_container';
 import PlaylistShowContainer from '../playlist/playlist_container';
-// import SideNavBarContainer from '../nav-bars/side_nav-bar_container';
-
+import SongsContainer from './songs_container';
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
@@ -41,6 +40,7 @@ class MainPage extends React.Component {
           <Route exact path='/browse/albums' component={FeatureContainer} />
           <Route exact path='/browse/playlists' component={DiscoverContainer} />
           <Route path='/browse/playlist/:id' component={PlaylistShowContainer} />
+          <Route path='/browse/songs' component={SongsContainer} />
         </Switch>
       </div>
 

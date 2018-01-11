@@ -6,7 +6,15 @@ export const fetchSong = (id) => {
   });
 };
 
+export const fetchAllSongs = () => {
+  return $.ajax({
+    type: 'get',
+    url: 'api/songs'
+  });
+};
+
 export const addSongToPlaylist = (post) => {
+  debugger
   return $.ajax({
     type: 'post',
     url: `api/playlist_taggings`,

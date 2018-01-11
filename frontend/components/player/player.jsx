@@ -8,6 +8,7 @@ class Player extends React.Component{
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
     this.changeSong = this.changeSong.bind(this);
+    // this.duration;
   }
   // go to reducer and add a reducer with idx and array of songs from albums/ playlist
 
@@ -16,16 +17,19 @@ class Player extends React.Component{
       this.state.audio.setAttribute('src', nextProps.song.audioUrl);
       // this.state.audio.addEventListener('ended', this.changeSong);
       this.state.audio.load();
+      this.props.receiveIsPlaying();
       this.state.audio.play();
     }
   }
   play() {
     this.state.audio.play();
+    this.props.receiveIsPlaying();
   }
 
   pause() {
-
     this.state.audio.pause();
+    this.props.receiveIsPlaying();
+
   }
 
   changeSong() {
@@ -41,14 +45,21 @@ class Player extends React.Component{
 
   render(){
 
-    let playbutton;
-    let pausebutton = <button onClick={this.pause}><img className="play-button"src="https://image.freepik.com/free-icon/pause-button-outline_318-40569.jpg" /></button>;
+    // this.duration = document.getElementById('audio').duration;
 
-      playbutton = <button onClick={this.play} ><img className="pause-button"src="http://soundshareapp.com/assets/images/tours/play-button.png" /></button>;
+    let playbutton = <button onClick={this.play} ><img className="pause-button"src="http://soundshareapp.com/assets/images/tours/play-button.png" /></button>;
+    let pausebutton = <button onClick={this.pause}><img className="play-button"src="https://image.freepik.com/free-icon/pause-button-outline_318-40569.jpg" /></button>;
+    let button = this.props.isPlaying ? pausebutton : playbutton;
+    let title;
+    if (this.props.song) {
+      title = this.props.song.title;
+      debugger
+    }
     return(
       <div className="player-outer-container">
-        {playbutton}
-        {pausebutton}
+        {button}
+        {title}
+        {this.duration}
       </div>
     );
     // figure out how to play an array of songs using fuking shit and how to pause plz bro

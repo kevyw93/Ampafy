@@ -14,7 +14,8 @@ class NewPlaylistForm extends React.Component {
   }
 
   render(){
-    let openPlaylist = this.props.openListPlaylist ? <PlaylistDropDownContainer /> : null;
+    debugger
+    let openPlaylist = this.props.openListPlaylist ? <PlaylistDropDownContainer songId={this.props.songId}/> : null;
     return (
       <div>
         <ul>

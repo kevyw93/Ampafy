@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Modal from 'react-modal';
 class PlaylistDropDown extends React.Component {
   constructor(props){
     super(props);
@@ -22,8 +22,6 @@ class PlaylistDropDown extends React.Component {
   }
 
   render(){
-    debugger
-
     let playlists;
     if (this.props.openListPlaylist) {
       playlists = this.props.playlists.map(playlist =>
@@ -32,11 +30,20 @@ class PlaylistDropDown extends React.Component {
           {playlist.title}
         </div>
       );
+
     }
     return (
       <div>
         <button onClick={this.handleOpenClose}>close</button>
+      <Modal
+        ariaHideApp={false}
+        isOpen={this.props.openListPlaylist}
+        className="playlist-modal"
+      >
+        <div>
         {playlists}
+      </div>
+      </Modal>
       </div>
     );
   }
