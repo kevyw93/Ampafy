@@ -51,7 +51,16 @@ class TopNavBar extends React.Component {
 
       <Modal
           isOpen={this.state.bool}
-          className="playlist-modal"
+          className={{
+            base: 'playlist-modal',
+            afterOpen: 'playlist-modal_after-open',
+            beforeClose: 'playlist-modal_before-close'
+          }}
+          overlayClassName={{
+            base: 'outer-playlist-modal',
+            afterOpen: 'outer-playlist-modal_after-open',
+            beforeClose: 'outer-playlist-modal_before-close'
+          }}
         >
           <div className="form-modal-outer-container">
             <div className="form-modal-inner-container">

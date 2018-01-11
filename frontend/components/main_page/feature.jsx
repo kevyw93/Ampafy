@@ -27,7 +27,7 @@ class Feature extends React.Component {
       (<li className="single-album">
 
         <Link className="img-hover-cont" to={`/browse/album/${alb.id}`}>
-         <div className="img-div"style={{backgroundImage: `url(${alb.album_img})`}}>
+         <div className="img-div" style={{backgroundImage: `url(${alb.album_img})`}}>
 
          </div>
          <img className="img-hover-div" src="http://www.pngmart.com/files/3/Play-Button-PNG-Picture.png" />

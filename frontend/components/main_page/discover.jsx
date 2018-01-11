@@ -18,9 +18,10 @@ class Discover extends React.Component {
       playlist = this.props.playlists.map(play =>
 
 // onHover
-        <li className="single-album">
-          <Link to={`/browse/playlist/${play.id}`}>
-            <img className="album-img" src="https://i.ebayimg.com/images/g/K-oAAMXQLw1R0v2T/s-l300.gif" />
+        <li className="single-playlist">
+          <Link className="img-hover-cont" to={`/browse/playlist/${play.id}`}>
+            <img className="img-div" src="https://i.ebayimg.com/images/g/K-oAAMXQLw1R0v2T/s-l300.gif" />
+            <img className="img-hover-div" src="http://www.pngmart.com/files/3/Play-Button-PNG-Picture.png" />
           </Link>
           <h1 className="alb-title">{play.title}</h1>
       </li>
@@ -28,8 +29,8 @@ class Discover extends React.Component {
       );
     }
     return(
-      <div className="all-albums" >
-        <div className="inner-albs">
+      <div className="outer-playlist" >
+        <div className="inner-playlists">
           {playlist}
         </div>
       </div>
