@@ -45,7 +45,7 @@ class TopNavBar extends React.Component {
       <div className="nav-bars">
         <Link className="nav-links" to='/browse/albums'>Albums</Link>
       <Link className="nav-links" to='/browse/playlists'>Playlists</Link>
-        <Link className="nav-links" to='/browse/random'>Random</Link>
+    <Link className="nav-links" to='/browse/songs'>Songs</Link>
       <button onClick={this.handleOpenClose}>New Playlist</button>
       <div className="playlist-modal">
 

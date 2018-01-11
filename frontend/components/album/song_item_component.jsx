@@ -28,7 +28,7 @@ class SongItemComponent extends React.Component{
     this.props.receiveModalSong();
     this.props.receiveSongId(this.props.song.id);
   }
-  handleAdd(id) {
+  handleAdd() {
     return e => this.props.receiveCurrentSong(this.props.song.id);
   }
 
@@ -42,7 +42,7 @@ class SongItemComponent extends React.Component{
     return(
       <div>
 
-        <button onClick={this.handleAdd(this.props.index)}>{this.props.song.title}</button>
+        <button onClick={this.handleAdd()}>{this.props.song.title}</button>
         <h1>{this.props.author}</h1>
       <button onClick={this.handleOpenClose}>modal</button>
         {form}

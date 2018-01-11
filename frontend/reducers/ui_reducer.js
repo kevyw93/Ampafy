@@ -1,9 +1,10 @@
-import {RECEIVE_MODAL, RECEIVE_SONG_ID, RECEIVE_LISTS_PLAYLIST} from '../actions/ui_actions';
+import {RECEIVE_MODAL, RECEIVE_PLAYING, RECEIVE_SONG_ID, RECEIVE_LISTS_PLAYLIST} from '../actions/ui_actions';
 
 const initialState = {
   isThreeDots: false,
   id: null,
   openListPlaylist: false,
+  isPlaying: false
 };
 
 const uiReducer = (state = initialState, action) => {
@@ -17,6 +18,9 @@ const uiReducer = (state = initialState, action) => {
       return newState;
     case RECEIVE_LISTS_PLAYLIST:
       newState = Object.assign({}, state, {openListPlaylist: !state.openListPlaylist});
+      return newState;
+    case RECEIVE_PLAYING:
+      newState = Object.assign({}, state, {isPlaying: !state.isPlaying});
       return newState;
     default:
       return state;

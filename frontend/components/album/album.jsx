@@ -15,7 +15,10 @@ class Album extends React.Component {
  }
 
 handleAdd(index) {
-  return e => this.props.receiveCurrentSong(this.props.songs[index]);
+  return e => {
+    this.props.receiveCurrentSong(this.props.songs[index]);
+    
+  };
 }
 
 

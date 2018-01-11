@@ -24,3 +24,11 @@ export const fetchSong = (id) => {
     );
   };
 };
+
+export const fetchAllSongs = () => {
+  return dispatch => {
+    return ApiUtil.fetchAllSongs().then(
+      songs => dispatch(receiveAllSong(songs))
+    );
+  };
+};
