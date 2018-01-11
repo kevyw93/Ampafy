@@ -43,7 +43,8 @@ render(){
 
   let songs = this.props.songs.map((song,idx) =>{
     return (
-      <div>
+      <ol className="songs-list">
+      <li >
         <SongComponent key={idx}
           handleAdd={this.handleAdd(idx)}
           author={this.props.album.author}
@@ -71,7 +72,9 @@ render(){
             />
 
         </Modal>
-      </div>);
+      </li>
+    </ol>
+    );
   });
 
   let alb;
