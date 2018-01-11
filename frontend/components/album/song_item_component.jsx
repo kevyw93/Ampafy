@@ -1,5 +1,5 @@
 import React from 'react';
-import NewPlaylistForm from './new_playlist_form';
+import NewPlaylistFormContainer from './new_playlist_form_container';
 import PlaylistDropDownContainer from '../playlist/playlist_drop_down_container';
 
 class SongItemComponent extends React.Component{
@@ -26,6 +26,7 @@ class SongItemComponent extends React.Component{
 
   handleOpenClose() {
     this.props.receiveModalSong();
+    this.props.receiveSongId(this.props.song.id);
   }
   handleAdd(id) {
     return e => this.props.receiveCurrentSong(this.props.song.id);
@@ -33,7 +34,8 @@ class SongItemComponent extends React.Component{
 
 
   render() {
-      const form = this.props.isThreeDots ? <NewPlaylistForm
+      const form = this.props.isThreeDots && this.props.songId === this.props.song.id ?
+      <NewPlaylistFormContainer
         songId={this.props.song.id} />
         : null;
 

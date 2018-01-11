@@ -1,24 +1,26 @@
 import React from 'react';
+import PlaylistDropDownContainer from '../playlist/playlist_drop_down_container';
 
 class NewPlaylistForm extends React.Component {
 
   constructor(props){
     super(props);
+    this.handleOpenClose = this.handleOpenClose.bind(this);
   }
 
-  handleAddSong(songId, playlistId) {
-    return e => {this.props.addSongToPlaylist(
-      {playlist_tagging:{song_id: songId, playlist_id: playlistId}});
-      this.handleOpenClose();
-    };
+
+  handleOpenClose() {
+    this.props.receiveListsPlaylist();
   }
 
   render(){
+    let openPlaylist = this.props.openListPlaylist ? <PlaylistDropDownContainer /> : null;
     return (
       <div>
         <ul>
-          <button>Add To Playlist</button>
-          <button>Delete From Playlist</button>
+          <button onClick={this.handleOpenClose}>Add To Playlist</button>
+        {openPlaylist}
+          {/* <button>Delete From Playlist</button> */}
         </ul>
       </div>
     );
