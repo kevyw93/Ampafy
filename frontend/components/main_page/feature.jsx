@@ -26,9 +26,12 @@ class Feature extends React.Component {
       alb =>
       (<li className="single-album">
 
-        <Link to={`/browse/album/${alb.id}`}>
-          <img className="album-img" src={alb.album_img} />
-        </Link>
+        <Link className="img-hover-cont" to={`/browse/album/${alb.id}`}>
+         <div className="img-div"style={{backgroundImage: `url(${alb.album_img})`}}>
+
+         </div>
+         <img className="img-hover-div" src="http://www.pngmart.com/files/3/Play-Button-PNG-Picture.png" />
+       </Link>
         <h1 className="alb-title">{alb.title}</h1>
       </li>)
     );
@@ -39,14 +42,14 @@ class Feature extends React.Component {
       //     <TopNavBarContainer />
       //   </div> */}
 
+      <div className="outer-albs">
         <div className="all-albums">
-          <div className="inner-albs">
             {albs}
 
-          </div>
 
 
         </div>
+      </div>
 
 
       // </div>

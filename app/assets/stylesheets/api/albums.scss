@@ -7,7 +7,15 @@
 //   border: 1px solid black;
 // }
 //
-
+.single-song{
+  border: 1px solid green;
+  &:hover{
+    background-color: grey;
+  }
+}
+.song-container {
+  // display: flex
+}
 
 .albums-single-album-img {
   height: auto;
@@ -23,6 +31,7 @@
 }
 .album-details-container {
   margin-left: 30px;
+
 
 }
 
@@ -54,8 +63,10 @@
 }
 
 .playlist-drop-down{
-  height:100px;
-  width: 100px;
-  border: 1px solid red;
-  overflow: none;
+  height:300px;
+  width: 300px;
+  border: 1px solid black;
+  // top:0;
+  background: transparent;
+  // overflow: none;
 }

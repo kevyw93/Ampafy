@@ -5,15 +5,18 @@ import { fetchPlaylist, fetchPlaylistSongs, deletePlaylist, updatePlaylist } fro
 const mapStateToProps = (state,ownProps) => {
   let playlist;
   let songs = [];
-  
+
 
     playlist = state.entities.playlists[ownProps.match.params.id];
     if (playlist) {
       
-      songs = playlist.songIds.map(songId => state.entities.songs[songId]);
+      if (Object.values(state.entities.songs).length > 0) {
+
+        songs = playlist.songIds.map(songId => state.entities.songs[songId]);
+      }
     }
 
-  
+
   return {
     playlist,
     songs
