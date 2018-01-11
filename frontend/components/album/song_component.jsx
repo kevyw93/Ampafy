@@ -7,7 +7,7 @@ const SongComponent = (props) => {
       <div>
         {props.song.title}
       </div>
-      <div>
+      <div className="song-author">
         {props.author}
       </div>
     </div>
