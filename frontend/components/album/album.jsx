@@ -17,7 +17,7 @@ class Album extends React.Component {
 handleAdd(index) {
   return e => {
     this.props.receiveCurrentSong(this.props.songs[index]);
-    
+
   };
 }
 
@@ -45,7 +45,8 @@ render(){
   let songs;
   if (this.props.songs.length > 0) {
 
-    songs=  <SongIndex
+    songs=
+      <SongIndex
       author={this.props.album.author}
       songs={this.props.songs} />;
   }
@@ -60,14 +61,20 @@ render(){
         </div>
         <div className="album-details-container">
           <div className="album-title">{this.props.album.title}</div>
-        <h1 className="alb-img-container">{this.props.album.author}</h1>
+          <h1 className="alb-img-container">{this.props.album.author}</h1>
         </div>
       </div>;
   }
     return (
       <div className="album-outmost-container">
-        {alb}
-        {songs}
+        <div className="margin-container">
+
+          {alb}
+        </div>
+        <div className="alb-songs">
+
+          {songs}
+        </div>
       </div>
     );
 

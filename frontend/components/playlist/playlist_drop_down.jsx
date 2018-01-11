@@ -14,8 +14,10 @@ class PlaylistDropDown extends React.Component {
   }
 
   handleAddSong(songId, playlistId) {
-    debugger
-    return e => {this.props.addSongToPlaylist(
+
+    return e => {
+      debugger
+      this.props.addSongToPlaylist(
       {playlist_tagging:{song_id: songId, playlist_id: playlistId}});
       this.handleOpenClose();
     };

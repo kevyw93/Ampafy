@@ -43,10 +43,10 @@ class TopNavBar extends React.Component {
     return(
 
       <div className="nav-bars">
-        <Link className="nav-links" to='/browse/albums'>Albums</Link>
-      <Link className="nav-links" to='/browse/playlists'>Playlists</Link>
-    <Link className="nav-links" to='/browse/songs'>Songs</Link>
-      <button onClick={this.handleOpenClose}>New Playlist</button>
+          <Link className="nav-links" to='/browse/albums'>Albums</Link>
+          <Link className="nav-links" to='/browse/playlists'>Playlists</Link>
+          <Link className="nav-links" to='/browse/songs'>Songs</Link>
+          <button onClick={this.handleOpenClose}>New Playlist</button>
       <div className="playlist-modal">
 
       <Modal

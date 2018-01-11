@@ -6,6 +6,7 @@
 //   height: 200px;
 //   border: 1px solid black;
 // }
+
 //
 .songs-list{
   list-style-type: value;
@@ -29,21 +30,27 @@
 }
 
 .albums-single-album-img {
-  height: auto;
-  max-width: 226px;
+  width: 320px;
+  margin-left: 12px;
+  margin-top: 50px;
 
 }
 
 .album-pic-container {
-  margin-left: 5%;
   margin-top: 15px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+.margin-container{
+  margin-left: 7%;
 }
 .album-details-container {
   margin-left: 30px;
 
-
+}
+.single-song{
+  display:flex;
+  flex-direction: row;
 }
 
 .alb-title {
@@ -51,12 +58,13 @@
 }
 .album-outmost-container{
   height: 100vh;
+  display: flex;
+  flex-direction: row;
 }
-
+ol{
+}
 // .albums-single-album {
-//   display:flex;
-//   flex-direction: row;
-//   margin: 20px 30px;
+//
 // }
 
 
@@ -72,6 +80,29 @@
   font-family: sans-serif;
 
 }
+.song-list{
+  display:flex;
+  justify-content: space-between;
+  padding: 15px;
+  &:hover {
+    background-color: darkslategray;
+    opacity: 0.9;
+    .three-dots {
+      visibility:visible;
+    }
+  }
+}
+.three-dots {
+  width: 40px;
+  visibility: hidden;
+
+}
+.song-title{
+  font-size: 17px;
+}
+.song-author{
+  font-size: 14px;
+}
 
 .playlist-drop-down{
   height:300px;
@@ -79,4 +110,9 @@
   // top:0;
   background: transparent;
   // overflow: none;
+}
+.alb-songs {
+  margin-top: 4%;
+  margin-left: 6%;
+  width: 53%;
 }
