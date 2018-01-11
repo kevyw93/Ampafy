@@ -7,6 +7,7 @@ import _ from 'lodash';
 
 const mapStateToProps = (state,ownProps) => {
 
+  debugger
   return {
     isPlaying: state.ui.isPlaying,
     song: state.entities.songs[state.player]

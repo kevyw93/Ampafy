@@ -1,7 +1,6 @@
 class Api::PlaylistTaggingsController < ApplicationController
 
   def create
-    debugger
     @playlist_tagging = PlaylistTagging.new(playlist_tagging_params)
     if @playlist_tagging.save(playlist_tagging_params)
       @playlist = Playlist.find(params[:playlist_tagging][:playlist_id])
