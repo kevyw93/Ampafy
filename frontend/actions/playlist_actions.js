@@ -38,7 +38,7 @@ export const fetchPlaylistSongs = (songs) => {
 
 export const addSongToPlaylist = (post) => {
   return dispatch => {
-    return SongApiUtil.SongToPlaylist(post).then(
+    return SongApiUtil.addSongToPlaylist(post).then(
       (payload) => dispatch(receivePlaylist(payload))
     );
   };

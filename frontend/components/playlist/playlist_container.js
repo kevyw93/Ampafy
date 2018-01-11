@@ -9,7 +9,7 @@ const mapStateToProps = (state,ownProps) => {
 
     playlist = state.entities.playlists[ownProps.match.params.id];
     if (playlist) {
-      
+
       if (Object.values(state.entities.songs).length > 0) {
 
         songs = playlist.songIds.map(songId => state.entities.songs[songId]);
