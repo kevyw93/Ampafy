@@ -4,38 +4,37 @@ class Player extends React.Component{
   constructor(props) {
     super(props);
 
-    this.state = { progress: 0 };
+    this.state = { progress: 0, length: 0, secs: 0, mins: 0 };
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
     this.changeSong = this.changeSong.bind(this);
     this.handleProgress = this.handleProgress.bind(this);
-    // this.duration;
+    this.handleLength = this.handleLength.bind(this);
   }
   // go to reducer and add a reducer with idx and array of songs from albums/ playlist
 
   componentWillReceiveProps(nextProps) {
     if (!this.props.song || nextProps.song.audioUrl !== this.props.song.audioUrl) {
       this.audio.setAttribute('src', nextProps.song.audioUrl);
-      // this.state.audio.addEventListener('ended', this.changeSong);
-      // this.audio.load();
 
       this.props.receiveIsPlaying();
-      // this.audio.play();
 
     }
   }
   play() {
 
-    // console.log(this.audio.duration)
     this.audio.play();
     this.props.receiveIsPlaying();
   }
 
+  handleLength(){
+    let length = this.audio.duration;
+    this.setState({length: length});
+  }
+
   handleProgress() {
-    debugger
     let newProgress = (this.audio.currentTime);
     this.setState({ progress: newProgress});
-    console.log(this.audio.currentTime / this.audio.duration);
   }
 
   pause() {
@@ -65,27 +64,44 @@ class Player extends React.Component{
     let title;
     let pic;
     let src;
+    let currentTime;
+    let img;
+
 
     if (this.props.song) {
       title = this.props.song.title;
       pic = this.props.song.albumImg;
       src = this.props.song.audioUrl;
+      img = <img className="alb-pics" src={pic} />;
     }
-
+    if (this.audio) {
+      currentTime = this.audio.currentTime;
+    }
     return(
       <div className="player-outer-container">
-        <div>{button}</div>
-        <div>{title}</div>
-      <div>
-        <img src={pic} />
-      </div>
-      <audio src={src} ref={(audio) => {
-          this.audio = audio;
-        }}
-        onCanPlayThrough={this.play}
-        onTimeUpdate={this.handleProgress}
-        ></audio>
-      <input type="range" value={this.audio ? this.audio.currentTime : 0} className="progressBar" onChange={this.someCallback}></input>
+        <div>
+          <div>
+            <h1 className="title">{title}</h1>
+          </div>
+          <div>
+            {img}
+          </div>
+        </div>
+        <div className="playbar-container">
+          <div className="play-pause">{button}</div>
+          <div className="playbar" >
+
+          <input type="range" value={this.audio ? this.audio.currentTime : 0} max={this.state.length} className="progressBar" />
+          </div>
+          <div>{currentTime}</div>
+        </div>
+        <audio src={src} ref={(audio) => {
+            this.audio = audio;
+          }}
+          onLoadedData={this.handleLength}
+          onCanPlayThrough={this.play}
+          onTimeUpdate={this.handleProgress}
+          ></audio>
       </div>
     );
 
