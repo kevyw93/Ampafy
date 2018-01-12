@@ -14,6 +14,7 @@ class Player extends React.Component{
   // go to reducer and add a reducer with idx and array of songs from albums/ playlist
 
   componentWillReceiveProps(nextProps) {
+    debugger
     if (!this.props.song || nextProps.song.audioUrl !== this.props.song.audioUrl) {
       this.audio.setAttribute('src', nextProps.song.audioUrl);
 
@@ -100,7 +101,7 @@ class Player extends React.Component{
           }}
           onLoadedData={this.handleLength}
           onCanPlayThrough={this.play}
-          onTimeUpdate={this.handleProgress}
+          // onTimeUpdate={this.handleProgress}
           ></audio>
       </div>
     );

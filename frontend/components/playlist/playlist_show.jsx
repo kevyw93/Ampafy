@@ -1,6 +1,7 @@
 import React from 'react';
 import Song from '../album/song_index';
 import {Redirect} from 'react-router-dom';
+import SongIndex from '../album/song_index';
 
 class PlaylistShow extends React.Component {
   constructor(props){
@@ -32,7 +33,7 @@ class PlaylistShow extends React.Component {
       title = this.props.playlist.title;
 
 
-      songs = this.props.songs.map(song => <div onClick={this.handleAdd(song.id)} >{song.title}</div>);
+      songs = <SongIndex songs={this.props.songs} />
 
       return (
         <div>
