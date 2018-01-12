@@ -36,10 +36,7 @@ class Feature extends React.Component {
     );
 
     return(
-      // <div className="feature">
-      //   {/* <div className="top-nav">
-      //     <TopNavBarContainer />
-      //   </div> */}
+
 
       <div className="outer-albs">
         <div className="all-albums">
