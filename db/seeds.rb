@@ -50,10 +50,38 @@ album9.save!
 
 
 
-song_2 = 'https://s3.amazonaws.com/ampafy-seeds/Home.mp3'
-song2 = Song.new(title: 'Home', album_id: album2.id, audio: song_2)
+song_1 = 'https://s3.amazonaws.com/ampafy-seeds/Home.mp3'
+song1 = Song.new(title: 'Home', album_id: album2.id, audio: song_1)
+song1.save!
+
+song_2 = 'https://s3.amazonaws.com/ampafy-seeds/World_Gone_Mad.mp3'
+song2 = Song.new(title: 'Loving You So', album_id: album1.id, audio: song_2)
 song2.save!
 
-song_3 = 'https://s3.amazonaws.com/ampafy-seeds/World_Gone_Mad.mp3'
-song3 = Song.new(title: 'World_Gone_Mad', album_id: album1.id, audio: song_3)
+song_3 = "https://s3.amazonaws.com/ampafy-seeds/Dont+Wanna+Know+-+Maroon+5+(Boyce+Avenue+ft.+Sarah+Hyland+cover)+on+Spotify++iTunes.mp3"
+song3 = Song.new(title: "Don't Want to Know", album_id: album3.id, audio: song_3)
 song3.save!
+
+song_4 = "https://s3.amazonaws.com/ampafy-seeds/Demons+-+Imagine+Dragons+(Cover+by+Jasmine+Thompson).mp3"
+song4 = Song.new(title: 'Demon', album_id: album3.id, audio: song_4)
+song4.save!
+
+song_5 = "https://s3.amazonaws.com/ampafy-seeds/Linkin+Park-In+The+End.mp3"
+song5 = Song.new(title: 'In The End', album_id: album1.id, audio: song_5)
+song5.save!
+
+song_6 = "https://s3.amazonaws.com/ampafy-seeds/Mac+Miller+-+Smile+Back.mp3"
+song6 = Song.new(title: 'Smile Back', album_id: album1.id, audio: song_6)
+song6.save!
+
+# song_7 = "https://s3.amazonaws.com/ampafy-seeds/Meg+%26+Dia+-+Monster+(DotEXE+Remix).mp3"
+# song7 = Song.new(title: 'Monster', album_id: album4.id, audio: song_7)
+# song7.save!
+
+# song_8 = "https://s3.amazonaws.com/ampafy-seeds/You_Belong_With_Me_-_Taylor_Swift_Lyrics%5BMp3Converter.net%5D.mp3"
+# song8 = Song.new(title: 'You Belong With Me', album_id: album5.id, audio: song_8)
+# song8.save!
+
+# song_9 = "https://s3.amazonaws.com/ampafy-seeds/MV_BTS%E1%84%87%E1%85%A1%E1%86%BC%E1%84%90%E1%85%A1%E1%86%AB%E1%84%89%E1%85%A9%E1%84%82%E1%85%A7%E1%86%AB%E1%84%83%E1%85%A1%E1%86%AB_FIRE_%E1%84%87%E1%85%AE%E1%86%AF%E1%84%90%E1%85%A1%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B3%E1%84%82%E1%85%A6%5BMp3Converter.net%5D.mp3"
+# song9 = Song.new(title: 'Fire', album_id: album5.id, audio: song_9)
+# song9.save!

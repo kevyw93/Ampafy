@@ -2,9 +2,10 @@ export const RECEIVE_MODAL = 'RECEIVE_MODAL';
 export const RECEIVE_SONG_ID = 'RECEIVE_SONG_ID';
 export const RECEIVE_LISTS_PLAYLIST= 'RECEIVE_LISTS_PLAYLIST';
 export const RECEIVE_PLAYING= 'RECEIVE_PLAYING';
-export const receiveModalSong = () => {
+export const receiveModalSong = (id) => {
   return {
     type: RECEIVE_MODAL,
+    id
   };
 };
 

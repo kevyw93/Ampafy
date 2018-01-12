@@ -22,34 +22,34 @@ class SessionForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    
+
     const user = Object.assign({}, this.state);
     this.props.processForm({user: user});
   }
 
   handleGuestLogin(e){
     e.preventDefault();
-    const user = {'username':'user', 'password':'password'};
-    // const username = {
-    //   strings: [user.username],
-    //   typeSpeed:50
-    // };
-    // const password = {
-    //   strings: [user.username],
-    //   typeSpeed:40
-    // };
-    // this.setState({
-    //   typeUsername: setTimeout(() => {
-    //     new Typed('.username-input', username);
-    //   }, 30),
-    //   typedPassword: setTimeout(() => {
-    //     new Typed('.password-input', password);
-    //   },900),
-    //   typeSubmit: setTimeout(() => {
-    //     this.props.login({user:user});
-    //   },3000)
-    // });
-     this.props.login({user:user});
+    const user = {'username':'kevin', 'password':'password'};
+    const username = {
+      strings: [user.username],
+      typeSpeed:50
+    };
+    const password = {
+      strings: [user.username],
+      typeSpeed:40
+    };
+    this.setState({
+      typeUsername: setTimeout(() => {
+        new Typed('.username-input', username);
+      }, 30),
+      typedPassword: setTimeout(() => {
+        new Typed('.password-input', password);
+      },900),
+      typeSubmit: setTimeout(() => {
+        this.props.login({user:user});
+      },3000)
+    });
+     // this.props.login({user:user});
   }
 
   handleChange(field){
