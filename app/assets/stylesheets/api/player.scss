@@ -28,3 +28,28 @@
 .progressBar{
   width: 400px;
 }
+.playbar-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+.play-pause{
+  align-self: center;
+  position: fixed;
+}
+.playbar{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-left: 15px;
+
+}
+.title{
+  font-size: 12px;
+}
+.alb-pics{
+  height: 80px;
+  width: 80px;
+  margin-left: 10px;
+}

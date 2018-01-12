@@ -25,7 +25,6 @@ class Feature extends React.Component {
     const albs = Object.values(this.props.albums).map(
       alb =>
       (<li className="single-album">
-
         <Link className="img-hover-cont" to={`/browse/album/${alb.id}`}>
          <div className="img-div" style={{backgroundImage: `url(${alb.album_img})`}}>
 
