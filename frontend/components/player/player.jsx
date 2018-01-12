@@ -1,4 +1,5 @@
 import React from 'react';
+import secToMin from 'sec-to-min';
 
 class Player extends React.Component{
   constructor(props) {
@@ -14,17 +15,20 @@ class Player extends React.Component{
   // go to reducer and add a reducer with idx and array of songs from albums/ playlist
 
   componentWillReceiveProps(nextProps) {
-    if (!this.props.song || nextProps.song.audioUrl !== this.props.song.audioUrl) {
+
+    if (typeof this.props.song === 'undefined' && typeof nextProps.song === 'undefined') {
+      return null;
+    }else if (!this.props.song || nextProps.song.audioUrl !== this.props.song.audioUrl) {
       this.audio.setAttribute('src', nextProps.song.audioUrl);
-
-      this.props.receiveIsPlaying();
-
     }
   }
   play() {
 
     this.audio.play();
-    this.props.receiveIsPlaying();
+    if (this.props.song) {
+
+      this.props.receiveIsPlaying();
+    }
   }
 
   handleLength(){
@@ -75,7 +79,7 @@ class Player extends React.Component{
       img = <img className="alb-pics" src={pic} />;
     }
     if (this.audio) {
-      currentTime = this.audio.currentTime;
+      currentTime = secToMin(this.audio.currentTime);
     }
     return(
       <div className="player-outer-container">

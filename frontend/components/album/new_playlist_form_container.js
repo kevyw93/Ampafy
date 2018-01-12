@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import NewPlaylistForm from './new_playlist_form';
 import {receiveListsPlaylist} from '../../actions/ui_actions';
+import {removeSongFromPlaylist} from '../../actions/playlist_actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -12,7 +13,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    receiveListsPlaylist: () =>  dispatch(receiveListsPlaylist())
+    receiveListsPlaylist: () =>  dispatch(receiveListsPlaylist()),
+    removeSongFromPlaylist: () => dispatch(removeSongFromPlaylist())
   };
 };
 

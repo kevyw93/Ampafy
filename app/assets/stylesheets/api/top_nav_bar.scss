@@ -106,11 +106,10 @@ $spot-green: #1ed760;
   display:flex;
 }
 .form-input {
-  height: 56px;
   font-size: 56px;
   width: 100vw;
   &::placeholder {
-    font-size: 56px;
+    font-size: 50px;
   }
 }
 .playlist-modal{
@@ -131,6 +130,8 @@ $spot-green: #1ed760;
 }
 .pic-of-x{
   margin-top: -100%;
+  background-color: gray;
+  opacity: 0.2;
 }
 .outer-playlist-modal{
   position: fixed;

@@ -29,9 +29,11 @@ class SongItemComponent extends React.Component{
     this.props.receiveSongId(this.props.song.id);
   }
   handleAdd() {
-    return e => this.props.receiveCurrentSong(this.props.song.id);
+    return e => {
+      this.props.receiveCurrentSong(this.props.song.id);
+      this.props.receiveIsPlaying();
+    };
   }
-
 
   render() {
       const form = this.props.isThreeDots && this.props.songId === this.props.song.id ?
@@ -46,7 +48,9 @@ class SongItemComponent extends React.Component{
           <h1 className="song-author">{this.props.author}</h1>
         </div>
         <div className="modal-button">
-          <button onClick={this.handleOpenClose}><img className="three-dots" src="https://ncphn.org.au/wp-content/themes/ncphn/img/three-dots.png"/></button>
+          <button onClick={this.handleOpenClose}>
+            <img className="three-dots" src="https://ncphn.org.au/wp-content/themes/ncphn/img/three-dots.png"/>
+          </button>
         {form}
         </div>
           {/* <PlaylistDropDownContainer handleAddSong={this.handleAddSong} handleOpenClose={this.handleOpenClose} /> */}

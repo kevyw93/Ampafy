@@ -44,6 +44,13 @@ export const addSongToPlaylist = (post) => {
     );
   };
 };
+export const removeSongFromPlaylist = (id) => {
+  return dispatch => {
+    return SongApiUtil.deleteSongFromPlaylist(id).then(
+      (playlist) => dispatch(removePlaylist(playlist))
+    );
+  };
+};
 
 
 export const createPlaylist = playlist => {
