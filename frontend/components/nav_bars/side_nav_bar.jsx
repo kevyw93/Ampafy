@@ -5,15 +5,21 @@ const SideNavBar = (props) => {
   return(
     <div className="side-nav-bar">
       <div className="top-bar">
+        <div className="spaces">
           <button className="search-bar">Search</button>
-          <div className=""></div>
-          <Link className="homepage" to="/browse/albums">Home</Link>
-          <button className="logout" onClick={props.logout}>Logout</button>
+          <div className="lines"></div>
+        </div>
+        <div className="spaces">
+          <Link to="/browse/albums"><h1 className="homepage" >Home</h1></Link>
+        </div>
+          <div className="spaces">
+            <button className="logout" onClick={props.logout}>Logout</button>
+          </div>
       </div>
-      <div className="welcome">
+      {/* <div className="welcome">
         <h1>Welcome {props.user.username}</h1>
 
-      </div>
+      </div> */}
     </div>
   );
 };
