@@ -73,15 +73,3 @@ song5.save!
 song_6 = "https://s3.amazonaws.com/ampafy-seeds/Mac+Miller+-+Smile+Back.mp3"
 song6 = Song.new(title: 'Smile Back', album_id: album1.id, audio: song_6)
 song6.save!
-
-# song_7 = "https://s3.amazonaws.com/ampafy-seeds/Meg+%26+Dia+-+Monster+(DotEXE+Remix).mp3"
-# song7 = Song.new(title: 'Monster', album_id: album4.id, audio: song_7)
-# song7.save!
-
-# song_8 = "https://s3.amazonaws.com/ampafy-seeds/You_Belong_With_Me_-_Taylor_Swift_Lyrics%5BMp3Converter.net%5D.mp3"
-# song8 = Song.new(title: 'You Belong With Me', album_id: album5.id, audio: song_8)
-# song8.save!
-
-# song_9 = "https://s3.amazonaws.com/ampafy-seeds/MV_BTS%E1%84%87%E1%85%A1%E1%86%BC%E1%84%90%E1%85%A1%E1%86%AB%E1%84%89%E1%85%A9%E1%84%82%E1%85%A7%E1%86%AB%E1%84%83%E1%85%A1%E1%86%AB_FIRE_%E1%84%87%E1%85%AE%E1%86%AF%E1%84%90%E1%85%A1%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B3%E1%84%82%E1%85%A6%5BMp3Converter.net%5D.mp3"
-# song9 = Song.new(title: 'Fire', album_id: album5.id, audio: song_9)
-# song9.save!
