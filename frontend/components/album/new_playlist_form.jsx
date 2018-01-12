@@ -25,9 +25,7 @@ class NewPlaylistForm extends React.Component {
       <div>
         <ul>
           <button onClick={this.handleOpenClose}>Add To Playlist</button>
-        {/* <button onClick={this.handleDeleteFromPlaylist} >Delete From Playlist</button> */}
         {openPlaylist}
-          {/* <button>Delete From Playlist</button> */}
         </ul>
       </div>
     );
