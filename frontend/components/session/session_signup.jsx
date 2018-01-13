@@ -10,13 +10,17 @@ class SessionSignup extends React.Component {
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
-  componentWillReceiveProps(nextProps){
-    if(nextProps.loggedIn){
-      this.props.history.push('/');
-    }
-    if (this.props.match.path !== nextProps.match.path) {
-      this.props.clearErrors();
-    }
+  // componentWillReceiveProps(nextProps){
+  //   if(nextProps.loggedIn){
+  //     this.props.history.push('/');
+  //   }
+  //   
+  //   if (this.props.match.path !== nextProps.match.path) {
+  //     this.props.clearErrors();
+  //   }
+  // }
+  componentDidMount(){
+    this.props.clearErrors();
   }
 
   handleSubmit(e){

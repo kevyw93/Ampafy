@@ -11,6 +11,10 @@ class SongItemComponent extends React.Component{
     this.state = {bool: false};
   }
 
+  componentWillReceiveProps(nextProps) {
+
+  }
+
   handleAddSong(songId, playlistId) {
     return e => {this.props.addSongToPlaylist(
       {playlist_tagging:{song_id: songId, playlist_id: playlistId}});
@@ -29,10 +33,10 @@ class SongItemComponent extends React.Component{
     this.props.receiveSongId(this.props.song.id);
   }
   handleAdd() {
-    return e => {
+    // return e => {
+
       this.props.receiveCurrentSong(this.props.song.id);
-      this.props.receiveIsPlaying();
-    };
+    // };
   }
 
   render() {
@@ -43,7 +47,7 @@ class SongItemComponent extends React.Component{
 
     return(
       <div className="song-list">
-        <div onClick={this.handleAdd()}>
+        <div onClick={this.handleAdd}>
           <h1 className="song-title">{this.props.index + 1}. {this.props.song.title}</h1>
           <h1 className="song-author">{this.props.author}</h1>
         </div>
