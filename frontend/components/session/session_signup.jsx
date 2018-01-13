@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class SessionSignup extends React.Component {
   constructor (props) {
     super(props);
-    this.state = { 'username': "", "usernameConf": "", "name": "", 'password': "" };
+    this.state = { 'username': "", "usernameConf": "", "name": "", 'password': "", 'errors': [] };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleGuestLogin = this.handleGuestLogin.bind(this);

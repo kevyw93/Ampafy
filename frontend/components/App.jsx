@@ -9,7 +9,7 @@ import LoggedInContainer from './logged_in/logged_in_container';
 
 const App = () => {
   return (
-    <div>
+    <div className="main-main-page">
 
       <Switch>
         <ProtectedRoute path='/browse' component={LoggedInContainer} />
