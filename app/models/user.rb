@@ -1,11 +1,11 @@
 class User < ApplicationRecord
-  validates :username, presence: {message: "Username can not be blank"}, uniqueness: true
+  validates :username, presence: {message: "Email can not be blank"}, uniqueness: true
   validates :session_token, presence: true, uniqueness: true
   validates :password_digest, presence: true
   validates :password, length: {minimum: 6, allow_nil: true, message: "Password must be at least 6 characters"}
 
   has_many :playlists
-  
+
   after_initialize :ensure_session_token
 
   attr_reader :password

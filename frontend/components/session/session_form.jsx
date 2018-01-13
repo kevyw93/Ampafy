@@ -11,15 +11,14 @@ class SessionForm extends React.Component {
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
-  componentWillReceiveProps(nextProps){
-    if(nextProps.loggedIn){
-      this.props.history.push('/');
-    }
-    if (this.props.match.path !== nextProps.match.path) {
-      this.props.clearErrors();
-    }
+  // componentWillReceiveProps(nextProps){
+  //   if(nextProps.loggedIn){
+  //     this.props.history.push('/');
+  //   }
+  // }
+  componentDidMount(){
+    this.props.clearErrors();
   }
-
   handleSubmit(e){
     e.preventDefault();
 
@@ -73,7 +72,8 @@ class SessionForm extends React.Component {
 
     return (
       <div className="form-container">
-        <h1 className="logo">Ampafy</h1>
+
+        <h1 className="login-logo">Ampafy</h1>
 
       <form className="form" onSubmit={this.handleSubmit}>
           {creds}

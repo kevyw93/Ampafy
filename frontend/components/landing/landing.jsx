@@ -14,7 +14,15 @@ const Landing = (props) => {
         <div className="wrapper-for-opacity">
 
           <div className="login-signup-landing">
-            <div><img></img><h1 className="landing-logo-title">Ampafy</h1></div>
+            <div className="amplafy-logo-container">
+              {/* <div> */}
+                {/* <img className="ampafy-logo" src="https://s3.amazonaws.com/ampafy-seeds/KEVVVVV.png"></img> */}
+              {/* </div>
+              <div> */}
+                <h1 className="landing-logo-title">Ampafy</h1>
+
+              {/* </div> */}
+            </div>
 
 
             <Link  className="landing-signup" to="/signup">Sign Up</Link>

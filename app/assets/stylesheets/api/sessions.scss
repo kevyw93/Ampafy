@@ -2,12 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.logo {
-  font-size: 40px;
+.login-logo {
+  font-size: 25px;
+  font-weight: 500;
+  font-family: sans-serif;
   text-align: center;
   border-bottom: 1px solid #d9dadc;
-  padding: 4%;
+  padding: 10px 0 10px 0;
 }
+// .input-container {
+//   display: flex;
+//   align-items: center;
+// }
+// .username-input {
+//   width: 426px;
+//   border: 1px solid lightgray;
+//   display: flex;
+//   align-self: center;
+// }
 
 .top-error {
   margin: 0 auto;
@@ -32,6 +44,7 @@
 }
 
 .guest-signin-button {
+  white-space:nowrap;
   background-color: blue;
   color: white;
   border-radius: 500px;
@@ -81,6 +94,7 @@
 .login-signup-button {
   background-color: #1db954;
   color: white;
+
   border-radius: 500px;
   border: 1px solid #1db954;
   min-width: 160px;
