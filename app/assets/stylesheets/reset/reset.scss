@@ -10,7 +10,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video, button, input, select {
+time, mark, audio, video, button, input, select Link {
  margin: 0;
  padding: 0;
  border: 0;
@@ -26,14 +26,21 @@ time, mark, audio, video, button, input, select {
  box-shadow: none;
  list-style: none;
  font-family: 'Montserrat', sans-serif;
- color: white;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
- display: block;
+body {
+  width: 100vw;
+  height: 100vh;
 }
-
+#root {
+  width: inherit;
+  height: inherit;
+}
+.main-main-page{
+  width:inherit;
+  height: inherit;
+}
+// /* HTML5 display-role reset for older browsers */
+//
 ol, ul {
  list-style: none;
 }
