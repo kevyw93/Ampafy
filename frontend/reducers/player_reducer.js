@@ -11,14 +11,21 @@ const spaceship = (x,y) => {
     return 0;
   }
 };
+const preloadedState = {
+  currentSongId: null,
+  queOfSongs: null
+};
 
-const playerReducer = (state = [], action) => {
+const playerReducer = (state = preloadedState, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_CURRENT_SONG:
-      return action.songId;
+      newState = Object.assign({}, state, {currentSongId: action.songId});
+      return newState;
     case RECEIVE_ALBUM_SONGS:
-      return Object.values(action.songs).sort((a,b) => spaceship(a.id, b.id));
+      newState = Object.assign({}, state, {queOfSongs: action.songIds});
+      return newState;
+      // return Object.values(action.songs).sort((a,b) => spaceship(a.id, b.id));
 
     default:
       return state;
