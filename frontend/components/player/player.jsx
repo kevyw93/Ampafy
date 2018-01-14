@@ -18,21 +18,27 @@ class Player extends React.Component{
     debugger
     if (typeof this.props.song === 'undefined' && typeof nextProps.song === 'undefined') {
       return null;
+    }else if (this.props.song){
+      if (this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'playing') {
+        this.audio.pause();
+      }else if(this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'paused'){
+        this.audio.play();
+      }
     }else if (!this.props.song || nextProps.song.audioUrl !== this.props.song.audioUrl) {
-      this.audio.setAttribute('src', nextProps.song.audioUrl);
+        this.audio.setAttribute('src', nextProps.song.audioUrl);
     }
   }
   componentDidMount() {
     debugger
-    // if (this.props.isPlaying) {
-    //   this.audio.pause();
-    // }
+
   }
 
   play() {
-
-    this.audio.play();
-    this.props.receiveIsPlaying();
+    debugger
+    if (this.props.song) {
+      this.audio.play();
+      this.props.receivePlay();
+    }
   }
 
   handleLength(){
@@ -46,8 +52,9 @@ class Player extends React.Component{
   }
 
   pause() {
+    debugger
     this.audio.pause();
-    this.props.receiveIsPlaying();
+    this.props.receivePause();
 
   }
 
@@ -68,7 +75,7 @@ class Player extends React.Component{
 
     let playbutton = <button onClick={this.play} ><img className="pause-button"src="http://soundshareapp.com/assets/images/tours/play-button.png" /></button>;
     let pausebutton = <button onClick={this.pause}><img className="play-button"src="http://pluspng.com/img-png/pause-button-png-pause-flat-button-png-512.png" /></button>;
-    let button = this.props.isPlaying ? pausebutton : playbutton;
+    let button = this.props.status === 'playing' ? pausebutton : playbutton;
     let title;
     let pic;
     let src;

@@ -11,9 +11,7 @@ class SongItemComponent extends React.Component{
     this.state = {bool: false};
   }
 
-  componentWillReceiveProps(nextProps) {
 
-  }
 
   handleAddSong(songId, playlistId) {
     return e => {this.props.addSongToPlaylist(
@@ -34,8 +32,13 @@ class SongItemComponent extends React.Component{
   }
   handleAdd() {
     // return e => {
-
+    if (this.props.status === 'playing') {
+      this.props.receivePause();
+    }else if(this.props.status === 'paused'){
+      this.props.receivePlay();
+    }else {
       this.props.receiveCurrentSong(this.props.song.id);
+    }
     // };
   }
 

@@ -1,14 +1,14 @@
 import {connect} from "react-redux";
 import SongItemComponent from './song_item_component';
-import {receiveModalSong, receiveSongId, receiveIsPlaying } from '../../actions/ui_actions';
+import {receiveModalSong, receiveSongId, receivePlay,receivePause } from '../../actions/ui_actions';
 import { receiveCurrentSong } from "../../actions/player_actions";
 import { fetchAllPlaylist, addSongToPlaylist} from "../../actions/playlist_actions";
 
 
 const mapStateToProps = (state, ownProps) => {
-  
+
   return {
-    isPlaying: true,
+    status: state.ui.status,
     songs: state.entities.songs,
     isThreeDots: state.ui.isThreeDots,
     songId: state.ui.id
@@ -22,7 +22,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchAllPlaylist: () => dispatch(fetchAllPlaylist()),
     receiveModalSong: () => dispatch(receiveModalSong()),
     receiveSongId: (id) => dispatch(receiveSongId(id)),
-    receiveIsPlaying: () => dispatch(receiveIsPlaying())
+    receivePlay: () => dispatch(receivePlay()),
+    receivePause: () => dispatch(receivePause()),
 
   };
 };
