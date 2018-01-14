@@ -4,18 +4,18 @@ import secToMin from 'sec-to-min';
 class Player extends React.Component{
   constructor(props) {
     super(props);
-
-    this.state = { progress: 0, length: 0, secs: 0, mins: 0 };
+    this.state = { progress: 0, length: 0};
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
     this.changeSong = this.changeSong.bind(this);
     this.handleProgress = this.handleProgress.bind(this);
     this.handleLength = this.handleLength.bind(this);
+    this.handleSeek = this.handleSeek.bind(this);
+
   }
   // go to reducer and add a reducer with idx and array of songs from albums/ playlist
 
   componentWillReceiveProps(nextProps) {
-    debugger
     if (typeof this.props.song === 'undefined' && typeof nextProps.song === 'undefined') {
       return null;
     }else if (this.props.song){
@@ -28,13 +28,9 @@ class Player extends React.Component{
         this.audio.setAttribute('src', nextProps.song.audioUrl);
     }
   }
-  componentDidMount() {
-    debugger
 
-  }
 
   play() {
-    debugger
     if (this.props.song) {
       this.audio.play();
       this.props.receivePlay();
@@ -52,11 +48,15 @@ class Player extends React.Component{
   }
 
   pause() {
-    debugger
     this.audio.pause();
     this.props.receivePause();
-
   }
+
+  handleSeek(e){
+    e.preventDefault();
+    this.audio.currentTime = e.target.value;
+  }
+
 
   changeSong() {
     this.props.playNextSong();
@@ -70,7 +70,6 @@ class Player extends React.Component{
 
 
   render(){
-
     // this.duration = document.getElementById('audio').duration;
 
     let playbutton = <button onClick={this.play} ><img className="pause-button"src="http://soundshareapp.com/assets/images/tours/play-button.png" /></button>;
@@ -79,7 +78,7 @@ class Player extends React.Component{
     let title;
     let pic;
     let src;
-    let currentTime;
+    let showTime;
     let img;
 
 
@@ -90,7 +89,7 @@ class Player extends React.Component{
       img = <img className="alb-pics" src={pic} />;
     }
     if (this.audio) {
-      currentTime = secToMin(this.audio.currentTime);
+      showTime = secToMin(this.audio.currentTime);
     }
     return(
       <div className="player-outer-container">
@@ -106,10 +105,11 @@ class Player extends React.Component{
           <div className="play-pause">{button}</div>
           <div className="playbar" >
 
-          <input type="range" value={this.audio ? this.audio.currentTime : 0} max={this.state.length} className="progressBar" />
+          <input type="range" value={this.audio ? this.audio.currentTime : 0} onChange={this.handleSeek} max={this.state.length} className="progressBar" />
           </div>
-          <div>{currentTime}</div>
+          <div>{showTime}</div>
         </div>
+
         <audio src={src} ref={(audio) => {
             this.audio = audio;
           }}
@@ -120,8 +120,7 @@ class Player extends React.Component{
       </div>
     );
 
-// Some callback: Grab audio elements, reassign time to the value of the e.currentTarget / duration
-    // set to the current time
+
     // figure out how to play an array of songs using fuking shit and how to pause plz bro
 
   }

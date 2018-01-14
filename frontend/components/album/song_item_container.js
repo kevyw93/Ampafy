@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
     status: state.ui.status,
     songs: state.entities.songs,
     isThreeDots: state.ui.isThreeDots,
-    songId: state.ui.id
+    songId: state.player.currentSongId
   };
 };
 
