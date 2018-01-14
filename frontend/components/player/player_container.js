@@ -1,16 +1,15 @@
 import {connect} from 'react-redux';
 import Player from './player';
 import { receiveCurrentSong } from "../../actions/player_actions";
-import {receiveIsPlaying} from '../../actions/ui_actions';
+import {receivePlay, receivePause, receiveStop} from '../../actions/ui_actions';
 // import { fetchSong } from "../../actions/song_actions";
 import _ from 'lodash';
 
 const mapStateToProps = (state,ownProps) => {
 
-
   return {
-    isPlaying: state.ui.isPlaying,
-    song: state.entities.songs[state.player]
+    status: state.ui.status,
+    song: state.entities.songs[state.player],
 
   };
 };
@@ -18,7 +17,9 @@ const mapStateToProps = (state,ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     receiveCurrentSong: (song) => dispatch(receiveCurrentSong(song)),
-    receiveIsPlaying: () => dispatch(receiveIsPlaying())
+    receivePlay: () => dispatch(receivePlay()),
+    receivePause: () => dispatch(receivePause()),
+    receiveStop: () => dispatch(receiveStop())
   };
 };
 

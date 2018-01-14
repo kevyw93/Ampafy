@@ -5,7 +5,7 @@ import { fetchSong } from "../../actions/song_actions";
 import { receiveCurrentSong } from "../../actions/player_actions";
 import * as selector from '../../util/selector';
 import { fetchAllPlaylist, addSongToPlaylist} from "../../actions/playlist_actions";
-import {receiveModalSong, receiveIsPlaying} from '../../actions/ui_actions';
+import {receiveModalSong, receiveStatus} from '../../actions/ui_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let album = state.entities.albums[ownProps.match.params.id];

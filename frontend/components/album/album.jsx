@@ -9,17 +9,17 @@ class Album extends React.Component {
 
  constructor(props) {
    super(props);
-   this.handleAdd = this.handleAdd.bind(this);
+   // this.handleAdd = this.handleAdd.bind(this);
    // this.handleAddSong = this.handleAddSong.bind(this);
    // this.handleOpenClose = this.handleOpenClose.bind(this);
  }
-
-handleAdd(index) {
-  return e => {
-    this.props.receiveCurrentSong(this.props.songs[index]);
-
-  };
-}
+//
+// handleAdd(index) {
+//   return e => {
+//     this.props.receiveCurrentSong(this.props.songs[index]);
+//
+//   };
+// }
 
 
 componentDidMount(){
