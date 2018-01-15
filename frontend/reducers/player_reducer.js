@@ -1,5 +1,9 @@
-import { RECEIVE_CURRENT_SONG }from '../actions/player_actions';
-import { RECEIVE_ALBUM, RECEIVE_ALBUM_SONGS }from '../actions/album_actions';
+import { RECEIVE_CURRENT_SONG,
+  RECEIVE_ALBUM_SONGS,
+  RECEIVE_CURRENT_SONG_ID,
+  RECEIVE_QUE_LENGTH }
+  from '../actions/player_actions';
+import { RECEIVE_ALBUM } from '../actions/album_actions';
 import merge from 'lodash/merge';
 
 const spaceship = (x,y) => {
@@ -13,7 +17,9 @@ const spaceship = (x,y) => {
 };
 const preloadedState = {
   currentSongId: null,
-  queOfSongs: null
+  queOfSongs: null,
+  currentSongIndex:null,
+  queLength: null,
 };
 
 const playerReducer = (state = preloadedState, action) => {
@@ -23,10 +29,15 @@ const playerReducer = (state = preloadedState, action) => {
       newState = Object.assign({}, state, {currentSongId: action.songId});
       return newState;
     case RECEIVE_ALBUM_SONGS:
-      newState = Object.assign({}, state, {queOfSongs: action.songIds});
-      return newState;
-      // return Object.values(action.songs).sort((a,b) => spaceship(a.id, b.id));
 
+      newState = Object.assign({}, state, {queOfSongs: action.songs});
+      return newState;
+    case RECEIVE_CURRENT_SONG_ID:
+      newState = Object.assign({}, state, {currentSongIndex: action.songIndex});
+      return newState;
+    case RECEIVE_QUE_LENGTH:
+      newState = Object.assign({}, state, {queLength: action.queLength});
+      return newState;
     default:
       return state;
 

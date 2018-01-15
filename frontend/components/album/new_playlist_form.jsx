@@ -13,9 +13,10 @@ class NewPlaylistForm extends React.Component {
   handleOpenClose() {
     this.props.receiveListsPlaylist();
   }
-  handleDeleteFromPlaylist(){
+  handleDeleteFromPlaylist(e){
 
-    return e => this.props.removeSongFromPlaylist(this.props.songId);
+    e.preventDefault();
+    this.props.removeSongFromPlaylist(this.props.songId);
   }
 
   render(){
@@ -25,6 +26,8 @@ class NewPlaylistForm extends React.Component {
       <div>
         <ul>
           <button onClick={this.handleOpenClose}>Add To Playlist</button>
+        <button onClick={this.handleDeleteFromPlaylist}>Delete From Playlist</button>
+        {/* <button onClick={}>  */}
         {openPlaylist}
         </ul>
       </div>

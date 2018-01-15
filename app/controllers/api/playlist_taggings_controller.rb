@@ -12,6 +12,7 @@ class Api::PlaylistTaggingsController < ApplicationController
   end
 
   def destroy
+    debugger
     @playlist_tagging = PlaylistTagging.find(params[:id])
     @playlist_tagging.destroy
   end

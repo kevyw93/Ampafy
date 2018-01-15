@@ -5,17 +5,17 @@ export const RECEIVE_PLAY = 'RECEIVE_PLAY';
 export const RECEIVE_PAUSE = 'RECEIVE_PAUSE';
 export const RECEIVE_STOP = 'RECEIVE_STOP';
 
-export const receiveModalSong = (id) => {
+export const receiveModalSong = () => {
   return {
     type: RECEIVE_MODAL,
-    id
+
   };
 };
 
-export const receiveSongId = (id) => {
+export const receiveSongId = (songId) => {
   return {
     type: RECEIVE_SONG_ID,
-    id
+    songId
   };
 };
 
