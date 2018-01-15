@@ -14,7 +14,7 @@ class Album extends React.Component {
  }
 
 componentDidMount(){
-
+  debugger
   this.props.getAlbum(parseInt(this.props.match.params.id));
   // this.props.receiveAlbumSongs(this.props.songs);
   // this.props.receiveQueLength(this.props.songs.length);
