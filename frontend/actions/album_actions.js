@@ -9,6 +9,7 @@ export const receiveAllAlbums = (albums) => {
   };
 };
 export const receiveAlbum = (payload) => {
+  debugger
   return {
     type: RECEIVE_ALBUM,
     album: payload.album,
