@@ -14,15 +14,15 @@ class Album extends React.Component {
  }
 
 componentDidMount(){
-  
+
   this.props.getAlbum(parseInt(this.props.match.params.id));
-  this.props.receiveAlbumSongs(this.props.songs);
-  this.props.receiveQueLength(this.props.songs.length);
+  // this.props.receiveAlbumSongs(this.props.songs);
+  // this.props.receiveQueLength(this.props.songs.length);
 
-  if (this.props.songs.length > 0) {
-
-    this.props.receiveCurrentSong(this.props.songs[0].id);
-  }
+  // if (this.props.songs.length > 0) {
+  //
+  //   this.props.receiveCurrentSong(this.props.songs[0].id);
+  // }
   this.props.fetchAllPlaylist();
 
 }
