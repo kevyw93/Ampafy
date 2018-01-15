@@ -11,9 +11,7 @@ class SongItemComponent extends React.Component{
     this.state = {bool: false};
   }
 
-  componentWillReceiveProps(nextProps) {
 
-  }
 
   handleAddSong(songId, playlistId) {
     return e => {this.props.addSongToPlaylist(
@@ -33,10 +31,14 @@ class SongItemComponent extends React.Component{
     this.props.receiveSongId(this.props.song.id);
   }
   handleAdd() {
-    // return e => {
-
+    if ( this.props.songId === this.props.song.id && this.props.status === 'playing') {
+      this.props.receivePause();
+    }else if(this.props.songId === this.props.song.id  && this.props.status === 'paused'){
+      this.props.receivePlay();
+    }else {
       this.props.receiveCurrentSong(this.props.song.id);
-    // };
+      this.props.receiveCurrentSongIndex(this.props.songCurrentIndex);
+    }
   }
 
   render() {
@@ -44,6 +46,9 @@ class SongItemComponent extends React.Component{
       <NewPlaylistFormContainer
         songId={this.props.song.id} />
         : null;
+      // const openPlaylist = this.props.isThreeDots
+      // && this.props.songId
+      // ? <PlaylistDropDownContainer songId={this.props.songId} /> : null;
 
     return(
       <div className="song-list">
@@ -55,16 +60,9 @@ class SongItemComponent extends React.Component{
           <button onClick={this.handleOpenClose}>
             <img className="three-dots" src="https://ncphn.org.au/wp-content/themes/ncphn/img/three-dots.png"/>
           </button>
-        {form}
+          {form}
         </div>
-          {/* <PlaylistDropDownContainer handleAddSong={this.handleAddSong} handleOpenClose={this.handleOpenClose} /> */}
 
-          {/* <PlaylistDropDown
-            playlists={this.props.playlists}
-            songId={this.props.song.id}
-            handleAddSong={this.handleAddSong}
-            handleOpenClose={this.handleOpenClose}
-          /> */}
 
       </div>
     );

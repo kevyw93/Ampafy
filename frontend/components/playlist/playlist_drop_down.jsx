@@ -54,7 +54,7 @@ class PlaylistDropDown extends React.Component {
     }
     return (
       <div>
-        <button onClick={this.handleOpenClose}>Open</button>
+        <button onClick={this.handleOpenClose}>AddToPlaylist</button>
       <Modal
         ariaHideApp={false}
         className="playlist-modal"
