@@ -9,36 +9,27 @@ class Album extends React.Component {
 
  constructor(props) {
    super(props);
-   // this.handleAdd = this.handleAdd.bind(this);
-   // this.handleAddSong = this.handleAddSong.bind(this);
-   // this.handleOpenClose = this.handleOpenClose.bind(this);
- }
-//
-// handleAdd(index) {
-//   return e => {
-//     this.props.receiveCurrentSong(this.props.songs[index]);
-//
-//   };
-// }
 
+
+ }
 
 componentDidMount(){
+  
   this.props.getAlbum(parseInt(this.props.match.params.id));
+  this.props.receiveAlbumSongs(this.props.songs);
+  this.props.receiveQueLength(this.props.songs.length);
+
+  if (this.props.songs.length > 0) {
+
+    this.props.receiveCurrentSong(this.props.songs[0].id);
+  }
   this.props.fetchAllPlaylist();
 
 }
 
+playAlbum() {
 
-// handleOpenClose() {
-//   this.props.receiveModalSong();
-// }
-
-// handleAddSong(songId, playlistId) {
-//   return e => {this.props.addSongToPlaylist(
-//     {playlist_tagging:{song_id: songId, playlist_id: playlistId}});
-//     this.handleOpenClose();
-//   };
-// }
+}
 
 render(){
 

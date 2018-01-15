@@ -16,7 +16,7 @@ const uiReducer = (state = initialState, action) => {
       newState = Object.assign({}, state, {isThreeDots: !state.isThreeDots});
       return newState;
     case RECEIVE_SONG_ID:
-      newState = Object.assign({}, state, {id: action.id});
+      newState = Object.assign({}, state, {id: action.songId});
       return newState;
     case RECEIVE_LISTS_PLAYLIST:
       newState = Object.assign({}, state, {openListPlaylist: !state.openListPlaylist});

@@ -6,6 +6,7 @@ import {receivePlay, receivePause, receiveStop} from '../../actions/ui_actions';
 import _ from 'lodash';
 
 const mapStateToProps = (state,ownProps) => {
+  
   return {
     status: state.ui.status,
     song: state.entities.songs[state.player.currentSongId],
