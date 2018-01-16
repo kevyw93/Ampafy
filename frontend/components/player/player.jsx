@@ -20,10 +20,10 @@ class Player extends React.Component{
       return null;
     // }else if (this.props.song){
     //   if(this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'paused'){
-    //     debugger
+    //     
     //     this.audio.play();
     //   }else if (this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'playing') {
-    //     debugger
+    //     
     //     this.audio.pause();
     //   }
     }else if (!this.props.song || nextProps.song.audioUrl !== this.props.song.audioUrl) {

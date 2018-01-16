@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     receiveListsPlaylist: () =>  dispatch(receiveListsPlaylist()),
-    removeSongFromPlaylist: () => dispatch(removeSongFromPlaylist())
+    removeSongFromPlaylist: (ids) => dispatch(removeSongFromPlaylist(ids))
   };
 };
 

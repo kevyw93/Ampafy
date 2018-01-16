@@ -16,10 +16,10 @@ class Discover extends React.Component {
     let playlist;
     if (this.props.playlists) {
     const playlistImg = "https://s3.amazonaws.com/ampafy-seeds/Screen+Shot+2018-01-12+at+12.28.18+PM.png";
-      playlist = this.props.playlists.map(play =>
+      playlist = this.props.playlists.map((play, idx) =>(
 
 // onHover
-        <li className="single-playlist">
+        <li key={idx} className="single-playlist">
           <Link className="img-hover-cont" to={`/browse/playlist/${play.id}`}>
           <div className="img-div" style={{backgroundImage: `url(${playlistImg})`}}>
           {/* <img  src="https://i.ebayimg.com/images/g/K-oAAMXQLw1R0v2T/s-l300.gif" /> */}
@@ -29,7 +29,7 @@ class Discover extends React.Component {
           <h1 className="alb-title">{play.title}</h1>
       </li>
 
-      );
+    ));
     }
     return(
       <div className="outer-playlist" >

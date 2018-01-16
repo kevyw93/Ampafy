@@ -45,6 +45,7 @@ class SongItemComponent extends React.Component{
   render() {
       const form = this.props.isThreeDots && this.props.songId === this.props.song.id ?
       <NewPlaylistFormContainer
+        playlistId={this.props.playlistId}
         songId={this.props.song.id} />
         : null;
       // const openPlaylist = this.props.isThreeDots

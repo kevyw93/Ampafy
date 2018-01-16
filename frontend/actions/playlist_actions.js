@@ -6,6 +6,7 @@ import * as PlaylistApiUtil from '../util/playlist_api_util';
 import * as SongApiUtil from "../util/song_api_util";
 
 export const receivePlaylist = (payload) => {
+
   return {
     type: RECEIVE_PLAYLIST,
     playlist: payload.playlist,
@@ -20,10 +21,11 @@ export const removePlaylist = (playlist) => {
   };
 };
 
-export const receiveAllPlaylist = (payload) => {
+export const receiveAllPlaylist = (playlists) => {
+
   return {
     type: RECEIVE_ALL_PLAYLISTS,
-    playlists: payload.playlists
+    playlists
   };
 };
 
@@ -44,9 +46,9 @@ export const addSongToPlaylist = (post) => {
     );
   };
 };
-export const removeSongFromPlaylist = (id) => {
+export const removeSongFromPlaylist = (ids) => {
   return dispatch => {
-    return SongApiUtil.deleteSongFromPlaylist(id).then(
+    return PlaylistApiUtil.updatePlaylist(ids).then(
       (playlist) => dispatch(removePlaylist(playlist))
     );
   };
@@ -70,7 +72,7 @@ export const updatePlaylist = playlist => dispatch => {
 
 export const fetchPlaylist = (id) => dispatch => {
   return PlaylistApiUtil.fetchPlaylist(id).then(
-    (playlist) => dispatch(receivePlaylist(playlist))
+    (payload) => dispatch(receivePlaylist(payload))
   );
 };
 

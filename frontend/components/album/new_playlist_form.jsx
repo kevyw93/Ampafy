@@ -15,13 +15,14 @@ class NewPlaylistForm extends React.Component {
   }
   handleDeleteFromPlaylist(e){
 
+
     e.preventDefault();
-    this.props.removeSongFromPlaylist(this.props.songId);
+    this.props.removeSongFromPlaylist({playlist_id: this.props.playlistId, song_id: this.props.songId});
   }
 
   render(){
 
-    let openPlaylist = this.props.openListPlaylist ? <PlaylistDropDownContainer songId={this.props.songId} /> : null;
+    let openPlaylist = this.props.openListPlaylist ? <PlaylistDropDownContainer playlistId={this.props.playlistId} songId={this.props.songId} /> : null;
     return (
       <div>
         <ul>

@@ -20,9 +20,10 @@ export const addSongToPlaylist = (post) => {
     data: post
   });
 };
-export const deleteSongFromPlaylist = (id) => {
-  return $.ajax({
-    type: 'delete',
-    url: `api/playlist_taggings/${id}`,
-  });
-};
+// 
+// export const deleteSongFromPlaylist = (ids) => {
+//   return $.ajax({
+//     type: 'delete',
+//     url: `api/playlist_taggings/${ids }`,
+//   });
+// };

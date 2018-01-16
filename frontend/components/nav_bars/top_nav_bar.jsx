@@ -26,7 +26,6 @@ class TopNavBar extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let newPlaylist = {playlist: {title: this.state.title, user_id: this.state.user_id}};
-
     this.props.createPlaylist(newPlaylist);
     let newState = Object.assign({}, this.state);
     newState.bool = false;
