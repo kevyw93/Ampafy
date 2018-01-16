@@ -24,12 +24,21 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def update
-    @playlist = Playlist.find(params[:id])
-    if @playlist.update(playlist_params)
-      render :show
+    
+    @playlist_tagging = PlaylistTagging.find(params[:playlist_tagging])
+
+    if @playlist_tagging
+      @playlist_tagging.destroy
+      render json: ["Successfully deleted"]
     else
-      render json: ["You haven't put in the neccessary information"]
+      render json: ["Unable to delete"]
     end
+    # @playlist = Playlist.find(params[:id])
+    # if @playlist.update(playlist_params)
+    #   render :show
+    # else
+    #   render json: ["You haven't put in the neccessary information"]
+    # end
   end
 
   private

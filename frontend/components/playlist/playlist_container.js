@@ -17,8 +17,8 @@ const mapStateToProps = (state,ownProps) => {
       }
     }
 
-
   return {
+    playlistId: parseInt(ownProps.match.params.id),
     playlist,
     songs
   };

@@ -1,5 +1,5 @@
 export const createPlaylist = (data) => {
-  
+
   return $.ajax({
     type: 'post',
     url: 'api/playlists',
@@ -17,7 +17,7 @@ export const deletePlaylist = (id) => {
 export const updatePlaylist = (data) => {
   return $.ajax({
     type: 'delete',
-    url: `api/playlists/${data.id}`,
+    url: `api/playlists/${data.playlist_id}`,
     data: data
   });
 };

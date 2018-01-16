@@ -25,7 +25,7 @@ class LoggedIn extends React.Component {
     }else if(this.props.history.location.pathname.includes('browse/album')){
       backgroundColor = "blue";
     }else if(this.props.history.location.pathname === '/browse/songs'){
-      backgroundColor = "darkslategrey"
+      backgroundColor = "darkslategrey";
     }
     return (
       <div style={{background: `linear-gradient(${backgroundColor}, black)`}} className="container" >

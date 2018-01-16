@@ -11,16 +11,14 @@
 .container {
   display:flex;
   flex-direction: column;
-  height: 100%;
-  width: 100vw;
+  height: inherit;
+  width: inherit;
 
   // background: linear-gradient(rgb(7, 61, 92), rgb(4, 6, 2) 85%) ;
 }
 .logg-main {
-  // width: 100%;
-  // height: 70%;
-  width: 100%;
-  height: 70%;
+  width: calc(100% - 220px);
+  height: 100%;
 }
 .player {
   bottom: 0;

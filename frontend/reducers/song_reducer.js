@@ -7,7 +7,6 @@ const songReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_SONG:
-
       newState = Object.assign({}, state, action.song);
       return newState;
     case RECEIVE_PLAYLIST:
