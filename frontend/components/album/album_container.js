@@ -12,7 +12,7 @@ import { fetchAllPlaylist, addSongToPlaylist} from "../../actions/playlist_actio
 import {receiveModalSong, receiveStatus} from '../../actions/ui_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  let album = state.entities.albums[ownProps.match.params.id];
+  const album = state.entities.albums[ownProps.match.params.id];
   let songs;
   // let songIds;
   if (album) {
