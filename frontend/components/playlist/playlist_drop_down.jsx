@@ -37,10 +37,10 @@ class PlaylistDropDown extends React.Component {
     let playlists;
     const playlistImg = "https://s3.amazonaws.com/ampafy-seeds/Screen+Shot+2018-01-12+at+12.28.18+PM.png";
     if (this.props.openListPlaylist) {
-      playlists = this.props.playlists.map(play =>
+      playlists = this.props.playlists.map((play, idx) =>
 
 
-        <li onClick={this.handleAddSong(this.props.songId, play.id)} className="single-playlist">
+        <li key={idx} onClick={this.handleAddSong(this.props.songId, play.id)} className="single-playlist">
           <Link className="img-hover-cont" to={`/browse/playlist/${play.id}`}>
           <div className="img-div" style={{backgroundImage: `url(${playlistImg})`}}>
           {/* <img  src="https://i.ebayimg.com/images/g/K-oAAMXQLw1R0v2T/s-l300.gif" /> */}

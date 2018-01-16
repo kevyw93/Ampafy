@@ -24,12 +24,12 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def update
-    
-    @playlist_tagging = PlaylistTagging.find(params[:playlist_tagging])
-
+    @playlist_tagging = PlaylistTagging.find_by({playlist_id: params[:playlist_id], song_id: params[:song_id]})
     if @playlist_tagging
       @playlist_tagging.destroy
-      render json: ["Successfully deleted"]
+      @playlist = Playlist.find(params[:playlist_id])
+      render partial: '/api/playlists/playlist'
+      # work on rendering something back to the front end so i can delete a single playlist
     else
       render json: ["Unable to delete"]
     end
