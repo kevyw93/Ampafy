@@ -2,6 +2,7 @@ export const RECEIVE_PLAYLIST = 'RECEIVE_PLAYLIST';
 export const REMOVE_PLAYLIST = 'REMOVE_PLAYLIST';
 export const RECEIVE_ALL_PLAYLISTS = 'RECEIVE_ALL_PLAYLISTS';
 export const RECEIVE_PLAYIST_SONGS = 'RECEIVE_PLAYIST_SONGS';
+export const REMOVE_SONG_FROM_PLAYLIST = 'REMOVE_SONG_FROM_PLAYLIST';
 import * as PlaylistApiUtil from '../util/playlist_api_util';
 import * as SongApiUtil from "../util/song_api_util";
 
@@ -36,6 +37,13 @@ export const fetchPlaylistSongs = (songs) => {
   };
 };
 
+export const removeSong = (payload) => {
+
+  return {
+    type: REMOVE_SONG_FROM_PLAYLIST,
+    playlist: payload.playlist
+  };
+};
 
 
 export const addSongToPlaylist = (post) => {
@@ -49,7 +57,7 @@ export const addSongToPlaylist = (post) => {
 export const removeSongFromPlaylist = (ids) => {
   return dispatch => {
     return PlaylistApiUtil.updatePlaylist(ids).then(
-      (playlist) => dispatch(removePlaylist(playlist))
+      (song) => dispatch(removeSong(song))
     );
   };
 };
