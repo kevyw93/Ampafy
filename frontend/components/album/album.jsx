@@ -9,12 +9,10 @@ class Album extends React.Component {
 
  constructor(props) {
    super(props);
-
-
  }
 
 componentDidMount(){
-  debugger
+  // debugger
   this.props.getAlbum(parseInt(this.props.match.params.id));
   // this.props.receiveAlbumSongs(this.props.songs);
   // this.props.receiveQueLength(this.props.songs.length);

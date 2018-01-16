@@ -18,12 +18,14 @@ class Player extends React.Component{
   componentWillReceiveProps(nextProps) {
     if (typeof this.props.song === 'undefined' && typeof nextProps.song === 'undefined') {
       return null;
-    }else if (this.props.song){
-      if (this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'playing') {
-        this.audio.pause();
-      }else if(this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'paused'){
-        this.audio.play();
-      }
+    // }else if (this.props.song){
+    //   if(this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'paused'){
+    //     debugger
+    //     this.audio.play();
+    //   }else if (this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'playing') {
+    //     debugger
+    //     this.audio.pause();
+    //   }
     }else if (!this.props.song || nextProps.song.audioUrl !== this.props.song.audioUrl) {
         this.audio.setAttribute('src', nextProps.song.audioUrl);
     }

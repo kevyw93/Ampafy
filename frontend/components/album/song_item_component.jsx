@@ -55,7 +55,8 @@ class SongItemComponent extends React.Component{
       <div className="song-list">
         <div onClick={this.handleAdd}>
           <h1 className="song-title">{this.props.index + 1}. {this.props.song.title}</h1>
-          <h1 className="song-author">{this.props.author}</h1>
+          <h1 className="song-author">{this.props.song.author}</h1>
+          <h1>{this.props.song.album}</h1>
         </div>
         <div className="modal-button">
           <button onClick={this.handleOpenClose}>

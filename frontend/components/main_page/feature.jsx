@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link, Route} from 'react-router-dom';
-// import TopNavBarContainer from '../nav-bars/top_nav-bar_container';
 
 
 class Feature extends React.Component {
@@ -9,22 +8,16 @@ class Feature extends React.Component {
   }
 
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.getAllAlbums();
   }
-
-
-  // handleClick(e){
-  //   e.preventDefault();
-  //   this.props.history.push(`/browse/albums/${this.album.id}`);
-  // }
 
   render() {
 
     // have a key error here
     const albs = Object.values(this.props.albums).map(
       alb =>
-      (<li className="single-album">
+      (<li key={alb.id} className="single-album">
         <Link className="img-hover-cont" to={`/browse/album/${alb.id}`}>
          <div className="img-div" style={{backgroundImage: `url(${alb.album_img})`}}>
 
@@ -42,13 +35,9 @@ class Feature extends React.Component {
         <div className="all-albums">
             {albs}
 
-
-
         </div>
       </div>
 
-
-      // </div>
     );
   }
 }

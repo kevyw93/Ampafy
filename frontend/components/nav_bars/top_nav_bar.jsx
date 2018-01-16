@@ -61,6 +61,7 @@ class TopNavBar extends React.Component {
             afterOpen: 'outer-playlist-modal_after-open',
             beforeClose: 'outer-playlist-modal_before-close'
           }}
+          ariaHideApp={false}
         >
           <div className="form-modal-outer-container">
             <div className="form-modal-inner-container">

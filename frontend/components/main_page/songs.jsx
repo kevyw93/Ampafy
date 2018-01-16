@@ -8,7 +8,7 @@ class Songs extends React.Component {
   componentDidMount(){
     this.props.fetchAllSongs();
   }
-  
+
   handleAdd(songId) {
     return e => this.props.receiveCurrentSong(songId);
   }

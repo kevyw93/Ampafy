@@ -9,7 +9,6 @@ export const receiveAllAlbums = (albums) => {
   };
 };
 export const receiveAlbum = (payload) => {
-  debugger
   return {
     type: RECEIVE_ALBUM,
     album: payload.album,
@@ -26,7 +25,6 @@ export const getAllAlbums = () => {
 };
 
 export const getAlbum = (id) => {
-
   return dispatch => {
     return ApiUtil.getAlbum(id).then(
       (payload) => dispatch(receiveAlbum(payload))
