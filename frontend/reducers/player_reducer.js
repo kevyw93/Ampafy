@@ -29,7 +29,6 @@ const playerReducer = (state = preloadedState, action) => {
       newState = Object.assign({}, state, {currentSongId: action.songId});
       return newState;
     case RECEIVE_ALBUM_SONGS:
-
       newState = Object.assign({}, state, {queOfSongs: action.songs});
       return newState;
     case RECEIVE_CURRENT_SONG_ID:

@@ -48,6 +48,7 @@ $spot-green: #1ed760;
 .top-of-form{
   color: white;
   font-size: 50px;
+  padding: 25px;
   font-weight: 700;
 }
 .form-modal-outer-container {
@@ -59,70 +60,94 @@ $spot-green: #1ed760;
   flex-direction: column;
   align-self: center;
   width: 100%;
-  height: 300px;
+  // height: 300px;
   display: flex;
   align-items: center;
 }
 .form-in-modal{
-  background-color: darkslategrey;
-  height: 157px;
+  // height: 300px;
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 .input-top {
   font-size: 20px;
-  padding: 0;
-  margin: 0;
+  padding: 10px 5px;
+}
+.playlist-outer-container{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: darkslategrey;
+  width: 100vw;
+  height: 154px;
 }
 .form-sub-btn{
   background-color: green;
-  width: 125px;
+  width: 143px;
   border: 1px solid green;
   border-radius: 200px;
   padding: 7px;
   margin-left: 5%;
-  font-size: 12px;
+  font-size: 11px;
   font-family: sans-serif;
   font-weight: 100px;
   color: white;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  height: 39px;
 }
 .cancel{
-  background: white;
+  font-family: sans-serif;
   border: 1px solid white;
   border-radius: 125px;
-  width: 125px;
-  color: black;
+  width: 143px;
+  height: 39px;
+  font-weight: 100px;
+  color: white;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 .sub-btn-container{
   display: flex;
-  width: 50%;
-  align-self:center;
-  justify-content: center;
+  // width: 50%;
+  // align-self:center;
+  // justify-content: center;
+  // margin-top: 10px;
+  padding: 28px 0;
 }
 .playlist-input-container{
   flex-direction: column;
-  margin-left: 5%;
   display:flex;
+  width: 850px;
+  align-self: center;
+  padding: 7px;
+
 }
 .form-input {
-  font-size: 56px;
-  width: 100vw;
+  height: 200px;
+  padding: 20px 3px;
+  width: 300px;
+  font-size: 48px;
+  line-height: 56px;
+  color: white;
+  text-transform: none;
+  box-sizing: border-box;
+  width: 100%;
   &::placeholder {
     font-size: 50px;
   }
 }
 .playlist-modal{
-  // work on the opacity and transparency
   position: fixed;
   display:flex;
+  justify-content: center;
   margin-bottom:60%;
   left: 0;
   right: 0;
   opacity: 1;
   background-color:black;
-
-  // background-color: grey;
 }
 .x-sign{
   display:flex;
@@ -130,8 +155,11 @@ $spot-green: #1ed760;
 }
 .pic-of-x{
   margin-top: -100%;
-  background-color: gray;
-  opacity: 0.2;
+  // background-color: gray;
+  opacity: 1;
+  img{
+    width: 50px;
+  }
 }
 .outer-playlist-modal{
   position: fixed;
@@ -139,6 +167,9 @@ $spot-green: #1ed760;
  bottom:0;
  left:0;
  right: 0;
- opacity: 0.8;
+ opacity: .95;
  background: rgba(0,0,0,2);
+ display:flex;
+ justify-content: center;
+ align-items: center;
 }

@@ -26,7 +26,7 @@ class Discover extends React.Component {
           </div>
           <img className="img-hover-div-playlist" src="http://www.pngmart.com/files/3/Play-Button-PNG-Picture.png" />
           </Link>
-          <h1 className="alb-title">{play.title}</h1>
+            <h1 className="alb-title">{play.title}</h1>
       </li>
 
     ));

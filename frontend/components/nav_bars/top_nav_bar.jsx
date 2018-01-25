@@ -26,10 +26,12 @@ class TopNavBar extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let newPlaylist = {playlist: {title: this.state.title, user_id: this.state.user_id}};
-    this.props.createPlaylist(newPlaylist);
-    let newState = Object.assign({}, this.state);
-    newState.bool = false;
-    this.setState(newState);
+    if (this.state.title.length !== 0) {
+      this.props.createPlaylist(newPlaylist);
+      let newState = Object.assign({}, this.state);
+      this.setState(newState);
+      newState.bool = false;
+    }
   }
 
   handleChange(field) {
@@ -66,23 +68,26 @@ class TopNavBar extends React.Component {
             <div className="form-modal-inner-container">
               <button onClick={this.handleOpenClose}>
                 <div className="x-sign">
-                  <div className="pic-of-x"><img src="https://www.shareicon.net/data/128x128/2015/12/18/689374_button_512x512.png" /></div>
+                  <div className="pic-of-x"><img src="http://www.stepienybarno.es/blog/wp-content/uploads/2012/12/x-decalogo-virtudes-fortalezas-arquitecto-stepienybarno-copia.jpg" /></div>
 
                 </div>
                 </button>
               <h1 className="top-of-form">Create new Playlist</h1>
 
               <form className="form-in-modal" onSubmit={this.handleSubmit}>
-                <div className="playlist-input-container">
-                  <h3 className="input-top">Playlist Name</h3>
-                <input className="form-input"
-                  placeholder="Start typing..."
-                  value={this.state.title}
-                  onChange={this.handleChange('title')} />
+                <div className="playlist-outer-container">
+                  <div className="playlist-input-container">
+
+                    <h3 className="input-top">Playlist Name</h3>
+                    <input className="form-input"
+                      placeholder="Start typing..."
+                      value={this.state.title}
+                      onChange={this.handleChange('title')} />
+                  </div>
+                </div>
                 <div className="sub-btn-container">
                   <button className="cancel" onClick={this.handleOpenClose}>Cancel</button>
-                <button className="form-sub-btn">Create</button>
-            </div>
+                  <button className="form-sub-btn">Create</button>
                 </div>
 
               </form>
