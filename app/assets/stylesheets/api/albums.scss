@@ -53,9 +53,17 @@
   flex-direction: row;
 }
 
-.alb-title {
-  font-size: 40px;
+
+.alb-title{
+  font-size: 15px;
+  text-align: center;
+  margin-top: 10px;
 }
+
+// .alb-title-container{
+//   display: flex;
+// }
+
 .album-outmost-container{
   height: 100vh;
   display: flex;
