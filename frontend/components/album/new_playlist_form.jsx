@@ -61,9 +61,7 @@ class NewPlaylistForm extends React.Component {
         <li key={idx} onClick={this.handleAddSong(this.props.songId, play.id)} className="single-playlist">
           <Link className="img-hover-cont" to={`/browse/playlist/${play.id}`}>
           <div className="img-div" style={{backgroundImage: `url(${playlistImg})`}}>
-          {/* <img  src="https://i.ebayimg.com/images/g/K-oAAMXQLw1R0v2T/s-l300.gif" /> */}
           </div>
-          <img className="img-hover-div-playlist" src="http://www.pngmart.com/files/3/Play-Button-PNG-Picture.png" />
           </Link>
           <h1 className="alb-title">{play.title}</h1>
       </li>
