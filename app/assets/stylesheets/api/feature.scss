@@ -15,39 +15,24 @@
   width: 100%;
   height: 100%;
   padding: 0 63px;
-  height: fixed;
-  grid-auto-rows: 29%;
+
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 10px;
   @media (min-width: 1500px){
     grid-template-columns: repeat(4, 1fr);
-
-  }
-  @media (max-width: 1500px){
-    .single-album{
-      width: 217px;
-      height: 217px;
-    }
-
-  }
-  @media (max-width: 1500px){
-    .single-album{
-      width: 217px;
-      height: 217px;
-    }
-
+    grid-auto-rows: auto;
   }
 
-  @media (max-width: 901){
-    .single-album{
-      width: 217px;
-      height: 217px;
-    }
 
-  }
+
+
   @media (max-width: 901px){
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: auto;
+    .single-album{
+      width: 217px;
+      height: 217px;
+    }
   }
   @media (max-width: 765px){
     grid-template-columns: repeat(2, 1fr);
@@ -56,9 +41,6 @@
   @media (max-width: 571px){
     grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: auto;
-  }
-}
-  @media (min-width: 571px){
     .single-album{
       width: 217px;
       height: 217px;
@@ -70,14 +52,10 @@
     grid-template-columns: repeat(5, 1fr);
   }
 }
+}
 .single-album{
   margin-bottom: 50px;
   margin-left: 10px;
-
-  // &:hover{
-  //   background-image: url(http://www.pngmart.com/files/3/Play-Button-PNG-Picture.png);
-  //
-  // }
 }
 
 .outer-albs {
@@ -94,7 +72,6 @@
 
 .img-hover-div {
   position: absolute;
-  // visibility: hidden;
   opacity: 0;
   bottom: calc(16% + 56px);
   right: calc(16% - 159px);
@@ -104,7 +81,6 @@
 }
 
 .img-hover-cont:hover .img-hover-div {
-  // visibility: visible;
   opacity: 1;
   cursor: pointer;
 }
