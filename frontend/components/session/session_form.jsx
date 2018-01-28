@@ -91,9 +91,9 @@ class SessionForm extends React.Component {
           </div>
           <br />
 
-          <button className="guest-signin-button" onClick={this.handleGuestLogin} >GUEST LOGIN</button>
-          <br />
           <button className="login-signup-button">{butt}</button>
+          <br />
+        <button className="guest-signin-button" onClick={this.handleGuestLogin} >GUEST LOGIN</button>
           <br />
           <h1 className="form-bot">{buttonholder} {sign} </h1>
         </form>
