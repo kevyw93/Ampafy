@@ -1,7 +1,7 @@
 # Ampafy
 Ampafy is a static page clone of Spotify, a web application that allows users to view and listen to music content from many different artists as well as compiling these songs into playlists.
 
-Ampafy was created through a combination of React-Redux and Ruby on Rails. In the front-end React_redix was used to render different contents dynamically and at the same time allowed some contents on the same page to be static. While React-Redux was used in the front-end in the back end Ruby on Rails was used to retrieve and save data.
+Ampafy was created through a combination of React-Redux and Ruby on Rails. In the front-end React-Redux was used to render different contents dynamically and at the same time allowed some contents on the same page to be static. While React-Redux was used in the front-end in the back end Ruby on Rails was used to retrieve and save data.
 
 # Main Features
 
