@@ -25,9 +25,9 @@ componentDidMount(){
 
 }
 
-playAlbum() {
-
-}
+// playAlbum() {
+//
+// }
 
 render(){
 

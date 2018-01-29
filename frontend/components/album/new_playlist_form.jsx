@@ -20,10 +20,9 @@ class NewPlaylistForm extends React.Component {
   handleAddSong(songId, playlistId) {
 
     return e => {
-
       this.props.addSongToPlaylist(
       {playlist_tagging:{song_id: songId, playlist_id: playlistId}});
-      this.handleOpenClose();
+      this.handleClose();
     };
   }
 

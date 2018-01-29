@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class SessionSignup extends React.Component {
   constructor (props) {
     super(props);
-    this.state = { 'username': "", "usernameConf": "", "name": "", 'password': "", 'errors': [] };
+    this.state = { 'username': "", "usernameConf": "", "name": "", 'password': "", 'errors': [], 'emailConf': "" };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
@@ -14,7 +14,7 @@ class SessionSignup extends React.Component {
   //   if(nextProps.loggedIn){
   //     this.props.history.push('/');
   //   }
-  //   
+  //
   //   if (this.props.match.path !== nextProps.match.path) {
   //     this.props.clearErrors();
   //   }
@@ -29,7 +29,9 @@ class SessionSignup extends React.Component {
     if (this.state.username === this.state.usernameConf) {
       this.props.signup({user: user});
     }else {
-      this.props.errors.push('email do not match');
+      let newState = Object.assign({'emailConf': 'Email does not match'});
+      this.setState(newState);
+      // this.props.errors.push('email do not match');
     }
   }
 
@@ -53,23 +55,22 @@ class SessionSignup extends React.Component {
     let butt = 'SIGN UP';
     let sign = <Link to="/login">LOG IN</Link>;
     let buttonholder = 'Already have an account?';
+    let emailErrors = this.state.emailConf;
+    // if (this.state.errors.length !== 0) {
 
-    let creds;
-    if (this.props.errors.creds) {
-      creds = <h1 className="top-error">{this.props.errors.creds}</h1>;
-    }
 
     return (
       <div className="form-container">
         <h1 className="logo">Ampafy</h1>
         <form className="form" onSubmit={this.handleSubmit}>
-          {creds}
           <div className="input-container">
             <input className="username-password-input" type="text" value={this.state.username} placeholder='Email' onChange={this.handleChange("username")} />
             <h1 className="errors">{this.props.errors.username}</h1>
+            <h1 className='errors'>{emailErrors}</h1>
             <br/>
-          <input className="username-password-input" type="text" placeholder='Confirm Email' value={this.state.usernameConf} onChange={this.handleChange("usernameConf")} />
+            <input className="username-password-input" type="text" placeholder='Confirm Email' value={this.state.usernameConf} onChange={this.handleChange("usernameConf")} />
             <h1 className="errors">{this.props.errors.username}</h1>
+            <h1 className='errors'>{emailErrors}</h1>
             <br />
           <input type="text" className="username-password-input" placeholder='What do you want to be called?' />
             <br/>
