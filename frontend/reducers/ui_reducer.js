@@ -2,11 +2,13 @@ import {RECEIVE_MODAL, RECEIVE_PLAY, RECEIVE_STOP, RECEIVE_PAUSE,
   RECEIVE_SONG_ID, RECEIVE_LISTS_PLAYLIST}
   from '../actions/ui_actions';
 
+
 const initialState = {
   isThreeDots: false,
   id: null,
   openListPlaylist: false,
-  status: 'stopped'
+  status: 'stopped',
+
 };
 
 const uiReducer = (state = initialState, action) => {
