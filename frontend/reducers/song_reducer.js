@@ -1,6 +1,8 @@
 import {RECEIVE_SONG, RECEIVE_ALL_SONGS} from '../actions/song_actions';
 import {RECEIVE_ALBUM} from '../actions/album_actions';
 import {RECEIVE_PLAYLIST} from '../actions/playlist_actions';
+import {RECEIVE_SEARCH_ITEM} from '../actions/search_actions';
+
 import merge from 'lodash/merge';
 
 const songReducer = (state = {}, action) => {
@@ -16,6 +18,9 @@ const songReducer = (state = {}, action) => {
       return action.songs;
     case RECEIVE_ALBUM:
       newState = Object.assign({} , state, action.songs);
+      return newState;
+    case RECEIVE_SEARCH_ITEM:
+      newState = Object.assign({}, state, action.song);
       return newState;
     default:
       return state;

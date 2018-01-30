@@ -7,6 +7,7 @@ Ampafy was created through a combination of React-Redux and Ruby on Rails. In th
 
 ## User Auth
 ![Login/Signup](/screenshot/Login.gif)
+
 Users can access the LogIn and Signup through the LandingPage.
 Each link will take you to a LogIn, Signup where you can enter through a GuestLogin or by creating a new account or entering the correct username/ password combination.
 
@@ -30,6 +31,7 @@ Some of the app's components were reused to render different contents. The Main 
  * Home - allows you to navigate to the home album page
 
 ![MainPage](/screenshot/Creating_Playlist.gif)
+
 4. Playbar
  * allows songs to play despite toggling to different pages
  * allows you to pause and play a song

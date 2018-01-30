@@ -28,14 +28,14 @@ class NewPlaylistForm extends React.Component {
 
 
   handleOpen() {
-    let modalMod = this.state.bool;
+    let modalMod;
     modalMod = true;
     this.setState({bool: modalMod });
 
   }
 
   handleClose(){
-    let modalMod = this.state.bool;
+    let modalMod;
     modalMod = false;
     this.setState({bool: modalMod });
   }
