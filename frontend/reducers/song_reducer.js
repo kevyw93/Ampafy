@@ -20,7 +20,7 @@ const songReducer = (state = {}, action) => {
       newState = Object.assign({} , state, action.songs);
       return newState;
     case RECEIVE_SEARCH_ITEM:
-      newState = Object.assign({}, state, action.song);
+      newState = Object.assign({}, state, action.songs);
       return newState;
     default:
       return state;
