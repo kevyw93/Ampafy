@@ -1,5 +1,3 @@
-// import {RECEIVE_ALBUM, receiveAlbum }from './album_actions';
-// import {RECEIVE_SONG, receiveSong} from './song_actions';
 import * as searchUtil from "../util/search_api_util";
 export const RECEIVE_SEARCH = 'RECEIVE_SEARCH';
 export const RECEIVE_SEARCH_ITEM = 'RECEIVE_SEARCH_ITEM';

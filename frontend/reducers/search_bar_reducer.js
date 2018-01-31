@@ -14,8 +14,14 @@ const searchBarReducer = (state = initialState,action) => {
       newState = Object.assign({}, state, {searchBarStatus: !state.searchBarStatus});
       return newState;
     case RECEIVE_SEARCH_ITEM:
-      const albums = Object.keys(action.albums);
-      const songs = Object.keys(action.songs);
+      let albums = [];
+      let songs = [];
+      if (action.albums) {
+        albums = Object.keys(action.albums);
+      }
+      if (action.songs) {
+        songs = Object.keys(action.songs);
+      }
       newState = Object.assign({}, state, {albums: albums, songs: songs});
       return newState;
     default:
