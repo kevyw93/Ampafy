@@ -5,6 +5,8 @@ import {Switch} from 'react-router-dom';
 import AlbumContainer from '../album/album_container';
 import PlayerContainer from '../player/player_container';
 import SideNavBarContainer from '../nav_bars/side_nav_bar_container';
+import SearchBarContainer from '../search/search_bar_container';
+
 // import SongContainer from '../songs/song_container';
 
 class LoggedIn extends React.Component {
@@ -39,7 +41,8 @@ class LoggedIn extends React.Component {
             <Switch>
               <Route exact path="/browse/album/:id" component={AlbumContainer} />
               {/* <Route path="/browse/song/:id" component={SongContainer} /> */}
-              <Route component={MainPageContainer} />
+              <Route path="/browse" component={MainPageContainer} />
+            <Route path="/search" component={SearchBarContainer} />
             </Switch>
 
           </div>

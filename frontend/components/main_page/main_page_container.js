@@ -3,9 +3,9 @@ import MainPage from './main_page';
 import { getAllAlbums } from "../../actions/album_actions";
 import { fetchSong } from "../../actions/song_actions";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state,ownProps) => {
   return {
-    albums: state.entities.albums
+    albums: state.entities.albums,
   };
 };
 
