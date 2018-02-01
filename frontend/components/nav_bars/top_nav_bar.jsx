@@ -85,6 +85,7 @@ class TopNavBar extends React.Component {
                       onChange={this.handleChange('title')} />
                   </div>
                 </div>
+                <button />
                 <div className="sub-btn-container">
                   <button className="cancel" onClick={this.handleOpenClose}>Cancel</button>
                   <button className="form-sub-btn">Create</button>

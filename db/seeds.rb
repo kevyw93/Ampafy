@@ -33,7 +33,7 @@ album6 = Album.new(title: 'Bright', author: 'Machine Gun Kelley', album_cover:al
 album6.save!
 
 alb_img7 = 'http://s3.amazonaws.com/ampafy-seeds/Bright.jpg'
-album7 = Album.new(title: 'Awesome', author: 'CoolGuys', album_cover:alb_img7 )
+album7 = Album.new(title: 'Rumor Has It', author: 'Adele', album_cover:alb_img7 )
 album7.save!
 
 alb_img8 = 'http://s3.amazonaws.com/ampafy-seeds/albumCoverSeeds/jrb80p.jpg'
@@ -106,7 +106,13 @@ song_14 = "https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/16+Save+Myself.m
 song14 = Song.new(title: 'Save Myself', album_id: album2.id, audio: song_14)
 song14.save!
 
-
+song_15 = "https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/02+Rumor+Has+It.mp3"
+song15 = Song.new(title: 'Rumor Has It', album_id: album7.id, audio: song_15)
+song15.save!
+#
+song_16 = "https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/01+Rolling+In+The+Deep.mp3"
+song16 = Song.new(title: 'Rolling In The Deep', album_id: album7.id, audio: song_16)
+song16.save!
 
 
 #
