@@ -7,24 +7,15 @@ import {getAlbum} from '../../actions/album_actions';
 import _ from 'lodash';
 
 const mapStateToProps = (state,ownProps) => {
-  let album;
-  let albId;
+
   let song;
    if ( state.entities.songs[state.player.currentSongId]) {
      song =  state.entities.songs[state.player.currentSongId];
-     if (state.entities.albums[state.entities.songs[state.player.currentSongId].albumId]) {
-       album = state.entities.albums[state.entities.songs[state.player.currentSongId].albumId];
-     }
-     if (state.entities.songs[state.player.currentSongId]) {
-       albId = state.entities.songs[state.player.currentSongId].albumId;
-     }
    }
   return {
     status: state.ui.status,
-    song,
-    albId,
-    album
-    // albImg: state.entities.albums[state.entities.songs[state.player.currentSongId.albumId]].alb
+    song
+  
 
   };
 };

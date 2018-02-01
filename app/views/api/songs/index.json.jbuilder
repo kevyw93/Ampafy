@@ -6,5 +6,6 @@
       json.album song.album.title
       json.audioUrl song.audio.url
       json.albumId song.album.id
+      json.albumImg song.album.album_cover.url
     end
   end
