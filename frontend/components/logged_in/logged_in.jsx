@@ -29,7 +29,7 @@ class LoggedIn extends React.Component {
     }else if(this.props.history.location.pathname === '/browse/songs'){
       backgroundColor = "darkslategrey";
     }else if(this.props.history.location.pathname === '/search'){
-      backgroundColor = "#78250b"
+      backgroundColor = "#78250b";
     }
     return (
       <div style={{background: `linear-gradient(${backgroundColor}, black)`}} className="container" >
@@ -42,11 +42,9 @@ class LoggedIn extends React.Component {
           <div className="logg-main">
             <Switch>
               <Route exact path="/browse/album/:id" component={AlbumContainer} />
-              {/* <Route path="/browse/song/:id" component={SongContainer} /> */}
               <Route path="/browse" component={MainPageContainer} />
-              <Route path="/search" component={SearchBarContainer} />
+              <Route exact path="/search" component={SearchBarContainer} />
             </Switch>
-
           </div>
         </div>
         <div className="player">

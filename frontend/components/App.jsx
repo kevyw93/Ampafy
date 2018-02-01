@@ -12,10 +12,11 @@ const App = () => {
     <div className="main-main-page">
 
       <Switch>
-        <Route path="/landing" component={LandingContainer} />
+        <AuthRoute path="/landing" component={LandingContainer} />
         <AuthRoute path='/login' component={SessionFormContainer} />
         <AuthRoute path='/signup' component={SessionSignupContainer} />
-        <ProtectedRoute path='/' component={LoggedInContainer} />
+        <ProtectedRoute path='/browse' component={LoggedInContainer} />
+        <ProtectedRoute path='/search' component={LoggedInContainer} />
       </Switch>
     </div>
   );
