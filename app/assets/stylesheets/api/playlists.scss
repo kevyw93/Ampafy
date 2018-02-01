@@ -101,7 +101,16 @@
 }
 
 .add-playlist-button {
-  background: grey;
-  padding: 7px 13px;
-  font-size: 14px;
+  // background: grey;
+  // padding: 7px 13px;
+  // font-size: 14px;
+  border-bottom: 1px solid white;
+}
+.playlists-adding-button{
+  display: flex;
+flex-direction: column;
+/* justify-content: flex-start; */
+background: grey;
+padding: 3px;
+border-radius: 5px;
 }

@@ -70,7 +70,7 @@ class NewPlaylistForm extends React.Component {
     const button = this.props.display === "playlist" ? <button onClick={this.handleDeleteFromPlaylist}>Delete From Playlist</button> : null;
     return (
       <div>
-        <ul>
+        <ul className="playlists-adding-button">
           <button className="add-playlist-button" onClick={this.handleOpen}>Add To Playlist</button>
           {button}
         <Modal
