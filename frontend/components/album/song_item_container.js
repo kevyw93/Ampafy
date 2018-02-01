@@ -6,14 +6,14 @@ import { fetchAllPlaylist, addSongToPlaylist} from "../../actions/playlist_actio
 
 
 const mapStateToProps = (state, ownProps) => {
-  
+
   return {
     songCurrentIndex: ownProps.index,
     status: state.ui.status,
     songs: state.entities.songs,
     isThreeDots: state.ui.isThreeDots,
     songId: state.ui.id,
-    currentSongId: state.player.currentSongId
+    currentSongId: state.player.currentSongId,
   };
 };
 
