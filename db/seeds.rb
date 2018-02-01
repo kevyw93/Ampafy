@@ -73,3 +73,14 @@ song5.save!
 song_6 = "http://s3.amazonaws.com/ampafy-seeds/Mac+Miller+-+Smile+Back.mp3"
 song6 = Song.new(title: 'Smile Back', album_id: album1.id, audio: song_6)
 song6.save!
+
+song_7 = "https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/01+24K+Magic.mp3"
+song7 = Song.new(title: 'Magic', album_id: album4.id, audio: song_7)
+song7.save!
+
+song_8 = "https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/01+Beware+of+Darkness.mp3"
+song8 = Song.new(title: 'Beware of the Darkness', album_id: album4.id, audio: song_8)
+song8.save!
+
+
+#
