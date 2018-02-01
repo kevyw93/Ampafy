@@ -9,7 +9,7 @@ Album.destroy_all
 Song.destroy_all
 
 alb_img1 = 'http://s3.amazonaws.com/ampafy-seeds/albumCoverSeeds/93989-collateral.jpg'
-album1 = Album.new(title: 'Bright', author: 'Machine Gun Kelley', album_cover: alb_img1 )
+album1 = Album.new(title: 'Numb', author: 'Linkin Park', album_cover: alb_img1 )
 album1.save!
 
 alb_img2 = 'http://s3.amazonaws.com/ampafy-seeds/albumCoverSeeds/Edsheeran.jpg'
@@ -29,11 +29,11 @@ album5 = Album.new(title: 'Crazy', author: 'Sunny', album_cover:alb_img5 )
 album5.save!
 
 alb_img6 = 'http://s3.amazonaws.com/ampafy-seeds/albumCoverSeeds/inside-the-weeknd-starboy-full-size.jpg'
-album6 = Album.new(title: 'Numb', author: 'Chris', album_cover:alb_img6 )
+album6 = Album.new(title: 'Bright', author: 'Machine Gun Kelley', album_cover:alb_img6 )
 album6.save!
 
 alb_img7 = 'http://s3.amazonaws.com/ampafy-seeds/Bright.jpg'
-album7 = Album.new(title: 'Bright', author: 'Machine Gun Kelley', album_cover:alb_img7 )
+album7 = Album.new(title: 'Awesome', author: 'CoolGuys', album_cover:alb_img7 )
 album7.save!
 
 alb_img8 = 'http://s3.amazonaws.com/ampafy-seeds/albumCoverSeeds/jrb80p.jpg'
@@ -51,11 +51,11 @@ album9.save!
 
 
 song_1 = 'http://s3.amazonaws.com/ampafy-seeds/Home.mp3'
-song1 = Song.new(title: 'Home', album_id: album2.id, audio: song_1)
+song1 = Song.new(title: 'Home', album_id: album5.id, audio: song_1)
 song1.save!
 
 song_2 = 'http://s3.amazonaws.com/ampafy-seeds/World_Gone_Mad.mp3'
-song2 = Song.new(title: 'Loving You So', album_id: album1.id, audio: song_2)
+song2 = Song.new(title: 'Loving You So', album_id: album5.id, audio: song_2)
 song2.save!
 
 song_3 = "http://s3.amazonaws.com/ampafy-seeds/Dont+Wanna+Know+-+Maroon+5+(Boyce+Avenue+ft.+Sarah+Hyland+cover)+on+Spotify++iTunes.mp3"
@@ -63,7 +63,7 @@ song3 = Song.new(title: "Don't Want to Know", album_id: album3.id, audio: song_3
 song3.save!
 
 song_4 = "http://s3.amazonaws.com/ampafy-seeds/Demons+-+Imagine+Dragons+(Cover+by+Jasmine+Thompson).mp3"
-song4 = Song.new(title: 'Demon', album_id: album3.id, audio: song_4)
+song4 = Song.new(title: 'Demon', album_id: album5.id, audio: song_4)
 song4.save!
 
 song_5 = "http://s3.amazonaws.com/ampafy-seeds/Linkin+Park-In+The+End.mp3"
@@ -71,7 +71,7 @@ song5 = Song.new(title: 'In The End', album_id: album1.id, audio: song_5)
 song5.save!
 
 song_6 = "http://s3.amazonaws.com/ampafy-seeds/Mac+Miller+-+Smile+Back.mp3"
-song6 = Song.new(title: 'Smile Back', album_id: album1.id, audio: song_6)
+song6 = Song.new(title: 'Smile Back', album_id: album5.id, audio: song_6)
 song6.save!
 
 song_7 = "https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/01+24K+Magic.mp3"
@@ -81,6 +81,32 @@ song7.save!
 song_8 = "https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/01+Beware+of+Darkness.mp3"
 song8 = Song.new(title: 'Beware of the Darkness', album_id: album4.id, audio: song_8)
 song8.save!
+
+song_9 = "https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/05+Perfect.mp3"
+song9 = Song.new(title: 'Perfect', album_id: album2.id, audio: song_9)
+song9.save!
+
+song_10 = "https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/03+Dive.mp3"
+song10 = Song.new(title: 'Dive', album_id: album2.id, audio: song_10)
+song10.save!
+
+song_11 = "https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/04+Shape+of+You.mp3"
+song11 = Song.new(title: 'Shape Of You', album_id: album2.id, audio: song_11)
+song11.save!
+
+song_12 = "https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/10+What+Do+I+Know_.mp3"
+song12 = Song.new(title: 'What Do I Know', album_id: album2.id, audio: song_12)
+song12.save!
+
+song_13 = "https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/11+How+Would+You+Feel+(Paean).mp3"
+song13 = Song.new(title: 'How Would You Feel', album_id: album2.id, audio: song_13)
+song13.save!
+
+song_14 = "https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/16+Save+Myself.mp3"
+song14 = Song.new(title: 'Save Myself', album_id: album2.id, audio: song_14)
+song14.save!
+
+
 
 
 #
