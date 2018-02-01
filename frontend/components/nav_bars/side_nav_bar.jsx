@@ -34,15 +34,17 @@ class SideNavBar extends React.Component{
           </div>
           <div className="spaces">
             <Link to="/browse/albums"><h1 className="homepage">Home</h1></Link>
+          <div className="lines"></div>
           </div>
             <div className="spaces">
               <button className="logout" onClick={this.props.logout}>Logout</button>
+            <div className="lines"></div>
             </div>
         </div>
-        {/* <div className="welcome">
-          <h1>Welcome {this.props.user.username}</h1>
-
-        </div> */}
+        <div className="username-sidenav">
+          <h1>Hi, {this.props.user.username}</h1>
+        </div>
+      
       </div>
     );
   }

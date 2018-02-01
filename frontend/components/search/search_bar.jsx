@@ -21,7 +21,7 @@ class SearchBar extends React.Component {
     let newPlaylist = {search_query: this.state.search};
     if (this.state.search.length !== 0) {
       this.props.searchDatabase(newPlaylist);
-      let newState = Object.assign({}, this.state,{search: ''});
+      let newState = Object.assign({}, this.state,newPlaylist);
       this.setState(newState);
       // this.props.receiveSearchBool();
     }
@@ -50,18 +50,18 @@ class SearchBar extends React.Component {
     }else {
       show = albums;
     }
-    debugger
 
     return(
-      <div>
+      <div className="search-bar-container">
         <form onSubmit={this.handleSubmit}>
-          <input className='form-input' onChange={this.handleChange('search')} value={this.state.search} placeholder="Search..."/>
-          <button>Search</button>
+          <input className='search-bar-form-input' onChange={this.handleChange('search')} value={this.state.search} placeholder="Search..."/>
+        <button />
         </form>
-        {/* <div> */}
-          <button onClick={this.handleAlbumSong} value="albums">Albums</button>
-          <button onClick={this.handleAlbumSong} value="songs">Songs</button>
-        {/* </div> */}
+          <div className="album-song-button">
+            <button onClick={this.handleAlbumSong} value="albums">Albums</button>
+            <button onClick={this.handleAlbumSong} value="songs">Songs</button>
+          </div>
+
         {show}
 
       </div>
