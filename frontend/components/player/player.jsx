@@ -15,9 +15,9 @@ class Player extends React.Component{
 
   }
   // go to reducer and add a reducer with idx and array of songs from albums/ playlist
-  
+
   componentWillReceiveProps(nextProps) {
-    this.props.getAlbum(this.props.albId);
+    // this.props.getAlbum(this.props.albId);
     if (typeof this.props.song === 'undefined' && typeof nextProps.song === 'undefined') {
       return null;
     // }else if (this.props.song){
@@ -90,13 +90,10 @@ class Player extends React.Component{
     let showTime;
     let img;
 
-    if (this.props.album) {
-      pic = this.props.album.albumImg;
-    }
-
     if (this.props.song) {
       title = this.props.song.title;
       src = this.props.song.audioUrl;
+      pic = this.props.song.albumImg;
       img = <img className="alb-pics" src={pic} />;
     }
     if (this.audio) {
