@@ -32,8 +32,8 @@ alb_img6 = 'http://s3.amazonaws.com/ampafy-seeds/albumCoverSeeds/inside-the-week
 album6 = Album.new(title: 'Bright', author: 'Machine Gun Kelley', album_cover:alb_img6 )
 album6.save!
 
-alb_img7 = 'http://s3.amazonaws.com/ampafy-seeds/Bright.jpg'
-album7 = Album.new(title: 'Rumor Has It', author: 'Adele', album_cover:alb_img7 )
+alb_img7 = 'https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Adele_-_21.png/220px-Adele_-_21.png'
+album7 = Album.new(title: '21', author: 'Adele', album_cover:alb_img7 )
 album7.save!
 
 alb_img8 = 'http://s3.amazonaws.com/ampafy-seeds/albumCoverSeeds/jrb80p.jpg'
@@ -43,6 +43,10 @@ album8.save!
 alb_img9 = 'http://s3.amazonaws.com/ampafy-seeds/albumCoverSeeds/xgvlyytw9rvrmjjc2r3t.jpeg'
 album9 = Album.new(title: 'NightMare', author: 'SevenFold', album_cover:alb_img9)
 album9.save!
+
+alb_img10 = 'http://s3.amazonaws.com/ampafy-seeds/Bright.jpg'
+album10 = Album.new(title: 'NightMare', author: 'SevenFold', album_cover:alb_img10)
+album10.save!
 
 
 
@@ -113,6 +117,11 @@ song15.save!
 song_16 = "https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/01+Rolling+In+The+Deep.mp3"
 song16 = Song.new(title: 'Rolling In The Deep', album_id: album7.id, audio: song_16)
 song16.save!
+
+song_16 = "https://s3.amazonaws.com/ampafy-seeds/albumSongSeeds/11+Someone+Like+You.mp3"
+song16 = Song.new(title: 'Soemone Like You', album_id: album7.id, audio: song_16)
+song16.save!
+
 
 
 #
