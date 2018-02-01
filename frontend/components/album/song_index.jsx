@@ -8,7 +8,7 @@ const SongIndex = (props) => {
   );
 
   return (
-    <div>
+    <div >
     {songs}
     </div>
   );

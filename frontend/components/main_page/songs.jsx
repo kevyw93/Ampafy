@@ -19,7 +19,7 @@ class Songs extends React.Component {
       songs = <SongIndex songs={this.props.songs} />;
     }
     return(
-      <div>
+      <div className="all-songs-lists">
         {songs}
       </div>
     );

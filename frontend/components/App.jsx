@@ -12,7 +12,7 @@ const App = () => {
     <div className="main-main-page">
 
       <Switch>
-        <AuthRoute path="/landing" component={LandingContainer} />
+        <AuthRoute exact path="/" component={LandingContainer} />
         <AuthRoute path='/login' component={SessionFormContainer} />
         <AuthRoute path='/signup' component={SessionSignupContainer} />
         <ProtectedRoute path='/browse' component={LoggedInContainer} />
