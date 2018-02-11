@@ -31,24 +31,23 @@ class SessionForm extends React.Component {
     const user = {'username':'kevin', 'password':'password'};
     const username = {
       strings: [user.username],
-      typeSpeed:50
+      typeSpeed: 30
     };
     const password = {
-      strings: [user.username],
-      typeSpeed:40
+      strings: [user.password],
+      typeSpeed: 30
     };
     this.setState({
       typeUsername: setTimeout(() => {
         new Typed('.username-input', username);
-      }, 30),
+      }, 400),
       typedPassword: setTimeout(() => {
         new Typed('.password-input', password);
-      },900),
+      },400),
       typeSubmit: setTimeout(() => {
         this.props.login({user:user});
-      },3000)
+      },900)
     });
-     // this.props.login({user:user});
   }
 
   handleChange(field){
