@@ -4,35 +4,30 @@ import { Link } from 'react-router-dom';
 class SessionSignup extends React.Component {
   constructor (props) {
     super(props);
-    this.state = { 'username': "", "usernameConf": "", "name": "", 'password': "", 'errors': [], 'emailConf': "" };
+    this.state = { 'username': "", "usernameConf": "", "name": "", 'password': "", 'emailConf': "" };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps){
-  //   if(nextProps.loggedIn){
-  //     this.props.history.push('/');
-  //   }
-  //
-  //   if (this.props.match.path !== nextProps.match.path) {
-  //     this.props.clearErrors();
-  //   }
-  // }
   componentDidMount(){
     this.props.clearErrors();
   }
 
   handleSubmit(e){
     e.preventDefault();
-    const user = Object.assign({}, this.state);
+    let newState;
+    const user = Object.assign({}, this.state, {'emailConf': ''});
     if (this.state.username === this.state.usernameConf) {
-      this.props.signup({user: user});
+        this.setState(user);
+        this.props.signup({user: user});
     }else {
-      let newState = Object.assign({'emailConf': 'Email does not match'});
+      newState = Object.assign({}, this.state, {'emailConf': 'Email does not match'});
       this.setState(newState);
       // this.props.errors.push('email do not match');
     }
+    this.props.clearErrors();
+
   }
 
   handleGuestLogin(e){
@@ -56,8 +51,6 @@ class SessionSignup extends React.Component {
     let sign = <Link to="/login">LOG IN</Link>;
     let buttonholder = 'Already have an account?';
     let emailErrors = this.state.emailConf;
-    // if (this.state.errors.length !== 0) {
-
 
     return (
       <div className="form-container">
