@@ -20,17 +20,17 @@ class Player extends React.Component{
     // this.props.getAlbum(this.props.albId);
     if (typeof this.props.song === 'undefined' && typeof nextProps.song === 'undefined') {
       return null;
-    // }else if (this.props.song){
-    //   if(this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'paused'){
-    //
-    //     this.audio.play();
-    //   }else if (this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'playing') {
-    //
-    //     this.audio.pause();
-    //   }
-    }else if (!this.props.song || nextProps.song.audioUrl !== this.props.song.audioUrl) {
+      }else if (!this.props.song || nextProps.song.audioUrl !== this.props.song.audioUrl) {
         this.audio.setAttribute('src', nextProps.song.audioUrl);
-    }
+      }else if (this.props.song){
+        if(this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'paused'){
+
+          this.audio.play();
+        }else if (this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'playing') {
+
+        this.audio.pause();
+       }
+     }
   }
 
 
