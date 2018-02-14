@@ -11,14 +11,10 @@ class SessionForm extends React.Component {
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps){
-  //   if(nextProps.loggedIn){
-  //     this.props.history.push('/');
-  //   }
-  // }
   componentDidMount(){
     this.props.clearErrors();
   }
+  
   handleSubmit(e){
     e.preventDefault();
 
