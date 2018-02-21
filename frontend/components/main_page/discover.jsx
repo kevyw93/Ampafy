@@ -6,8 +6,8 @@ class Discover extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.fetchAllPlaylist();
+  componentWillMount() {
+    this.props.fetchAllPlaylist({user_id: this.props.currentUserId});
   }
 
 

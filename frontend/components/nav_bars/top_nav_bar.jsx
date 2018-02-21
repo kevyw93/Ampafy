@@ -7,7 +7,7 @@ class TopNavBar extends React.Component {
     super(props);
     // this.bool();
     this.handleOpenClose = this.handleOpenClose.bind(this);
-    this.state = {title: '', user_id: parseInt(this.props.currentUser.id), bool: false};
+    this.state = {title: '', user_id: null, bool: false};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
 
@@ -25,7 +25,7 @@ class TopNavBar extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let newPlaylist = {playlist: {title: this.state.title, user_id: this.state.user_id}};
+    let newPlaylist = {playlist: {title: this.state.title, user_id: parseInt(this.props.currentUser.id)}};
     if (this.state.title.length !== 0) {
       this.props.createPlaylist(newPlaylist);
       let newState = Object.assign({}, this.state);

@@ -4,13 +4,14 @@ import { fetchAllPlaylist, deletePlaylist, updatePlaylist } from "../../actions/
 
 const mapStateToProps = (state) => {
   return {
-    playlists: Object.values(state.entities.playlists)
+    playlists: Object.values(state.entities.playlists),
+    currentUserId: state.entities.session.currentUser.id
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchAllPlaylist: () => dispatch(fetchAllPlaylist()),
+    fetchAllPlaylist: (userId) => dispatch(fetchAllPlaylist(userId)),
     deletePlaylist: (id) => dispatch(deletePlaylist(id)),
     updatePlaylist: (playlist) => dispatch(updatePlaylist(playlist))
   };

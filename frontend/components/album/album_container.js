@@ -14,15 +14,13 @@ import {receiveModalSong, receiveStatus} from '../../actions/ui_actions';
 const mapStateToProps = (state, ownProps) => {
   const album = state.entities.albums[ownProps.match.params.id];
   let songs;
-  // let songIds;
   if (album) {
-    // songIds = album.songIds;
    songs = selector.albumSongsSelector(album, state);
   }
 
   return {
     album,
-    // songIds: songIds || null,
+    currentUserId: state.entities.session.currentUser.id,
     songs: songs || [],
     playlists: Object.values(state.entities.playlists),
     isThreeDots: state.ui.isThreeDots
@@ -35,7 +33,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchSong: (songs) => dispatch(fetchSong(songs)),
     receiveCurrentSong: (song) => dispatch(receiveCurrentSong(song)),
     addSongToPlaylist: (payload) => dispatch(addSongToPlaylist(payload)),
-    fetchAllPlaylist: () => dispatch(fetchAllPlaylist()),
+    fetchAllPlaylist: (userId) => dispatch(fetchAllPlaylist(userId)),
     receiveModalSong: () => dispatch(receiveModalSong()),
     receiveAlbumSongs: (albumSongs) => dispatch(receiveAlbumSongs(albumSongs)),
     receiveQueLength: (queLength) => dispatch(receiveQueLength(queLength)),

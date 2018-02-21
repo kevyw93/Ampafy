@@ -12,7 +12,6 @@ class Player extends React.Component{
     this.handleLength = this.handleLength.bind(this);
     this.handleSeek = this.handleSeek.bind(this);
     this.volumeControl = this.volumeControl.bind(this);
-
   }
   // go to reducer and add a reducer with idx and array of songs from albums/ playlist
 
@@ -67,7 +66,9 @@ class Player extends React.Component{
 
 
   changeSong() {
-    this.props.playNextSong();
+
+    this.props.incrementCurrentSongIndex();
+    // this.props.playNextSong();
     // playnextsong will increment till the end
     /**
      * 1. remove song that has finished playing
@@ -132,6 +133,7 @@ class Player extends React.Component{
         <audio src={src} ref={(audio) => {
             this.audio = audio;
           }}
+          onEnded = {this.changeSong}
           onLoadedData={this.handleLength}
           onCanPlayThrough={this.play}
           onTimeUpdate={this.handleProgress}

@@ -20,7 +20,7 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def index
-    @playlists = Playlist.all
+    @playlists = Playlist.where(user_id: params[:user_id])
   end
 
   def update
@@ -29,16 +29,9 @@ class Api::PlaylistsController < ApplicationController
       @playlist_tagging.destroy
       @playlist = Playlist.find(params[:playlist_id])
       render partial: '/api/playlists/playlist'
-      # work on rendering something back to the front end so i can delete a single playlist
     else
       render json: ["Unable to delete"]
     end
-    # @playlist = Playlist.find(params[:id])
-    # if @playlist.update(playlist_params)
-    #   render :show
-    # else
-    #   render json: ["You haven't put in the neccessary information"]
-    # end
   end
 
   private

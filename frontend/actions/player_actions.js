@@ -2,7 +2,7 @@ export const RECEIVE_CURRENT_SONG = 'RECEIVE_CURRENT_SONG';
 export const RECEIVE_ALBUM_SONGS = 'RECEIVE_ALBUM_SONGS';
 export const RECEIVE_CURRENT_SONG_ID = 'RECEIVE_CURRENT_SONG_ID';
 export const RECEIVE_QUE_LENGTH = 'RECEIVE_QUE_LENGTH';
-export const RECEIVE_CURRENT_SONG_INDEX = 'RECEIVE_CURRENT_SONG_INDEX';
+export const INCREMENT_CURRENT_SONG_INDEX = 'INCREMENT_CURRENT_SONG_INDEX';
 
 export const receiveCurrentSong = (songId) => {
   return {
@@ -12,18 +12,12 @@ export const receiveCurrentSong = (songId) => {
 };
 
 export const incrementCurrentSongIndex = () => {
+
   return {
-    type: RECEIVE_CURRENT_SONG_INDEX
+    type: INCREMENT_CURRENT_SONG_INDEX
   };
 };
 
-
-export const receiveAlbumSongs = (songs) => {
-  return {
-    type: RECEIVE_ALBUM_SONGS,
-    songs
-  };
-};
 
 export const receiveCurrentSongIndex = (songIndex) => {
   return {
@@ -32,9 +26,9 @@ export const receiveCurrentSongIndex = (songIndex) => {
   };
 };
 
-export const receiveQueLength = (queLength) => {
-  return {
-    type: RECEIVE_QUE_LENGTH,
-    queLength
-  };
-};
+// export const receiveQueLength = (queLength) => {
+//   return {
+//     type: RECEIVE_QUE_LENGTH,
+//     queLength
+//   };
+// };

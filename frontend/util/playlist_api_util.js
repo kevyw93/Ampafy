@@ -15,7 +15,7 @@ export const deletePlaylist = (id) => {
 };
 
 export const updatePlaylist = (data) => {
-  
+
   return $.ajax({
     type: 'patch',
     url: `api/playlists/${data.playlist_id}`,
@@ -30,9 +30,10 @@ export const fetchPlaylist = (id) => {
   });
 };
 
-export const fetchAllPlaylist = () => {
+export const fetchAllPlaylist = (userId) => {
   return $.ajax({
     type: 'get',
-    url: `api/playlists`
+    url: `api/playlists`,
+    data: userId
   });
 };

@@ -84,8 +84,8 @@ export const fetchPlaylist = (id) => dispatch => {
   );
 };
 
-export const fetchAllPlaylist = () => dispatch => {
-  return PlaylistApiUtil.fetchAllPlaylist().then(
+export const fetchAllPlaylist = (userId) => dispatch => {
+  return PlaylistApiUtil.fetchAllPlaylist(userId).then(
     (playlists) => dispatch(receiveAllPlaylist(playlists))
   );
 };

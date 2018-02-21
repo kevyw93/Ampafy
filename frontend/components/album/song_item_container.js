@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     receiveCurrentSong: (song) => dispatch(receiveCurrentSong(song)),
     addSongToPlaylist: (payload) => dispatch(addSongToPlaylist(payload)),
-    fetchAllPlaylist: () => dispatch(fetchAllPlaylist()),
+    fetchAllPlaylist: (userId) => dispatch(fetchAllPlaylist(userId)),
     receiveModalSong: () => dispatch(receiveModalSong()),
     receiveSongId: (id) => dispatch(receiveSongId(id)),
     receivePlay: () => dispatch(receivePlay()),
