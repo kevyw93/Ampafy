@@ -23,15 +23,12 @@ class Player extends React.Component{
         this.audio.setAttribute('src', nextProps.song.audioUrl);
       }else if (this.props.song){
         if(this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'paused'){
-
           this.audio.play();
         }else if (this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'playing') {
-
-        this.audio.pause();
+          this.audio.pause();
        }
      }
   }
-
 
   play() {
     if (this.props.song) {

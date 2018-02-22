@@ -37,9 +37,7 @@ const playerReducer = (state = preloadedState, action) => {
         playAlbum:true, queLength: Object.keys(action.songs).length});
       return newState;
     case INCREMENT_CURRENT_SONG_INDEX:
-      
       if (state.queLength && state.currentSongIndex + 1 < state.queLength) {
-
         const currentSongIndex = state.currentSongIndex + 1;
         newState = Object.assign({}, state, {currentSongIndex: currentSongIndex, endQue: false});
       }else{
