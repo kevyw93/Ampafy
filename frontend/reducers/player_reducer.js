@@ -30,7 +30,14 @@ const playerReducer = (state = preloadedState, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_CURRENT_SONG:
-      newState = Object.assign({}, state, {currentSongId: action.songId, playAlbum: false});
+      if (state.queOfSongs.length > 0) {
+        if (state.queOfSongs.includes(action.songId.toString())) {
+          const newSongIndex = state.queOfSongs.indexOf(action.songId.toString());
+          newState = Object.assign({}, state, {currentSongId: action.songId, playAlbum: true, currentSongIndex: newSongIndex});
+        }
+      }else{
+        newState = Object.assign({}, state, {currentSongId: action.songId, playAlbum: true});
+      }
       return newState;
     case RECEIVE_ALBUM:
       newState = Object.assign({}, state, {queOfSongs: Object.keys(action.songs),
@@ -41,12 +48,8 @@ const playerReducer = (state = preloadedState, action) => {
         const currentSongIndex = state.currentSongIndex + 1;
         newState = Object.assign({}, state, {currentSongIndex: currentSongIndex, endQue: false});
       }else{
-
         newState = Object.assign({}, state, {endQue: true, currentSongIndex: 0});
       }
-      return newState;
-    case RECEIVE_CURRENT_SONG_ID:
-      newState = Object.assign({}, state, {currentSongIndex: action.songIndex});
       return newState;
     case RECEIVE_QUE_LENGTH:
       newState = Object.assign({}, state, {queLength: action.queLength});
