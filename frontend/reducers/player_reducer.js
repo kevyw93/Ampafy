@@ -24,6 +24,7 @@ const preloadedState = {
   currentSongIndex: 0,
   queLength: null,
   endQue: false,
+  albumImg: null,
 };
 
 const playerReducer = (state = preloadedState, action) => {
@@ -40,8 +41,10 @@ const playerReducer = (state = preloadedState, action) => {
       }
       return newState;
     case RECEIVE_ALBUM:
-      newState = Object.assign({}, state, {queOfSongs: Object.keys(action.songs),
-        playAlbum:true, queLength: Object.keys(action.songs).length});
+      const queOfSongs = action.songs ? Object.keys(action.songs) : null;
+      const queLength = queOfSongs ? queOfSongs.length : [];
+      newState = Object.assign({}, state, {albumImg: Object.values(action.album)[0].albumImg, queOfSongs: queOfSongs,
+        playAlbum:true, queLength: queLength});
       return newState;
     case INCREMENT_CURRENT_SONG_INDEX:
       if (state.queLength && state.currentSongIndex + 1 < state.queLength) {

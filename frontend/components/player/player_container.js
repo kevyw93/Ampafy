@@ -9,7 +9,7 @@ import _ from 'lodash';
 const mapStateToProps = (state, ownProps) => {
   let song;
   let queOfSongs;
-  if(state.player.playAlbum){
+  if(state.player.playAlbum && state.player.songs){
     queOfSongs = state.player.queOfSongs;
     const songId = queOfSongs[state.player.currentSongIndex];
     song = state.entities.songs[songId];
@@ -18,8 +18,8 @@ const mapStateToProps = (state, ownProps) => {
    }
   return {
     status: state.ui.status,
-    song
-
+    song,
+    albumImg: state.player.albumImg,
 
   };
 };
