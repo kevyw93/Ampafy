@@ -12,7 +12,6 @@ export const receiveCurrentSong = (songId) => {
 };
 
 export const incrementCurrentSongIndex = () => {
-
   return {
     type: INCREMENT_CURRENT_SONG_INDEX
   };

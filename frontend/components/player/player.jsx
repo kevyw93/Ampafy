@@ -16,18 +16,18 @@ class Player extends React.Component{
   // go to reducer and add a reducer with idx and array of songs from albums/ playlist
 
   componentWillReceiveProps(nextProps) {
-    this.props.getAlbum(this.props.albId);
+    // this.props.getAlbum(this.props.albId);
     if (typeof this.props.song === 'undefined' && typeof nextProps.song === 'undefined') {
       return null;
-      }else if (!this.props.song || nextProps.song.audioUrl !== this.props.song.audioUrl) {
-        this.audio.setAttribute('src', nextProps.song.audioUrl);
-      }else if (this.props.song){
-        if(this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'paused'){
-          this.audio.play();
-        }else if (this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'playing') {
-          this.audio.pause();
-       }
-     }
+    }else if (!this.props.song || nextProps.song.audioUrl !== this.props.song.audioUrl) {
+      this.audio.setAttribute('src', nextProps.song.audioUrl);
+    }else if (this.props.song){
+      if(this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'paused'){
+        this.audio.play();
+      }else if (this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'playing') {
+        this.audio.pause();
+      }
+    }
   }
 
   play() {
@@ -51,6 +51,7 @@ class Player extends React.Component{
     this.audio.pause();
     this.props.receivePause();
   }
+
   volumeControl(e) {
     e.preventDefault();
     this.audio.volume = e.target.value/100;
@@ -63,15 +64,8 @@ class Player extends React.Component{
 
 
   changeSong() {
-
+    debugger
     this.props.incrementCurrentSongIndex();
-    // this.props.playNextSong();
-    // playnextsong will increment till the end
-    /**
-     * 1. remove song that has finished playing
-     * 2. if next song exists play next song (componentWillReceiveProps)
-     * 3. play no songs (remove audio)?
-     */
   }
 
 
@@ -91,12 +85,12 @@ class Player extends React.Component{
     if (this.props.song) {
       title = this.props.song.title;
       src = this.props.song.audioUrl;
-      // pic = this.props.song.albumImg;
       img = <img className="alb-pics" src={pic} />;
     }
     if (this.audio) {
       showTime = secToMin(this.audio.currentTime);
     }
+
     return(
       <div className="player-outer-container">
         <div className="player-alb-img-outerContainer">
@@ -125,22 +119,21 @@ class Player extends React.Component{
                 {showTime}
                 {volumebutton}
             </div>
-          </div>
+        </div>
 
-        <audio src={src} ref={(audio) => {
+        <audio
+          src={src}
+          ref={(audio) => {
             this.audio = audio;
           }}
-          onEnded = {this.changeSong}
+          onEnded={this.changeSong}
           onLoadedData={this.handleLength}
           onCanPlayThrough={this.play}
           onTimeUpdate={this.handleProgress}
-          ></audio>
+          >
+        </audio>
       </div>
     );
-
-
-    // figure out how to play an array of songs using fuking shit and how to pause plz bro
-
   }
 }
 

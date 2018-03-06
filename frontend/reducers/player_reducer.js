@@ -34,10 +34,10 @@ const playerReducer = (state = preloadedState, action) => {
       if (state.queOfSongs.length > 0) {
         if (state.queOfSongs.includes(action.songId.toString())) {
           const newSongIndex = state.queOfSongs.indexOf(action.songId.toString());
-          newState = Object.assign({}, state, {currentSongId: action.songId, playAlbum: true, currentSongIndex: newSongIndex});
+          newState = Object.assign({}, state, {currentSongId: state.queOfSongs[newSongIndex], playAlbum: true, currentSongIndex: newSongIndex});
         }
       }else{
-        newState = Object.assign({}, state, {currentSongId: action.songId, playAlbum: true});
+        newState = Object.assign({}, state, {currentSongId: action.songId, playAlbum: true, currentSongIndex: 0});
       }
       return newState;
     case RECEIVE_ALBUM:
@@ -47,10 +47,12 @@ const playerReducer = (state = preloadedState, action) => {
         playAlbum:true, queLength: queLength});
       return newState;
     case INCREMENT_CURRENT_SONG_INDEX:
+    debugger
       if (state.queLength && state.currentSongIndex + 1 < state.queLength) {
         const currentSongIndex = state.currentSongIndex + 1;
         newState = Object.assign({}, state, {currentSongIndex: currentSongIndex, endQue: false});
-      }else{
+      }
+      else{
         newState = Object.assign({}, state, {endQue: true, currentSongIndex: 0});
       }
       return newState;
