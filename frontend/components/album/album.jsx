@@ -49,7 +49,6 @@ render(){
           {alb}
         </div>
         <div className="alb-songs">
-
           {songs}
         </div>
       </div>

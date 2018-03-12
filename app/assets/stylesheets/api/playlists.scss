@@ -1,3 +1,14 @@
+.add-playlist-words{
+  font-size: 68px;
+  line-height: 82px;
+  font-weight: 550;
+  letter-spacing: -0.005em;
+  color: rgb(255, 255, 255);
+  text-transform: none;
+  font-family: spotify-circular, "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic Pro", Meiryo, "MS Gothic", sans-serif;
+  text-align: center;
+  padding: 23px;
+}
 .single-playlist {
   margin-bottom: 50px;
   margin-left: 10px;
@@ -9,6 +20,10 @@
   flex-direction: column;
 
 }
+.playlist-modal-after-open{
+  width:100%;
+  height:100%;
+}
 .new-playlist-modal-cancel-button{
   width: 70px;
 }
@@ -16,7 +31,8 @@
 .adding-playlists-container{
   display: flex;
   flex-wrap: wrap;
-  overflow-x: scroll;
+  overflow: scroll;
+  justify-content: center;
 }
 
 
@@ -31,11 +47,10 @@
 .inner-playlists {
   background: transparent;
   display: grid;
-  width: 97%;
   height: 100%;
   height: fixed;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
+  grid-gap: 30px;
   overflow: scroll;
 
   @media (max-width: 1500px){

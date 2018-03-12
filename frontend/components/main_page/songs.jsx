@@ -10,7 +10,7 @@ class Songs extends React.Component {
   }
 
   handleAdd(songId) {
-    return e => this.props.receiveCurrentSong(songId);
+    this.props.receiveCurrentSong(songId);
   }
 
   render() {

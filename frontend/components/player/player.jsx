@@ -16,7 +16,6 @@ class Player extends React.Component{
   // go to reducer and add a reducer with idx and array of songs from albums/ playlist
 
   componentWillReceiveProps(nextProps) {
-    // this.props.getAlbum(this.props.albId);
     if (typeof this.props.song === 'undefined' && typeof nextProps.song === 'undefined') {
       return null;
     }else if (!this.props.song || nextProps.song.audioUrl !== this.props.song.audioUrl) {
@@ -38,13 +37,11 @@ class Player extends React.Component{
   }
 
   handleLength(){
-    let length = this.audio.duration;
-    this.setState({length: length});
+    this.setState({length: this.audio.duration});
   }
 
   handleProgress() {
-    let newProgress = (this.audio.currentTime);
-    this.setState({ progress: newProgress});
+    this.setState({ progress: this.audio.currentTime});
   }
 
   pause() {
@@ -62,12 +59,10 @@ class Player extends React.Component{
     this.audio.currentTime = e.target.value;
   }
 
-
   changeSong() {
     debugger
     this.props.incrementCurrentSongIndex();
   }
-
 
   render(){
     // this.duration = document.getElementById('audio').duration;
@@ -81,6 +76,7 @@ class Player extends React.Component{
     let showTime;
     let img;
     const pic = this.props.albumImg;
+    let value;
 
     if (this.props.song) {
       title = this.props.song.title;
@@ -89,6 +85,9 @@ class Player extends React.Component{
     }
     if (this.audio) {
       showTime = secToMin(this.audio.currentTime);
+      value = this.audio.currentTime;
+    }else {
+      value = 0;
     }
 
     return(
@@ -110,8 +109,7 @@ class Player extends React.Component{
 
             <div className="play-pause">{button}</div>
               <div className="playbar" >
-
-                <input type="range" value={this.audio ? this.audio.currentTime : 0} onChange={this.handleSeek} max={this.state.length} className="progressBar" />
+                <input type="range" onChange={this.handleSeek} max={this.state.length} value={value} className="progressBar" />
               </div>
             </div>
 
@@ -126,10 +124,10 @@ class Player extends React.Component{
           ref={(audio) => {
             this.audio = audio;
           }}
-          onEnded={this.changeSong}
-          onLoadedData={this.handleLength}
           onCanPlayThrough={this.play}
+          onLoadedData={this.handleLength}
           onTimeUpdate={this.handleProgress}
+          onEnded={this.changeSong}
           >
         </audio>
       </div>

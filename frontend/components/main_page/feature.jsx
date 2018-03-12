@@ -31,12 +31,11 @@ class Feature extends React.Component {
     return(
 
 
-      // <div className="outer-albs">
+      <div className="outer-albs">
         <div className="all-albums">
             {albs}
-
         </div>
-      // </div>
+      </div>
 
     );
   }

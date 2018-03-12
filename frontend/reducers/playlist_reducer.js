@@ -9,7 +9,9 @@ const playlistReducer = (state = {}, action) => {
       newState = Object.assign({}, state, action.playlist);
       return newState;
     case RECEIVE_ALL_PLAYLISTS:
-      return action.playlists.playlists;
+      const myPlayListDropDown = action.playlists.playlists ? action.playlists.playlists : null;
+      newState = Object.assign({}, state, myPlayListDropDown);
+      return newState;
     case REMOVE_PLAYLIST:
       newState = Object.assign({}, state);
       delete newState[Object.keys(action.playlist.playlist)[0]];

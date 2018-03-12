@@ -11,8 +11,6 @@ class SongItemComponent extends React.Component{
     this.state = {bool: false};
   }
 
-
-
   handleAddSong(songId, playlistId) {
     return e => {this.props.addSongToPlaylist(
       {playlist_tagging:{song_id: songId, playlist_id: playlistId}});
@@ -31,14 +29,12 @@ class SongItemComponent extends React.Component{
     this.props.receiveSongId(this.props.song.id);
   }
   handleAdd() {
-
     if ( this.props.currentSongId === this.props.song.id && this.props.status === 'playing') {
       this.props.receivePause();
     }else if(this.props.currentSongId=== this.props.song.id  && this.props.status === 'paused'){
       this.props.receivePlay();
     }else {
       this.props.receiveCurrentSong(this.props.song.id);
-      this.props.receiveCurrentSongIndex(this.props.songCurrentIndex);
     }
   }
 

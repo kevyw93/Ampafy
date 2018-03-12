@@ -2,11 +2,7 @@ import {connect} from "react-redux";
 import Album from './album';
 import { getAlbum } from "../../actions/album_actions";
 import { fetchSong } from "../../actions/song_actions";
-import { receiveCurrentSong,
-  receiveAlbumSongs,
-  receiveCurrentSongIndex,
-  receiveQueLength }
-  from "../../actions/player_actions";
+import { receiveCurrentSong,receiveQueLength } from "../../actions/player_actions";
 import * as selector from '../../util/selector';
 import { fetchAllPlaylist, addSongToPlaylist} from "../../actions/playlist_actions";
 import {receiveModalSong, receiveStatus} from '../../actions/ui_actions';
@@ -35,9 +31,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     addSongToPlaylist: (payload) => dispatch(addSongToPlaylist(payload)),
     fetchAllPlaylist: (userId) => dispatch(fetchAllPlaylist(userId)),
     receiveModalSong: () => dispatch(receiveModalSong()),
-    receiveAlbumSongs: (albumSongs) => dispatch(receiveAlbumSongs(albumSongs)),
     receiveQueLength: (queLength) => dispatch(receiveQueLength(queLength)),
-    receiveCurrentSongIndex: (idx) => dispatch(receiveCurrentSongIndex(idx))
   };
 };
 
