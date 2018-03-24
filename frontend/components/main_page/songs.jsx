@@ -1,5 +1,5 @@
 import React from 'react';
-import SongIndex from '../album/song_index';
+import SongIndexContainer from '../album/song_index_container';
 class Songs extends React.Component {
   constructor(props){
     super(props);
@@ -16,7 +16,7 @@ class Songs extends React.Component {
   render() {
     let songs;
     if (this.props.songs.length > 0) {
-      songs = <SongIndex songs={this.props.songs} />;
+      songs = <SongIndexContainer songs={this.props.songs} />;
     }
     return(
       <div className="all-songs-lists">

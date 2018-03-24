@@ -3,7 +3,7 @@ import Player from '../player/player';
 import Modal from 'react-modal';
 import PlaylistDropDown from '../playlist/playlist_drop_down';
 import SongItemComponent from './song_item_component';
-import SongIndex from './song_index';
+import SongIndexContainer from './song_index_container';
 
 class Album extends React.Component {
 
@@ -11,19 +11,22 @@ class Album extends React.Component {
    super(props);
  }
 
+
+
 componentDidMount(){
   this.props.getAlbum(parseInt(this.props.match.params.id));
   this.props.fetchAllPlaylist({user_id: this.props.currentUserId});
 }
 
 
+
 render(){
+
 
   let songs;
   if (this.props.songs.length > 0) {
-
     songs=
-      <SongIndex
+      <SongIndexContainer
       author={this.props.album.author}
       songs={this.props.songs} />;
   }

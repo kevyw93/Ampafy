@@ -14,8 +14,8 @@ class Feature extends React.Component {
   }
 
   handlePlayerAlbum(id){
-    debugger
     this.props.getPlayerAlbum(id);
+    this.props.playAlbum();
   }
 
   render() {

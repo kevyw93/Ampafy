@@ -1,11 +1,9 @@
 import { RECEIVE_CURRENT_SONG,
-  // RECEIVE_ALBUM_SONGS,
   RECEIVE_QUE_LENGTH,
   INCREMENT_CURRENT_SONG_INDEX,
   }
   from '../actions/player_actions';
-// import { RECEIVE_PLAYER_ALBUM } from '../actions/album_actions';
-import { RECEIVE_ALBUM } from '../actions/album_actions';
+import { PLAY_ALBUM, RECEIVE_PLAYER_ALBUM } from '../actions/album_actions';
 
 
 const spaceship = (x,y) => {
@@ -31,22 +29,17 @@ const playerReducer = (state = preloadedState, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_CURRENT_SONG:
-    debugger
-      // if (state.queOfSongs.length > 0) {
-        // if (state.queOfSongs.includes(action.songId.toString())) {
-          const newSongIndex = state.queOfSongs.indexOf(action.songId.toString());
-          newState = Object.assign({}, state, {currentSongId: action.songId, playAlbum: true, currentSongIndex: newSongIndex});
-        // }
-      // }else{
-      //   newState = Object.assign({}, state, {currentSongId: action.songId, playAlbum: true, currentSongIndex: 0});
-      // }
+        const newSongIndex = state.queOfSongs.indexOf(action.songId.toString());
+        newState = Object.assign({}, state, {currentSongId: action.songId, playAlbum: true, currentSongIndex: newSongIndex});
       return newState;
-    case RECEIVE_ALBUM:
-      debugger
+    case RECEIVE_PLAYER_ALBUM:
       const queOfSongs = action.songs ? Object.keys(action.songs) : null;
       const queLength = queOfSongs ? queOfSongs.length : [];
       newState = Object.assign({}, state, {albumImg: Object.values(action.album)[0].albumImg, queOfSongs: queOfSongs,
-        playAlbum:true, queLength: queLength});
+         queLength: queLength});
+      return newState;
+    case PLAY_ALBUM:
+      newState = Object.assign({}, state, {playAlbum: !state.playAlbum});
       return newState;
     case INCREMENT_CURRENT_SONG_INDEX:
       let currentSongIndex;

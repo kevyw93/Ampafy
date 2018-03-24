@@ -1,7 +1,7 @@
 import React from 'react';
 import Song from '../album/song_index';
 import {Redirect} from 'react-router-dom';
-import SongIndex from '../album/song_index';
+import SongIndexContainer from '../album/song_index_container';
 
 class PlaylistShow extends React.Component {
   constructor(props){
@@ -33,7 +33,7 @@ class PlaylistShow extends React.Component {
       title = this.props.playlist.title;
 
 
-      songs = <SongIndex display={"playlist"} playlistId={this.props.playlist.id} songs={this.props.songs} />;
+      songs = <SongIndexContainer display={"playlist"} playlistId={this.props.playlist.id} songs={this.props.songs} />;
 
       return (
         <div>

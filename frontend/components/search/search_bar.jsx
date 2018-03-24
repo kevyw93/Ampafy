@@ -1,6 +1,6 @@
 import Modal from 'react-modal';
 import React from 'react';
-import SongIndex from '../album/song_index';
+import SongIndexContainer from '../album/song_index_container';
 import AlbumSearchContainer from '../album/album_search_container';
 
 class SearchBar extends React.Component {
@@ -42,7 +42,7 @@ class SearchBar extends React.Component {
     let albums = <AlbumSearchContainer />;
     let songs;
     if (this.props.songs && this.props.songs.length > 0) {
-      songs = <SongIndex songs={this.props.songs} />;
+      songs = <SongIndexContainer songs={this.props.songs} />;
     }
     let show;
     if (this.state.button === 'songs') {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import {Link, Route} from 'react-router-dom';
-import SongIndex from '../album/song_index';
+// import SongIndex from '../album/song_index';
 
 class SideNavBar extends React.Component{
   constructor(props) {
@@ -44,7 +44,7 @@ class SideNavBar extends React.Component{
         <div className="username-sidenav">
           <h1>Hi, {this.props.user.username}</h1>
         </div>
-      
+
       </div>
     );
   }

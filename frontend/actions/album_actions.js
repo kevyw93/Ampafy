@@ -1,5 +1,6 @@
 export const RECEIVE_ALBUM = 'RECEIVE_ALBUM';
 export const RECEIVE_PLAYER_ALBUM = 'RECEIVE_PLAYER_ALBUM';
+export const PLAY_ALBUM = 'PLAY_ALBUM';
 export const RECEIVE_ALL_ALBUMS = 'RECEIVE_ALL_ALBUM';
 import * as ApiUtil from "../util/album_api_util";
 
@@ -25,6 +26,13 @@ export const receivePlayerAlbum = (payload) => {
   };
 };
 
+export const playAlbum = () => {
+  return {
+    type: PLAY_ALBUM,
+  };
+};
+
+
 export const getAllAlbums = () => {
   return dispatch => {
     return ApiUtil.getAllAlbums().then(
@@ -42,7 +50,6 @@ export const getAlbum = (id) => {
 };
 
 export const getPlayerAlbum = (id) => {
-  debugger
   return dispatch => {
     return ApiUtil.getAlbum(id).then(
       (payload) => dispatch(receivePlayerAlbum(payload))
