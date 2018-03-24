@@ -60,7 +60,6 @@ class Player extends React.Component{
   }
 
   changeSong() {
-    debugger
     this.props.incrementCurrentSongIndex();
   }
 

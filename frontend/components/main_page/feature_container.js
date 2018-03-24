@@ -1,8 +1,8 @@
 import {connect} from "react-redux";
 import Feature from './feature';
-import { getAllAlbums } from "../../actions/album_actions";
+import { getAllAlbums, getPlayerAlbum } from "../../actions/album_actions";
 import { fetchSong } from "../../actions/song_actions";
-import { receiveQueAlbum } from "../../actions/player_actions";
+import { receiveCurrentSong } from "../../actions/player_actions";
 
 const mapStateToProps = (state) => {
 
@@ -14,8 +14,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getAllAlbums: () => dispatch(getAllAlbums()),
+    getPlayerAlbum: (id) => dispatch(getPlayerAlbum(id)),
     fetchSong: (id) => dispatch(fetchSong(id)),
-    receiveQueAlbum: () => dispatch(receiveQueAlbum())
+    receiveCurrentSong: (songId) => dispatch(receiveCurrentSong(songId))
   };
 };
 

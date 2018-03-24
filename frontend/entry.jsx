@@ -18,13 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }else {
     store = configureStore();
   }
-  window.store = store;
-  window.getAlbum = getAlbum;
-  window.fetchArraySongs = fetchArraySongs;
-  window.getAllAlbums = getAllAlbums;
-  window.createPlaylist = createPlaylist;
   const root = document.getElementById("root");
 
   ReactDOM.render(<Root store={store} />, root);
-  // window.audio = document.getElementById('audio');
 });

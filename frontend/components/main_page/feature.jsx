@@ -5,11 +5,17 @@ import {Link, Route} from 'react-router-dom';
 class Feature extends React.Component {
   constructor(props) {
     super(props);
+    this.handlePlayerAlbum = this.handlePlayerAlbum.bind(this);
   }
 
 
   componentDidMount() {
     this.props.getAllAlbums();
+  }
+
+  handlePlayerAlbum(id){
+    debugger
+    this.props.getPlayerAlbum(id);
   }
 
   render() {
@@ -22,7 +28,7 @@ class Feature extends React.Component {
          <div className="img-div" style={{backgroundImage: `url(${alb.album_img})`}}>
 
          </div>
-         <img className="img-hover-div" src="http://www.pngmart.com/files/3/Play-Button-PNG-Picture.png" />
+         <img onClick={() => this.handlePlayerAlbum(alb.id)} className="img-hover-div" src="http://www.pngmart.com/files/3/Play-Button-PNG-Picture.png" />
        </Link>
         <h1 className="alb-title">{alb.title}</h1>
       </li>)

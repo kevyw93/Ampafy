@@ -1,9 +1,10 @@
 import { RECEIVE_CURRENT_SONG,
-  RECEIVE_ALBUM_SONGS,
+  // RECEIVE_ALBUM_SONGS,
   RECEIVE_QUE_LENGTH,
   INCREMENT_CURRENT_SONG_INDEX,
   }
   from '../actions/player_actions';
+// import { RECEIVE_PLAYER_ALBUM } from '../actions/album_actions';
 import { RECEIVE_ALBUM } from '../actions/album_actions';
 
 
@@ -30,6 +31,7 @@ const playerReducer = (state = preloadedState, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_CURRENT_SONG:
+    debugger
       // if (state.queOfSongs.length > 0) {
         // if (state.queOfSongs.includes(action.songId.toString())) {
           const newSongIndex = state.queOfSongs.indexOf(action.songId.toString());
@@ -40,6 +42,7 @@ const playerReducer = (state = preloadedState, action) => {
       // }
       return newState;
     case RECEIVE_ALBUM:
+      debugger
       const queOfSongs = action.songs ? Object.keys(action.songs) : null;
       const queLength = queOfSongs ? queOfSongs.length : [];
       newState = Object.assign({}, state, {albumImg: Object.values(action.album)[0].albumImg, queOfSongs: queOfSongs,
