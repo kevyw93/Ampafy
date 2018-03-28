@@ -17,15 +17,15 @@ class NewPlaylistForm extends React.Component {
   componentDidMount(){
     this.props.fetchAllPlaylist();
   }
-  handleAddSong(songId, playlistId) {
 
+  handleAddSong(songId, playlistId) {
+    
     return e => {
       this.props.addSongToPlaylist(
       {playlist_tagging:{song_id: songId, playlist_id: playlistId}});
       this.handleClose();
     };
   }
-
 
   handleOpen() {
     let modalMod;
