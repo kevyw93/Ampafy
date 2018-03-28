@@ -16,7 +16,7 @@ class Player extends React.Component{
   // go to reducer and add a reducer with idx and array of songs from albums/ playlist
 
   componentWillReceiveProps(nextProps) {
-    
+
     if (typeof this.props.song === 'undefined' && typeof nextProps.song === 'undefined') {
       return null;
     }else if (!this.props.song || nextProps.song.audioUrl !== this.props.song.audioUrl) {
@@ -67,8 +67,8 @@ class Player extends React.Component{
   render(){
     // this.duration = document.getElementById('audio').duration;
 
-    let playbutton = <button onClick={this.play} ><img className="pause-button"src="http://soundshareapp.com/assets/images/tours/play-button.png" /></button>;
-    let pausebutton = <button onClick={this.pause}><img className="play-button"src="http://pluspng.com/img-png/pause-button-png-pause-flat-button-png-512.png" /></button>;
+    let playbutton = <button onClick={this.play} ><img className="pause-button"src="https://cdn2.iconfinder.com/data/icons/media-and-navigation-buttons-round/512/Button_3-512.png" /></button>;
+    let pausebutton = <button onClick={this.pause}><img className="play-button"src="https://cdn3.iconfinder.com/data/icons/buttons/512/Icon_4-512.png" /></button>;
     let volumebutton = <input className="volume-bar" type="range" max={100} onChange={this.volumeControl} />;
     let button = this.props.status === 'playing' ? pausebutton : playbutton;
     let title;

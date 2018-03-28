@@ -89,7 +89,7 @@ class NewPlaylistForm extends React.Component {
           }}
         >
           <div className="in-modal-adding-playlist-container">
-            <button onClick={this.handleClose}><img className="new-playlist-modal-cancel-button" src="http://www.stepienybarno.es/blog/wp-content/uploads/2012/12/x-decalogo-virtudes-fortalezas-arquitecto-stepienybarno-copia.jpg" /></button>
+            <button onClick={this.handleClose}><img className="new-playlist-modal-cancel-button" src="https://www.stepienybarno.es/blog/wp-content/uploads/2012/12/x-decalogo-virtudes-fortalezas-arquitecto-stepienybarno-copia.jpg" /></button>
             <h1 className="add-playlist-words">Add to playlist</h1>
             <div className="adding-playlists-container">
               {playlists}

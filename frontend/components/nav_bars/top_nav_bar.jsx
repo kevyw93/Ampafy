@@ -68,7 +68,7 @@ class TopNavBar extends React.Component {
             <div className="form-modal-inner-container">
               <button onClick={this.handleOpenClose}>
                 <div className="x-sign">
-                  <div className="pic-of-x"><img src="http://www.stepienybarno.es/blog/wp-content/uploads/2012/12/x-decalogo-virtudes-fortalezas-arquitecto-stepienybarno-copia.jpg" /></div>
+                  <div className="pic-of-x"><img src="https://www.stepienybarno.es/blog/wp-content/uploads/2012/12/x-decalogo-virtudes-fortalezas-arquitecto-stepienybarno-copia.jpg" /></div>
 
                 </div>
                 </button>
