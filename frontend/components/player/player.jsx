@@ -77,7 +77,6 @@ class Player extends React.Component{
     let img;
     const pic = this.props.albumImg;
     let value;
-    console.log(pic);
 
     if (this.props.song) {
       title = this.props.song.title;
