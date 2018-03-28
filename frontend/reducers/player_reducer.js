@@ -3,7 +3,7 @@ import { RECEIVE_CURRENT_SONG,
   INCREMENT_CURRENT_SONG_INDEX,
   }
   from '../actions/player_actions';
-import { PLAY_ALBUM, RECEIVE_PLAYER_ALBUM } from '../actions/album_actions';
+import { PLAY_ALBUM, RECEIVE_PLAYER_ALBUM, RECEIVE_ALBUM } from '../actions/album_actions';
 
 
 const spaceship = (x,y) => {

@@ -28,7 +28,8 @@ class SongItemComponent extends React.Component{
     this.props.receiveModalSong();
     this.props.receiveSongId(this.props.song.id);
   }
-  handleAdd() {
+  handleAdd(e) {
+    debugger
     if ( this.props.currentSongId === this.props.song.id && this.props.status === 'playing') {
       this.props.receivePause();
     }else if(this.props.currentSongId=== this.props.song.id  && this.props.status === 'paused'){

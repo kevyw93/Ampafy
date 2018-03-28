@@ -10,7 +10,6 @@ class SongIndex extends React.Component{
     if (this.props.willPlayAlbum) {
       this.props.receiveCurrentSong(this.props.songs[0].id);
       this.props.playAlbum();
-      debugger
     }
   }
 
