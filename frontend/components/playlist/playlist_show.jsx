@@ -20,6 +20,7 @@ class PlaylistShow extends React.Component {
       this.props.history.push('/browse/playlists');
     };
   }
+  
   handleAdd(songId) {
     return e => this.props.receiveCurrentSong(songId);
   }

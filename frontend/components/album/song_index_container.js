@@ -13,7 +13,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     playAlbum: () => dispatch(playAlbum()),
-    receiveCurrentSong: (songId) => dispatch(receiveCurrentSong(songId))
+    receiveCurrentSong: (payload) => dispatch(receiveCurrentSong(payload)),
   };
 };
 

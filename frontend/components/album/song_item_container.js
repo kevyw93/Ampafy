@@ -19,14 +19,13 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    receiveCurrentSong: (song) => dispatch(receiveCurrentSong(song)),
+    receiveCurrentSong: (payload) => dispatch(receiveCurrentSong(payload)),
     addSongToPlaylist: (payload) => dispatch(addSongToPlaylist(payload)),
     fetchAllPlaylist: (userId) => dispatch(fetchAllPlaylist(userId)),
     receiveModalSong: () => dispatch(receiveModalSong()),
     receiveSongId: (id) => dispatch(receiveSongId(id)),
     receivePlay: () => dispatch(receivePlay()),
     receivePause: () => dispatch(receivePause()),
-
   };
 };
 

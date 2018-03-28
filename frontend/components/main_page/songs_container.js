@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchAllSongs: () => dispatch(fetchAllSongs()),
-    receiveCurrentSong: (song) => dispatch(receiveCurrentSong(song))
+    receiveCurrentSong: (payload) => dispatch(receiveCurrentSong(payload))
   };
 };
 

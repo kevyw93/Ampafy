@@ -4,10 +4,12 @@ export const RECEIVE_QUE_LENGTH = 'RECEIVE_QUE_LENGTH';
 
 export const INCREMENT_CURRENT_SONG_INDEX = 'INCREMENT_CURRENT_SONG_INDEX';
 
-export const receiveCurrentSong = (songId) => {
+export const receiveCurrentSong = (payload) => {
+  debugger
   return {
     type: RECEIVE_CURRENT_SONG,
-    songId
+    songId: payload.songId,
+    albumImg: payload.albumImg
   };
 };
 

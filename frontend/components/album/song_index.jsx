@@ -8,7 +8,7 @@ class SongIndex extends React.Component{
 
   componentDidMount(){
     if (this.props.willPlayAlbum) {
-      this.props.receiveCurrentSong(this.props.songs[0].id);
+      this.props.receiveCurrentSong({songId: this.props.songs[0].id, albumImg: this.props.albImg});
       this.props.playAlbum();
     }
   }

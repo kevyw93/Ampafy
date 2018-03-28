@@ -5,11 +5,14 @@ import PlaylistDropDownContainer from '../playlist/playlist_drop_down_container'
 class SongItemComponent extends React.Component{
   constructor(props){
     super(props);
+    debugger
     this.handleAdd = this.handleAdd.bind(this);
     this.handleOpenClose = this.handleOpenClose.bind(this);
     this.handleOpenCloseNewForm = this.handleOpenCloseNewForm.bind(this);
     this.state = {bool: false};
   }
+
+
 
   handleAddSong(songId, playlistId) {
     return e => {this.props.addSongToPlaylist(
@@ -28,23 +31,28 @@ class SongItemComponent extends React.Component{
     this.props.receiveModalSong();
     this.props.receiveSongId(this.props.song.id);
   }
+
   handleAdd(e) {
     if ( this.props.currentSongId === this.props.song.id && this.props.status === 'playing') {
       this.props.receivePause();
     }else if(this.props.currentSongId=== this.props.song.id  && this.props.status === 'paused'){
       this.props.receivePlay();
     }else {
-      this.props.receiveCurrentSong(this.props.song.id);
+      this.props.receiveCurrentSong({songId: this.props.song.id, albumImg: this.props.song.albumImg});
     }
   }
 
   render() {
-      const form = this.props.isThreeDots && this.props.songId === this.props.song.id ?
+    let form;
+    if (this.props.song) {
+      form = this.props.isThreeDots && this.props.songId === this.props.song.id ?
       <NewPlaylistFormContainer
         display={this.props.display}
         playlistId={this.props.playlistId}
         songId={this.props.song.id} />
-        : null;
+      : null;
+
+    }
       // const openPlaylist = this.props.isThreeDots
       // && this.props.songId
       // ? <PlaylistDropDownContainer songId={this.props.songId} /> : null;

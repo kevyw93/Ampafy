@@ -29,8 +29,9 @@ const playerReducer = (state = preloadedState, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_CURRENT_SONG:
+    debugger
         const newSongIndex = state.queOfSongs.indexOf(action.songId.toString());
-        newState = Object.assign({}, state, {currentSongId: action.songId, playAlbum: true, currentSongIndex: newSongIndex});
+        newState = Object.assign({}, state, {currentSongId: action.songId, playAlbum: true, currentSongIndex: newSongIndex, albumImg: action.albumImg});
       return newState;
     case RECEIVE_PLAYER_ALBUM:
       const queOfSongs = action.songs ? Object.keys(action.songs) : null;

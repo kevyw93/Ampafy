@@ -20,13 +20,12 @@ const mapStateToProps = (state, ownProps) => {
     status: state.ui.status,
     song,
     albumImg: state.player.albumImg,
-
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    receiveCurrentSong: (song) => dispatch(receiveCurrentSong(song)),
+    receiveCurrentSong: (payload) => dispatch(receiveCurrentSong(payload)),
     receivePlay: () => dispatch(receivePlay()),
     receivePause: () => dispatch(receivePause()),
     receiveStop: () => dispatch(receiveStop()),

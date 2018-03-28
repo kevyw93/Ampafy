@@ -40,12 +40,7 @@ class NewPlaylistForm extends React.Component {
     this.setState({bool: modalMod });
   }
 
-
-  // handleOpenClose() {
-  //   this.props.receiveListsPlaylist();
-  // }
   handleDeleteFromPlaylist(e){
-
     e.preventDefault();
     this.props.removeSongFromPlaylist({playlist_id: this.props.playlistId, song_id: this.props.songId});
   }

@@ -23,7 +23,7 @@ class Discover extends React.Component {
           <Link className="img-hover-cont" to={`/browse/playlist/${play.id}`}>
           <div className="img-div" style={{backgroundImage: `url(${playlistImg})`}}>
           </div>
-          <img className="img-hover-div-playlist" src="https://t3.ftcdn.net/jpg/00/32/16/22/240_F_32162248_LHZW62byX72nRhfHAcxBgKMBaN6pb9wn.jpg" />
+          <img className="img-hover-div-playlist" src="https://cdn2.iconfinder.com/data/icons/media-and-navigation-buttons-round/512/Button_3-512.png" />
           </Link>
             <h1 className="alb-title">{play.title}</h1>
       </li>
