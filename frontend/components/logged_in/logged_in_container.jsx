@@ -1,6 +1,7 @@
 import {connect} from "react-redux";
 import LoggedIn from "./logged_in";
 import {logout} from "../../actions/session_actions";
+import { fetchAllSongs } from "../../actions/song_actions";
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -10,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    fetchAllSongs: () => dispatch(fetchAllSongs())
   };
 };
 

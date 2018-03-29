@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import Feature from './feature';
 import { getAllAlbums, playAlbum, getPlayerAlbum } from "../../actions/album_actions";
-import { fetchSong } from "../../actions/song_actions";
+import { fetchSong} from "../../actions/song_actions";
 import { receiveCurrentSong } from "../../actions/player_actions";
 
 const mapStateToProps = (state) => {

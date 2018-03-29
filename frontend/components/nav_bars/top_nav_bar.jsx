@@ -38,8 +38,6 @@ class TopNavBar extends React.Component {
     return e => this.setState({[field]: e.target.value});
   }
 
-
-
   render() {
     return(
 

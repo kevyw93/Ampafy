@@ -7,12 +7,16 @@ import PlayerContainer from '../player/player_container';
 import SideNavBarContainer from '../nav_bars/side_nav_bar_container';
 import SearchBarContainer from '../search/search_bar_container';
 
-// import SongContainer from '../songs/song_container';
+import SongContainer from '../main_page/songs_container';
 
 class LoggedIn extends React.Component {
   constructor(props) {
     super(props);
 
+  }
+
+  componentDidMount() {
+    this.props.fetchAllSongs();
   }
 
 

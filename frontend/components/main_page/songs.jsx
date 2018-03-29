@@ -6,7 +6,7 @@ class Songs extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchAllSongs();
+    // this.props.fetchAllSongs();
   }
 
   handleAdd(songId) {
