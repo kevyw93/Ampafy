@@ -9,9 +9,9 @@ class Songs extends React.Component {
     this.props.fetchAllSongs();
   }
 
-  handleAdd(songId) {
-    this.props.receiveCurrentSong(songId);
-  }
+  // handleAdd(songId) {
+  //   this.props.receiveCurrentSong(songId);
+  // }
 
   render() {
     let songs;

@@ -14,14 +14,10 @@ const Landing = (props) => {
         <div className="wrapper-for-opacity">
 
           <div className="login-signup-landing">
-            <div className="amplafy-logo-container">
-              {/* <div> */}
-                {/* <img className="ampafy-logo" src="https://s3.amazonaws.com/ampafy-seeds/KEVVVVV.png"></img> */}
-              {/* </div>
-              <div> */}
-                <h1 className="landing-logo-title">Ampafy</h1>
+            <div className="ampafy-logo-container">
+              <img className="ampafy-logo" src="https://s3.amazonaws.com/ampafy-seeds/KEVVVVV.png"></img>
+              <h1 className="landing-logo-title">Ampafy</h1>
 
-              {/* </div> */}
             </div>
 
 
@@ -47,7 +43,7 @@ const Landing = (props) => {
             <div className="checkbox-holder">
               <img className="checks" src="https://open.scdn.co/static/images/checkmark.png" /><h3 className="check-image-words"> Search and discover how to be Ampafied</h3>
             </div>
-              <div className="checkbox-holder">
+            <div className="checkbox-holder">
               <img className="checks" src="https://open.scdn.co/static/images/checkmark.png" /><h3 className="check-image-words">Create playlist of your favorite music</h3>
             </div>
           </div>
