@@ -9,9 +9,9 @@ class Feature extends React.Component {
   }
 
 
-  componentDidMount() {
-    this.props.getAllAlbums();
-  }
+  // componentDidMount() {
+  //   this.props.getAllAlbums();
+  // }
 
   handlePlayerAlbum(id){
     this.props.getPlayerAlbum(id);
