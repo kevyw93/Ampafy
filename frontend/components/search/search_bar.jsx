@@ -69,36 +69,3 @@ class SearchBar extends React.Component {
   }
 }
   export default SearchBar;
-
-//   <Modal
-//     ariaHideApp={false}
-//     className="search-bar-modal"
-//     isOpen={this.props.statusOfModal}
-//     className={{
-//       base: 'search-bar-modal',
-//       afterOpen: 'search-bar-modal_after-open',
-//       beforeClose: 'search-bar-modal_before-close'
-//     }}
-//     overlayClassName={{
-//       base: 'search-bar-modal-overlay',
-//       afterOpen: 'search-bar-modal-overlay_after-open',
-//       beforeClose: 'search-bar-modal-overlay_before-close'
-//     }}
-//     >
-//       <button onClick={this.props.receiveSearchBool} className="close-button">Close</button>
-//     {/*  onsubmit and onChange*/}
-//     <form onSubmit={this.handleSubmit}>
-//       <input className='form-input' onChange={this.handleChange('search')} value={this.state.search} placeholder="Search..."/>
-//
-//     <button>Search</button>
-// </form>
-// {/* <Route exact path='/search/songs' component={SongIndex} /> */}
-//
-// <Link to="/search/songs" >Songs</Link>
-// {/* {songs} */}
-// {/* {albums} */}
-//
-//
-//
-//
-// </Modal>

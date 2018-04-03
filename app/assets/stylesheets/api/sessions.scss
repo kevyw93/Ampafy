@@ -28,7 +28,9 @@
   padding: 22px 15px;
   text-align: center;
   color: white;
+
 }
+
 
 .form-container {
   @media screen and (max-width: 767px){
@@ -89,8 +91,19 @@
 .errors {
   text-align: center;
   color: red;
+  height: 20px;
   font-family: Circular,Helvetica,Arial,sans-serif;
+  -webkit-animation: fadein 6s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 6s; /* Firefox < 16 */
+       -ms-animation: fadein 6s; /* Internet Explorer */
+        -o-animation: fadein 6s; /* Opera < 12.1 */
+           animation: fadein 6s;
 }
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 
 .login-signup-button {
   background-color: #1db954;

@@ -9,9 +9,9 @@ class Feature extends React.Component {
   }
 
 
-  // componentDidMount() {
-  //   this.props.getAllAlbums();
-  // }
+  componentDidMount() {
+    this.props.getAllAlbums();
+  }
 
   handlePlayerAlbum(id){
     this.props.getPlayerAlbum(id);
@@ -20,7 +20,7 @@ class Feature extends React.Component {
 
   render() {
 
-    // have a key error here
+
     const albs = Object.values(this.props.albums).map(
       alb =>
       (<li key={alb.id} className="single-album">

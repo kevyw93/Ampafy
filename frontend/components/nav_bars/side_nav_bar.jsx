@@ -8,28 +8,16 @@ class SideNavBar extends React.Component{
     super(props);
   }
 
-  // handleChange(field){
-  //   return e => this.setState({[field]: e.target.value});
-  // }
-  //
-  // handleSubmit(e){
-  //   e.preventDefault();
-  //   let newPlaylist = {search_query: this.state.search};
-  //   if (this.state.search.length !== 0) {
-  //     this.props.searchDatabase(newPlaylist);
-  //     let newState = Object.assign({}, {search: ''});
-  //     this.setState(newState);
-  //     // this.props.receiveSearchBool();
-  //   }
-  // }
-
   render(){
 
     return(
       <div className="side-nav-bar">
         <div className="top-bar">
           <div className="spaces">
-            <Link className="search-bar" to="/search">Search</Link>
+            <div className="search-bar_icon">
+              <Link className="search-bar" to="/search">Search</Link>
+              <i className="fas fa-search"></i>
+            </div>
             <div className="lines"></div>
           </div>
           <div className="spaces">

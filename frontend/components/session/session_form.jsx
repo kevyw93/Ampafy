@@ -14,10 +14,9 @@ class SessionForm extends React.Component {
   componentDidMount(){
     this.props.clearErrors();
   }
-  
+
   handleSubmit(e){
     e.preventDefault();
-
     const user = Object.assign({}, this.state);
     this.props.processForm({user: user});
   }
@@ -60,7 +59,7 @@ class SessionForm extends React.Component {
     let butt = 'LOG IN';
     let buttonholder = "Don't have an account?";
     let creds;
-    if (this.props.errors.creds) {
+    if (this.props.errors.creds && (this.state.username.length > 0 && this.state.password.length > 0)) {
       creds = <h1 className="top-error">{this.props.errors.creds}</h1>;
     }
 
