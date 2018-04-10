@@ -4,6 +4,20 @@ export const RECEIVE_LISTS_PLAYLIST = 'RECEIVE_LISTS_PLAYLIST';
 export const RECEIVE_PLAY = 'RECEIVE_PLAY';
 export const RECEIVE_PAUSE = 'RECEIVE_PAUSE';
 export const RECEIVE_STOP = 'RECEIVE_STOP';
+// export const SAME_THREE_DOTS = 'SAME_THREE_DOTS';
+// export const DIFFERENT_THREE_DOTS = 'DIFFERENT_THREE_DOTS';
+
+// export const toggleSameThreeDots = () => {
+//   return {
+//     type: SAME_THREE_DOTS
+//   };
+// };
+
+// export const toggleDifferentThreeDots = () => {
+//   return {
+//     type: DIFFERENT_THREE_DOTS
+//   };
+// };
 
 export const receiveModalSong = () => {
   return {

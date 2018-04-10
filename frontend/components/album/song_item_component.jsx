@@ -20,14 +20,10 @@ class SongItemComponent extends React.Component{
   }
 
   handleOpenCloseNewForm(){
-    let newBool = this.state.bool ? false : true;
+    let newBool = !this.state.bool;
     let newState = { bool: newBool };
-    this.setState(newState);
-  }
-
-  handleOpenClose() {
-    this.props.receiveModalSong();
     this.props.receiveSongId(this.props.song.id);
+    this.setState(newState);
   }
 
   handleAdd() {
@@ -47,7 +43,7 @@ class SongItemComponent extends React.Component{
     let author;
     let album;
     if (this.props.song) {
-      form = this.props.isThreeDots && this.props.songId === this.props.song.id ?
+      form = this.state.bool && this.props.songId === this.props.song.id ?
       <NewPlaylistFormContainer
         display={this.props.display}
         playlistId={this.props.playlistId}
@@ -70,7 +66,7 @@ class SongItemComponent extends React.Component{
       <h1>{album}</h1>
         </div>
         <div className="modal-button">
-          <button onClick={this.handleOpenClose}>
+          <button onClick={this.handleOpenCloseNewForm}>
             <img className="three-dots" src="https://ncphn.org.au/wp-content/themes/ncphn/img/three-dots.png"/>
           </button>
           {form}

@@ -19,7 +19,7 @@ class NewPlaylistForm extends React.Component {
   }
 
   handleAddSong(songId, playlistId) {
-    
+
     return e => {
       this.props.addSongToPlaylist(
       {playlist_tagging:{song_id: songId, playlist_id: playlistId}});
@@ -31,7 +31,6 @@ class NewPlaylistForm extends React.Component {
     let modalMod;
     modalMod = true;
     this.setState({bool: modalMod });
-
   }
 
   handleClose(){

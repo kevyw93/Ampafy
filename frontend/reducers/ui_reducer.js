@@ -1,5 +1,6 @@
 import {RECEIVE_MODAL, RECEIVE_PLAY, RECEIVE_STOP, RECEIVE_PAUSE,
-  RECEIVE_SONG_ID, RECEIVE_LISTS_PLAYLIST}
+  RECEIVE_SONG_ID, RECEIVE_LISTS_PLAYLIST, SAME_THREE_DOTS}
+  // DIFFERENT_THREE_DOTS}
   from '../actions/ui_actions';
 
 
@@ -8,7 +9,7 @@ const initialState = {
   id: null,
   openListPlaylist: false,
   status: 'stopped',
-
+  toggleThreeDots: false
 };
 
 const uiReducer = (state = initialState, action) => {
@@ -32,6 +33,12 @@ const uiReducer = (state = initialState, action) => {
     case RECEIVE_PAUSE:
       newState = Object.assign({}, state, {status: 'paused'});
       return newState;
+    // case SAME_THREE_DOTS:
+    //   newState = Object.assign({}, state, {toggleThreeDots: !state.toggleThreeDots});
+    //   return newState;
+    // case DIFFERENT_THREE_DOTS:
+    //   newState = Object.assign({}, state, {toggleThreeDots: !state.toggleThreeDots});
+    //   return newState;
     default:
       return state;
 
