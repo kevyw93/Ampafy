@@ -18,6 +18,7 @@ const mapStateToProps = (state,ownProps) => {
     }
 
   return {
+    currentUserId: state.entities.session.currentUser.id,
     playlistId: parseInt(ownProps.match.params.id),
     playlist,
     songs

@@ -11,7 +11,6 @@ class Discover extends React.Component {
   }
 
 
-
   render() {
     let playlist;
     if (this.props.playlists) {

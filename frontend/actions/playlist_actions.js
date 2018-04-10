@@ -23,7 +23,6 @@ export const removePlaylist = (playlist) => {
 };
 
 export const receiveAllPlaylist = (playlists) => {
-
   return {
     type: RECEIVE_ALL_PLAYLISTS,
     playlists

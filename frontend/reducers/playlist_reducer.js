@@ -13,7 +13,7 @@ const playlistReducer = (state = {}, action) => {
       return newState;
     case REMOVE_PLAYLIST:
       newState = Object.assign({}, state);
-      delete newState[Object.keys(action.playlist.playlist)[0]];
+      delete newState[parseInt(Object.keys(action.playlist.playlist)[0])];
       return newState;
     case REMOVE_SONG_FROM_PLAYLIST:
       newState = Object.assign({}, state, action.playlist);
