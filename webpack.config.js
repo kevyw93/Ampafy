@@ -4,7 +4,7 @@ var plugins = [];
 var devPlugins = [];
 
 var prodPlugins = [
-  new webpack.DefinePLugin({
+  new webpack.DefinePlugin({
     'process.env': {
       'NODE_ENV': JSON.stringify('production')
     }
@@ -27,6 +27,7 @@ module.exports = {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
     filename: './bundle.js',
   },
+  plugins: plugins,
   module: {
     loaders: [
       {
@@ -43,5 +44,5 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '*']
   },
-  plugins: plugins
+
 };
