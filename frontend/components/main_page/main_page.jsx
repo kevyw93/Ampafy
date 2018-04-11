@@ -26,7 +26,7 @@ class MainPage extends React.Component {
           <Route exact path='/browse/albums' component={FeatureContainer} />
           <Route exact path='/browse/playlists' component={DiscoverContainer} />
           <Route path='/browse/playlist/:id' component={PlaylistShowContainer} />
-        <Route exact path='/browse/songs' component={SongsContainer} />
+          <Route exact path='/browse/songs' component={SongsContainer} />
         </Switch>
       </div>
 
