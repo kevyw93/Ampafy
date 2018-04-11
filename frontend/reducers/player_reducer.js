@@ -3,7 +3,7 @@
   INCREMENT_CURRENT_SONG_INDEX,
   }
   from '../actions/player_actions';
-import { PLAY_ALBUM, RECEIVE_PLAYER_ALBUM, RECEIVE_ALBUM } from '../actions/album_actions';
+import { PLAY_ALBUM, RECEIVE_PLAYER_ALBUM, RECEIVE_ALBUM, VISIT_PLAYER_ALBUM } from '../actions/album_actions';
 
 
 const spaceship = (x,y) => {
@@ -23,6 +23,8 @@ const preloadedState = {
   queLength: null,
   endQue: false,
   albumImg: null,
+  visitingSongs: [],
+  visitingQueLength: null
 };
 
 const playerReducer = (state = preloadedState, action) => {
@@ -37,6 +39,11 @@ const playerReducer = (state = preloadedState, action) => {
       const queLength = queOfSongs ? queOfSongs.length : [];
       newState = Object.assign({}, state, {albumImg: Object.values(action.album)[0].albumImg, queOfSongs: queOfSongs,
          queLength: queLength});
+      return newState;
+    case VISIT_PLAYER_ALBUM:
+      const visitingSongs = action.songs ? Object.keys(action.songs) : null;
+      const visitingQueLength = visitingSongs ? visitingSongs.length : [];
+      newState = Object.assign({}, state, {visitingSongs: visitingSongs, visitingQueLength : visitingQueLength });
       return newState;
     case PLAY_ALBUM:
       newState = Object.assign({}, state, {playAlbum: !state.playAlbum});

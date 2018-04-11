@@ -8,7 +8,6 @@ class Feature extends React.Component {
     this.handlePlayerAlbum = this.handlePlayerAlbum.bind(this);
   }
 
-
   componentDidMount() {
     this.props.getAllAlbums();
   }
@@ -18,12 +17,13 @@ class Feature extends React.Component {
     this.props.playAlbum();
   }
 
+
+
   render() {
 
-
     const albs = Object.values(this.props.albums).map(
-      alb =>
-      (<li key={alb.id} className="single-album">
+      (alb, idx)=>
+      (<li key={idx} className="single-album">
         <Link className="img-hover-cont" to={`/browse/album/${alb.id}`}>
          <div className="img-div" style={{backgroundImage: `url(${alb.album_img})`}}>
 

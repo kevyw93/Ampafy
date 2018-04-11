@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import Player from './player';
 import { receiveCurrentSong, incrementCurrentSongIndex } from "../../actions/player_actions";
 import {receivePlay, receivePause, receiveStop} from '../../actions/ui_actions';
-import {getAlbum} from '../../actions/album_actions';
+import {getAlbum } from '../../actions/album_actions';
 // import { fetchSong } from "../../actions/song_actions";
 import _ from 'lodash';
 
@@ -20,6 +20,7 @@ const mapStateToProps = (state, ownProps) => {
     status: state.ui.status,
     song,
     albumImg: state.player.albumImg,
+    visitingStatus: state.ui.visiting
   };
 };
 

@@ -5,7 +5,6 @@ import { fetchSong } from "../../actions/song_actions";
 import { receiveCurrentSong } from "../../actions/player_actions";
 
 const mapStateToProps = (state) => {
-
   return {
     albums: state.entities.albums
   };

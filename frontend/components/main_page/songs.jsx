@@ -3,6 +3,7 @@ import SongIndexContainer from '../album/song_index_container';
 class Songs extends React.Component {
   constructor(props){
     super(props);
+    
   }
 
   handleAdd(songId) {

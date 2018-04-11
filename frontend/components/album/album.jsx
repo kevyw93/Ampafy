@@ -14,6 +14,8 @@ class Album extends React.Component {
 componentDidMount(){
   this.props.getAlbum(parseInt(this.props.match.params.id));
   this.props.fetchAllPlaylist({user_id: this.props.currentUserId});
+  this.props.visitPlayerAlbum(parseInt(this.props.match.params.id));
+  this.props.visitAlbum();
 }
 
 render(){
@@ -23,7 +25,7 @@ render(){
     songs=
       <SongIndexContainer
       albImg = {this.props.album.albumImg}
-      author={this.props.album.author}
+
       songs={this.props.songs} />;
   }
 
