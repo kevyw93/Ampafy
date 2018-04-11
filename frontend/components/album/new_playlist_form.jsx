@@ -7,7 +7,6 @@ class NewPlaylistForm extends React.Component {
 
   constructor(props){
     super(props);
-    // this.handleOpenClose = this.handleOpenClose.bind(this);
     this.state = {bool:false};
     this.handleDeleteFromPlaylist = this.handleDeleteFromPlaylist.bind(this);
     this.handleOpen = this.handleOpen.bind(this);
@@ -47,7 +46,6 @@ class NewPlaylistForm extends React.Component {
   render(){
     let playlists;
     const playlistImg = "https://s3.amazonaws.com/ampafy-seeds/Screen+Shot+2018-01-12+at+12.28.18+PM.png";
-    // if (this.props.openListPlaylist) {
       playlists = this.props.playlists.map((play, idx) =>
 
 
@@ -60,7 +58,6 @@ class NewPlaylistForm extends React.Component {
       </li>
     );
 
-    // let openPlaylist = this.props.openListPlaylist ? <PlaylistDropDownContainer playlistId={this.props.playlistId} songId={this.props.songId} /> : null;
     const button = this.props.display === "playlist" ? <button onClick={this.handleDeleteFromPlaylist}>Delete From Playlist</button> : null;
     return (
       <div>

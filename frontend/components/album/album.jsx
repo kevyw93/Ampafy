@@ -12,6 +12,7 @@ class Album extends React.Component {
  }
 
 componentDidMount(){
+  debugger
   this.props.getAlbum(parseInt(this.props.match.params.id));
   this.props.fetchAllPlaylist({user_id: this.props.currentUserId});
 }

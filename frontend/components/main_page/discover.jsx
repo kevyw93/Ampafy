@@ -10,7 +10,6 @@ class Discover extends React.Component {
     this.props.fetchAllPlaylist({user_id: this.props.currentUserId});
   }
 
-
   render() {
     let playlist;
     if (this.props.playlists) {

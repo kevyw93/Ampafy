@@ -11,7 +11,6 @@ const mapStateToProps = (state, ownProps) => {
     songCurrentIndex: ownProps.index,
     status: state.ui.status,
     songs: state.entities.songs,
-    isThreeDots: state.ui.isThreeDots,
     songId: state.ui.id,
     currentSongId: state.player.currentSongId,
   };

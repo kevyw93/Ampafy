@@ -16,7 +16,7 @@ class Player extends React.Component{
   // go to reducer and add a reducer with idx and array of songs from albums/ playlist
 
   componentWillReceiveProps(nextProps) {
-
+    debugger
     if (typeof this.props.song === 'undefined' && typeof nextProps.song === 'undefined') {
       return null;
     }else if (!this.props.song || nextProps.song.audioUrl !== this.props.song.audioUrl) {

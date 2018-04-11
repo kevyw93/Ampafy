@@ -20,7 +20,7 @@ const mapStateToProps = (state, ownProps) => {
     currentUserId: state.entities.session.currentUser.id,
     songs: songs || [],
     playlists: Object.values(state.entities.playlists),
-    isThreeDots: state.ui.isThreeDots
+    
   };
 };
 
