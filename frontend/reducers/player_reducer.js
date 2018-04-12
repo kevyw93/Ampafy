@@ -4,6 +4,7 @@
   }
   from '../actions/player_actions';
 import { PLAY_ALBUM, RECEIVE_PLAYER_ALBUM, RECEIVE_ALBUM, VISIT_PLAYER_ALBUM } from '../actions/album_actions';
+import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
 
 const spaceship = (x,y) => {
@@ -65,6 +66,21 @@ const playerReducer = (state = preloadedState, action) => {
       return newState;
     case RECEIVE_QUE_LENGTH:
       newState = Object.assign({}, state, {queLength: action.queLength});
+      return newState;
+    case RECEIVE_CURRENT_USER:
+    debugger
+      newState = Object.assign({}, state,
+        {
+        currentSongId: null,
+        playAlbum: false,
+        queOfSongs: [],
+        currentSongIndex: 0,
+        queLength: null,
+        endQue: false,
+        albumImg: null,
+        visitingSongs: [],
+        visitingQueLength: null
+      });
       return newState;
     default:
       return state;

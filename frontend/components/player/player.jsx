@@ -7,7 +7,7 @@ class Player extends React.Component{
     this.state = { progress: 0, length: 0};
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
-    this.changeSong = this.changeSong.bind(this);
+    this.nextSong = this.nextSong.bind(this);
     this.handleProgress = this.handleProgress.bind(this);
     this.handleLength = this.handleLength.bind(this);
     this.handleSeek = this.handleSeek.bind(this);
@@ -24,7 +24,7 @@ class Player extends React.Component{
       if(this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'paused'){
         this.audio.play();
       }else if (this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'playing' && this.props.visitingStatus) {
-        
+
       }else if (this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'playing'){
         this.audio.pause();
       }
@@ -61,7 +61,7 @@ class Player extends React.Component{
     this.audio.currentTime = e.target.value;
   }
 
-  changeSong() {
+  nextSong() {
     this.props.incrementCurrentSongIndex();
   }
 
@@ -70,6 +70,8 @@ class Player extends React.Component{
 
     let playbutton = <button onClick={this.play} ><img className="pause-button"src="https://cdn2.iconfinder.com/data/icons/media-and-navigation-buttons-round/512/Button_3-512.png" /></button>;
     let pausebutton = <button onClick={this.pause}><img className="play-button"src="https://cdn3.iconfinder.com/data/icons/buttons/512/Icon_4-512.png" /></button>;
+    let nextbutton = <div onClick={this.nextSong}>Next</div>;
+    let prevbutton = <div>prev</div>;
     let volumebutton = <input className="volume-bar" type="range" max={100} onChange={this.volumeControl} />;
     let button = this.props.status === 'playing' ? pausebutton : playbutton;
     let title;
@@ -117,6 +119,8 @@ class Player extends React.Component{
             <div className="player-song-time">
                 {showTime}
                 {volumebutton}
+                {nextbutton}
+                {prevbutton}
             </div>
         </div>
 
@@ -128,7 +132,7 @@ class Player extends React.Component{
           onCanPlayThrough={this.play}
           onLoadedData={this.handleLength}
           onTimeUpdate={this.handleProgress}
-          onEnded={this.changeSong}
+          onEnded={this.nextSong}
           >
         </audio>
       </div>

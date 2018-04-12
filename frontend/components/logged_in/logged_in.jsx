@@ -12,13 +12,11 @@ import SongContainer from '../main_page/songs_container';
 class LoggedIn extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   componentDidMount() {
     this.props.fetchAllSongs();
   }
-
 
   render() {
     let backgroundColor;

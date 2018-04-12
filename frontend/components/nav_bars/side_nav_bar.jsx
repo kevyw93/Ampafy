@@ -1,7 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
 import {Link, Route} from 'react-router-dom';
-// import SongIndex from '../album/song_index';
 
 class SideNavBar extends React.Component{
   constructor(props) {
