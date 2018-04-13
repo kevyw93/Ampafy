@@ -1,6 +1,7 @@
 .player-outmost-container{
  display:flex;
  height: inherit;
+ background: rgba(0,0,0,0.7);
 }
 .button-holder{
   width: 200px;
@@ -27,8 +28,12 @@
 }
 .right-side-container{
   display:flex;
-  // margin: auto auto;
-  margin-left: calc(50% - 450px);
+  @media only screen and (min-width: 1000px){
+    margin-left: calc(50% - 450px);
+  }
+  @media only screen and (max-width: 1000px){
+    margin: auto auto;
+  }
 }
 
 .prev-button{
