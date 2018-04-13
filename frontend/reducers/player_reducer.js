@@ -1,6 +1,7 @@
  import { RECEIVE_CURRENT_SONG,
   RECEIVE_QUE_LENGTH,
   INCREMENT_CURRENT_SONG_INDEX,
+  DECREMENT_CURRENT_SONG_INDEX
   }
   from '../actions/player_actions';
 import { PLAY_ALBUM, RECEIVE_PLAYER_ALBUM, RECEIVE_ALBUM, VISIT_PLAYER_ALBUM } from '../actions/album_actions';
@@ -30,6 +31,10 @@ const preloadedState = {
 
 const playerReducer = (state = preloadedState, action) => {
   let newState;
+  let currentSongIndex;
+  let endQue;
+  let playAlbum;
+
   switch (action.type) {
     case RECEIVE_CURRENT_SONG:
       const newSongIndex = state.queOfSongs.indexOf(action.songId.toString());
@@ -50,9 +55,6 @@ const playerReducer = (state = preloadedState, action) => {
       newState = Object.assign({}, state, {playAlbum: !state.playAlbum});
       return newState;
     case INCREMENT_CURRENT_SONG_INDEX:
-      let currentSongIndex;
-      let endQue;
-      let playAlbum;
       if (state.queLength && state.currentSongIndex + 1 < state.queLength) {
         currentSongIndex = state.currentSongIndex + 1;
         endQue = false;
@@ -64,11 +66,22 @@ const playerReducer = (state = preloadedState, action) => {
       }
       newState = Object.assign({}, state, {currentSongIndex: currentSongIndex, currentSongId: state.queOfSongs[currentSongIndex], endQue: endQue, playAlbum: playAlbum});
       return newState;
+    case DECREMENT_CURRENT_SONG_INDEX:
+      if (state.queLength && state.currentSongIndex - 1 >= 0) {
+        currentSongIndex = state.currentSongIndex - 1;
+        endQue = false;
+        playAlbum = true;
+      }else{
+        currentSongIndex = state.queLength - 1;
+        endQue = true;
+        playAlbum = false;
+      }
+      newState = Object.assign({}, state, {currentSongIndex: currentSongIndex, currentSongId: state.queOfSongs[currentSongIndex], endQue: endQue, playAlbum: playAlbum});
+      return newState;
     case RECEIVE_QUE_LENGTH:
       newState = Object.assign({}, state, {queLength: action.queLength});
       return newState;
     case RECEIVE_CURRENT_USER:
-    debugger
       newState = Object.assign({}, state,
         {
         currentSongId: null,
