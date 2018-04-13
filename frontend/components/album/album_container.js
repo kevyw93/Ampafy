@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import Album from './album';
-import { getAlbum, visitPlayerAlbum} from "../../actions/album_actions";
+import { getAlbum, visitPlayerAlbum, getPlayerAlbum} from "../../actions/album_actions";
 import { fetchSong } from "../../actions/song_actions";
 import { receiveQueLength } from "../../actions/player_actions";
 import * as selector from '../../util/selector';
@@ -29,6 +29,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     getAlbum: (id) => dispatch(getAlbum(id)),
     fetchSong: (songs) => dispatch(fetchSong(songs)),
     visitPlayerAlbum: (id) => dispatch(visitPlayerAlbum(id)),
+    getPlayerAlbum: (id) => dispatch(getPlayerAlbum(id)),
     visitAlbum: () => dispatch(visitAlbum()),
     addSongToPlaylist: (payload) => dispatch(addSongToPlaylist(payload)),
     fetchAllPlaylist: (userId) => dispatch(fetchAllPlaylist(userId)),

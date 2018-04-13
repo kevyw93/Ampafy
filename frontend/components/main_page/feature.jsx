@@ -13,7 +13,6 @@ class Feature extends React.Component {
   }
 
   handlePlayerAlbum(id){
-    this.props.getPlayerAlbum(id);
     this.props.playAlbum();
   }
 

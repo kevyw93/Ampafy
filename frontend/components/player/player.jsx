@@ -26,7 +26,6 @@ class Player extends React.Component{
       }else if (this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'playing' && this.props.visitingStatus) {
 
       }else if (this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'playing'){
-        debugger
         this.audio.pause();
       }
     }
