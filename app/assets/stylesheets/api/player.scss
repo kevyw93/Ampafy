@@ -27,7 +27,8 @@
 }
 .right-side-container{
   display:flex;
-  margin: auto auto;
+  // margin: auto auto;
+  margin-left: calc(50% - 450px);
 }
 
 .prev-button{
@@ -52,6 +53,9 @@
   width: 30px;
 }
 
+.show-time{
+  width: 40px;
+}
 
 .progressBar{
   width: 400px;
@@ -60,8 +64,9 @@
   height: 20px;
   display: flex;
   justify-content: space-between;
-  width: 200px;
-  margin-top: 60px;
+  width: 140px;
+  margin-top: 63px;
+  padding: 2px;
 }
 
 .play-pause{
@@ -79,4 +84,6 @@
 }
 .volume-bar{
   width: 50px;
+  margin-left: 5px;
+  margin-bottom: 5px;
 }

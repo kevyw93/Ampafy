@@ -116,8 +116,8 @@ class Player extends React.Component{
 
           <section className="time-vol-bar-container">
             <div className="player-song-time">
-              {showTime}
-              <div className="volume-container"><p>volumepic</p>{volumebutton}</div>
+              <div className="show-time">{showTime}</div>
+              <div className="volume-container"><i class="fas fa-volume-up"></i>{volumebutton}</div>
             </div>
           </section>
         </section>
