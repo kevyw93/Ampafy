@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import Player from './player';
-import { receiveCurrentSong, incrementCurrentSongIndex } from "../../actions/player_actions";
+import { receiveCurrentSong, incrementCurrentSongIndex, decrementCurrentSongIndex } from "../../actions/player_actions";
 import {receivePlay, receivePause, receiveStop} from '../../actions/ui_actions';
 import {getAlbum } from '../../actions/album_actions';
 // import { fetchSong } from "../../actions/song_actions";
@@ -32,6 +32,7 @@ const mapDispatchToProps = (dispatch) => {
     receiveStop: () => dispatch(receiveStop()),
     getAlbum: (id) => dispatch(getAlbum(id)),
     incrementCurrentSongIndex: () => dispatch(incrementCurrentSongIndex()),
+    decrementCurrentSongIndex: () => dispatch(decrementCurrentSongIndex()),
   };
 };
 

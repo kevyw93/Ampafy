@@ -8,12 +8,12 @@ class Player extends React.Component{
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
     this.nextSong = this.nextSong.bind(this);
+    this.prevSong = this.prevSong.bind(this);
     this.handleProgress = this.handleProgress.bind(this);
     this.handleLength = this.handleLength.bind(this);
     this.handleSeek = this.handleSeek.bind(this);
     this.volumeControl = this.volumeControl.bind(this);
   }
-  // go to reducer and add a reducer with idx and array of songs from albums/ playlist
 
   componentWillReceiveProps(nextProps) {
     if (typeof this.props.song === 'undefined' && typeof nextProps.song === 'undefined') {
@@ -26,6 +26,7 @@ class Player extends React.Component{
       }else if (this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'playing' && this.props.visitingStatus) {
 
       }else if (this.props.song.audioUrl === nextProps.song.audioUrl && this.props.status === 'playing'){
+        debugger
         this.audio.pause();
       }
     }
@@ -65,13 +66,16 @@ class Player extends React.Component{
     this.props.incrementCurrentSongIndex();
   }
 
-  render(){
-    // this.duration = document.getElementById('audio').duration;
+  prevSong() {
+    this.props.decrementCurrentSongIndex();
+  }
 
-    let playbutton = <button onClick={this.play} ><img className="pause-button"src="https://cdn2.iconfinder.com/data/icons/media-and-navigation-buttons-round/512/Button_3-512.png" /></button>;
-    let pausebutton = <button onClick={this.pause}><img className="play-button"src="https://cdn3.iconfinder.com/data/icons/buttons/512/Icon_4-512.png" /></button>;
-    let nextbutton = <div onClick={this.nextSong}>Next</div>;
-    let prevbutton = <div>prev</div>;
+  render(){
+
+    let playbutton = <button onClick={this.play} ><img className="pause-button" src="https://cdn2.iconfinder.com/data/icons/media-and-navigation-buttons-round/512/Button_3-512.png" /></button>;
+    let pausebutton = <button onClick={this.pause}><img className="play-button" src="https://cdn3.iconfinder.com/data/icons/buttons/512/Icon_4-512.png" /></button>;
+    let nextButton = <button onClick={this.nextSong}><img className="next-button" src="https://cdn2.iconfinder.com/data/icons/multimedia-glyph-black/2048/Next_Track-512.png"/></button>;
+    let prevButton = <button onClick={this.prevSong}><img className="prev-button" src="https://cdn2.iconfinder.com/data/icons/multimedia-glyph-black/2048/Previous_Track-256.png" /></button>;
     let volumebutton = <input className="volume-bar" type="range" max={100} onChange={this.volumeControl} />;
     let button = this.props.status === 'playing' ? pausebutton : playbutton;
     let title;
@@ -94,36 +98,29 @@ class Player extends React.Component{
     }
 
     return(
-      <div className="player-outer-container">
-        <div className="player-alb-img-outerContainer">
-          <div className="player-alb-img-innerContainer">
-            {img}
-          </div>
-
-          <div className="player-alb-title-container">
-            <h1 className="title">{title}</h1>
-          </div>
-
-        </div>
-
-        <div className="playbar-container">
-
-          <div className="playbar-inner-container">
-
-            <div className="play-pause">{button}</div>
-              <div className="playbar" >
-                <input type="range" onChange={this.handleSeek} max={this.state.length} value={value} className="progressBar" />
-              </div>
+      <main className="player-outmost-container">
+        <section className="left-side-container">
+          {img}
+          <h1>{title}</h1>
+        </section>
+        <section className="right-side-container">
+          <section className="button-bar-container">
+            <div className="button-holder">
+              {prevButton}
+              {button}
+              {nextButton}
             </div>
+              <input type="range" onChange={this.handleSeek} max={this.state.length} value={value} className="progressBar" />
 
+          </section>
+
+          <section className="time-vol-bar-container">
             <div className="player-song-time">
-                {showTime}
-                {volumebutton}
-                {nextbutton}
-                {prevbutton}
+              {showTime}
+              <div className="volume-container"><p>volumepic</p>{volumebutton}</div>
             </div>
-        </div>
-
+          </section>
+        </section>
         <audio
           src={src}
           ref={(audio) => {
@@ -135,7 +132,8 @@ class Player extends React.Component{
           onEnded={this.nextSong}
           >
         </audio>
-      </div>
+
+      </main>
     );
   }
 }
