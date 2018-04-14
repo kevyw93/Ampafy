@@ -100,7 +100,7 @@ class Player extends React.Component{
       <main className="player-outmost-container">
         <section className="left-side-container">
           {img}
-          <h1>{title}</h1>
+          <h1 className="title">{title}</h1>
         </section>
         <section className="right-side-container">
           <section className="button-bar-container">

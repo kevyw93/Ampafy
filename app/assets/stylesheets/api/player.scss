@@ -3,6 +3,7 @@
  height: inherit;
  background: rgba(0,0,0,0.7);
 }
+
 .button-holder{
   width: 200px;
   display: flex;
@@ -10,6 +11,7 @@
   margin: 0 auto;
   padding: 13px 0;
 }
+
 .button-bar-container {
   align-self: center;
 }
@@ -26,6 +28,7 @@
   width: 200px;
   display: flex;
 }
+
 .right-side-container{
   display:flex;
   @media only screen and (min-width: 1000px){
@@ -65,6 +68,7 @@
 .progressBar{
   width: 400px;
 }
+
 .player-song-time {
   height: 20px;
   display: flex;
@@ -80,8 +84,15 @@
 }
 
 .title{
-  font-size: 12px;
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
+  margin: auto 0;
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .alb-pics{
   height: 85px;
   width: 85px;

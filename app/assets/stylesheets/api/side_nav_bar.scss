@@ -71,7 +71,7 @@
 
 .side-nav-bar-container {
   width: 220px;
-  height: 100%;
+  height: calc(100% - 90px);
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;

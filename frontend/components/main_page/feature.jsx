@@ -27,7 +27,13 @@ class Feature extends React.Component {
          <div className="img-div" style={{backgroundImage: `url(${alb.album_img})`}}>
 
          </div>
-         <img onClick={() => this.handlePlayerAlbum(alb.id)} className="img-hover-div" src="https://cdn2.iconfinder.com/data/icons/media-and-navigation-buttons-round/512/Button_3-512.png" />
+         <div onClick={() => this.handlePlayerAlbum(alb.id)} className="img-hover-div">
+           <div className="albums-play-button">
+           </div>
+         </div>
+         <div className="darken-on-hover">
+
+         </div>
        </Link>
         <h1 className="alb-title">{alb.title}</h1>
       </li>)

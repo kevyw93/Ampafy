@@ -49,19 +49,16 @@
   flex-direction: row;
 }
 
-
 .alb-title{
   font-size: 15px;
   text-align: center;
   margin-top: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-// .alb-title-container{
-//   display: flex;
-// }
-
 .album-outmost-container{
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: row;
   overflow: scroll;

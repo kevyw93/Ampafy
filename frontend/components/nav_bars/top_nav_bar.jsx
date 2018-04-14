@@ -10,12 +10,9 @@ class TopNavBar extends React.Component {
     this.state = {title: '', user_id: null, bool: false};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-
-
   }
   //so topnavbar has 3 things feature blah blah
   // the routes will be in loggedIn and the they pass components in of each of the thigns
-
 
   handleOpenClose() {
     let modalMod = this.state.bool;
@@ -42,10 +39,15 @@ class TopNavBar extends React.Component {
     return(
 
       <div className="nav-bars">
-          <Link className="nav-links" to='/browse/albums'>Albums</Link>
-          <Link className="nav-links" to='/browse/playlists'>Playlists</Link>
-          <Link className="nav-links" to='/browse/songs'>Songs</Link>
+        <div className="inner-nav-bar-container">
+
+          <div className="nav-link-container">
+            <Link className="nav-links" to='/browse/albums'>Albums</Link>
+            <Link className="nav-links" to='/browse/playlists'>Playlists</Link>
+            <Link className="nav-links" to='/browse/songs'>Songs</Link>
+          </div>
           <button onClick={this.handleOpenClose}>New Playlist</button>
+        </div>
       <div className="playlist-modal">
 
       <Modal
