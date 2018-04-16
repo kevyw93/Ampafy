@@ -17,7 +17,7 @@
 
 .search-bar-form-input {
   height: 150px;
-  padding: 20px 3px;
+  padding: 20px 30px;
   width: 300px;
   font-size: 48px;
   line-height: 56px;
@@ -28,6 +28,7 @@
   width: 100%;
   &::placeholder {
     font-size: 50px;
+    font-family: 'Raleway', sans-serif;
   }
   background: rgba(40,40,40,1);
 }

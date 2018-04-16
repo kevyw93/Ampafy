@@ -6,10 +6,11 @@
 
 .button-holder{
   width: 200px;
+  height:35px;
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
-  padding: 13px 0;
+  margin: 0 calc(50% - 85px);
+  padding-bottom: 13px;
 }
 
 .button-bar-container {
@@ -40,26 +41,73 @@
 }
 
 .prev-button{
-  height: 30px;
-  width: 30px;
-}
-
-.play-button{
-  height: 32px;
-  width: 32px;
-  margin: auto auto;
-}
-
-.pause-button{
-  height: 32px;
-  width: 32px;
-  margin: auto auto;
+  margin-top: 5px;
+  height: 22px;
+  width: 22px;
 }
 
 .next-button {
-  height: 30px;
-  width: 30px;
+  margin-top: 5px;
+  height: 22px;
+  width: 22px;
 }
+
+.play-button{
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 11px solid grey;
+  transition: color,0.6s;
+  margin: auto 39%;
+}
+.play-button-container{
+  display:flex;
+  width: 32px;
+  height: 32px;
+  border:1px solid grey;
+  border-radius: 50%;
+  &:hover{
+    width: 34px;
+    height: 34px;
+    .play-button{
+      border-left: 11px solid white;
+    }
+    border: 1px solid white;
+  }
+
+}
+
+.pause-button-container{
+ border: 1px grey solid;
+ width: 32px;
+ height: 32px;
+ border-radius: 50%;
+ display:flex;
+ &:hover{
+   width: 34px;
+   height: 34px;
+   .pause-button{
+     border-color: white;
+   }
+   border: 1px solid white;
+ }
+}
+.pause-button{
+  width: 22px;
+  height: 16px;
+  border-style: solid;
+  border-width: 16px;
+  border-color: #202020;
+  border-style: double;
+  border-width: 0px 11px 0px 11px;
+  border-width: 0px 0px 0px 11px;
+  border-color: grey;
+  margin: auto calc(50% - 6px);
+  // margin: auto calc(50%-22px);
+}
+
+
 
 .show-time{
   width: 40px;
@@ -74,7 +122,7 @@
   display: flex;
   justify-content: space-between;
   width: 140px;
-  margin-top: 63px;
+  margin-top: 45px;
   padding: 2px;
 }
 

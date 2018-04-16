@@ -71,8 +71,8 @@ class Player extends React.Component{
 
   render(){
 
-    let playbutton = <button onClick={this.play} ><img className="pause-button" src="https://cdn2.iconfinder.com/data/icons/media-and-navigation-buttons-round/512/Button_3-512.png" /></button>;
-    let pausebutton = <button onClick={this.pause}><img className="play-button" src="https://cdn3.iconfinder.com/data/icons/buttons/512/Icon_4-512.png" /></button>;
+    let playbutton = <button onClick={this.play} ><div className="play-button-container"><div className="play-button"></div></div></button>;
+    let pausebutton = <button onClick={this.pause}><div className="pause-button-container"><div className="pause-button"></div></div></button>;
     let nextButton = <button onClick={this.nextSong}><img className="next-button" src="https://cdn2.iconfinder.com/data/icons/multimedia-glyph-black/2048/Next_Track-512.png"/></button>;
     let prevButton = <button onClick={this.prevSong}><img className="prev-button" src="https://cdn2.iconfinder.com/data/icons/multimedia-glyph-black/2048/Previous_Track-256.png" /></button>;
     let volumebutton = <input className="volume-bar" type="range" max={100} onChange={this.volumeControl} />;
