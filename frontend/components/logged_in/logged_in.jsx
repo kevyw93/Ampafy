@@ -21,13 +21,13 @@ class LoggedIn extends React.Component {
   render() {
     let backgroundColor;
     if (this.props.history.location.pathname === '/browse/albums') {
-      backgroundColor = "#313d30";
+      backgroundColor = "rgb(112, 65, 37)";
     }else if(this.props.history.location.pathname === '/browse/playlists'){
       backgroundColor = "#142444";
     }else if(this.props.history.location.pathname.includes('browse/playlist')){
       backgroundColor = "rgb(42, 57, 85)";
     }else if(this.props.history.location.pathname.includes('browse/album')){
-      backgroundColor = "rgb(112, 65, 37)";
+      backgroundColor = "#313d30";
     }else if(this.props.history.location.pathname === '/browse/songs'){
       backgroundColor = "darkslategrey";
     }else if(this.props.history.location.pathname === '/search'){

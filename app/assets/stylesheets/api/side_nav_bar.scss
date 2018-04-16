@@ -1,81 +1,73 @@
 .side-nav-bar{
-  height: 88%;
-  display: flex;
-  justify-content: space-between;
+  height: calc(100% - 90px);
+  width: 220px;
+  border: 1px solid black;
+  display:flex;
   flex-direction: column;
-  width: 180px;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.5);
 }
+.top-bar{
+  display:flex;
+  justify-content: center;
+}
+
+.links-container{
+  margin-top: 66px;
+  width: 172px;
+}
+
 .search-bar{
-  color: hsla(0,0%,100%,.6);
-  font-weight: 750;
-  transition: color, 1.5s;
-  &:hover{
-    color: white;
-  }
-  &:active{
-    color: rgb(27, 186, 83);
-
-  }
-
-}
-
-.search-bar_icon {
   display:flex;
   justify-content: space-between;
+  width: 100%;
+  margin: 15px 0;
 }
 
-.top-bar{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 172px;
-  margin-top: 30px;
-}
-.spaces{
-  width: 172px;
-  height: 49px;
-}
-.lines {
-  width: 172px;
-  border-bottom: 1px solid rgb(159, 152, 147);
-  margin-top: 15px;
+.search-text{
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 15px;
+  color: hsla(0,0%,100%,.6);
+  transition: color, 1s;
 }
 
 .homepage{
+  width: 100%;
+  margin: 15px 0;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 15px;
   color: hsla(0,0%,100%,.6);
-  font-weight: 750;
-  transition: color, 1.5s;
-  &:hover{
-    color: white;
-  }
-  &:active{
-    color: rgb(27, 186, 83);
-
-  }
-
+  transition: color, 1s;
 }
-.logout{
+
+.search-text:hover, .homepage:hover, .logout-button:hover {
+  color: white;
+}
+
+.lines{
+  width: 178px;
+  border-bottom: 1px solid #575A5B;
+}
+
+.bot-bar{
+  padding: 10px 0;
+  margin: 0 24px;
+}
+
+.logout-button{
+  padding: 10px 0;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 15px;
   color: hsla(0,0%,100%,.6);
-  font-weight: 750;
-  transition: color, 1.5s;
-  &:hover{
-    color: white;
-  }
-  &:active{
-    color: rgb(27, 186, 83);
-
-  }
-
+  transition: color, 1s;
 }
 
-
-.side-nav-bar-container {
-  width: 220px;
-  height: calc(100% - 90px);
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-}
-.username-sidenav{
-  text-align: center;
+.username-container{
+  padding-top: 10px;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 15px;
 }

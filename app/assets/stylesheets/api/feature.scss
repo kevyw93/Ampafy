@@ -11,6 +11,14 @@
   position: relative;
 }
 
+.img-hover-cont {
+  position: relative;
+}
+
+.darken-on-hover:hover, .img-hover-div:hover + .darken-on-hover{
+  visibility: visible;
+}
+
 .darken-on-hover{
   width: 218px;
   height: 217px;
@@ -20,16 +28,17 @@
   opacity: 0.5;
   bottom: 0;
   visibility: hidden;
-
 }
 
 .all-albums {
   background: transparent;
   display: grid;
   height: 100%;
+  box-sizing: border-box;
+  width: 100%;
 
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 30px;
+  grid-gap: 15px;
   .single-album{
     width:217px;
     height:217px;
@@ -62,15 +71,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
   }
-  @media (max-width: 717px){
-    grid-template-columns: repeat(1, 1fr);
-    grid-auto-rows: auto;
-    .single-album{
-      width: 217px;
-      height: 217px;
-    }
-  }
-  @media (max-width: 474px){
+  @media (max-width: 600px){
     grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: auto;
     .single-album{
@@ -91,11 +92,14 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  overflow: scroll;
 }
 
-.img-hover-cont {
-  position: relative;
+.all-albums-container{
+  width: 95%;
+  height: 100%;
+  display:flex;
+  overflow: hidden;
+  overflow: scroll
 }
 
 .img-hover-div {
@@ -120,9 +124,6 @@
   }
 
 }
-.img-hover-div:hover + .darken-on-hover {
-  visibility: visible;
-}
 
 .albums-play-button{
   width: 0;
@@ -131,10 +132,10 @@
   border-bottom: 32px solid transparent;
   border-left: 35px solid grey;
   transition: color,0.6s;
-  // &:hover{
-  //   border-left: 38px solid green;
-  //
-  // }
+  &:hover{
+    border-left: 38px solid green;
+
+  }
   margin: 19px 38px;
 }
 

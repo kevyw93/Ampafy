@@ -1,5 +1,4 @@
 import React from 'react';
-import Modal from 'react-modal';
 import {Link, Route} from 'react-router-dom';
 
 class SideNavBar extends React.Component{
@@ -10,29 +9,24 @@ class SideNavBar extends React.Component{
   render(){
 
     return(
-      <div className="side-nav-bar">
-        <div className="top-bar">
-          <div className="spaces">
-            <div className="search-bar_icon">
-              <Link className="search-bar" to="/search">Search</Link>
-              <i className="fas fa-search"></i>
-            </div>
+      <main className="side-nav-bar">
+        <section className="top-bar">
+          <div className="links-container">
             <div className="lines"></div>
-          </div>
-          <div className="spaces">
+            <Link className="search-bar" to="/search"><h1 className="search-text">Search</h1><i className="fas fa-search"></i></Link>
+            <div className="lines"></div>
             <Link to="/browse/albums"><h1 className="homepage">Home</h1></Link>
-          <div className="lines"></div>
-          </div>
-            <div className="spaces">
-              <button className="logout" onClick={this.props.logout}>Logout</button>
             <div className="lines"></div>
-            </div>
-        </div>
-        <div className="username-sidenav">
-          <h1>Hi, {this.props.user.username}</h1>
-        </div>
-
-      </div>
+          </div>
+        </section>
+        <section className="bot-bar">
+          <button className="logout-button" onClick={this.props.logout}>Logout</button>
+          <div className="lines"></div>
+          <h1 className="username-container">
+              {this.props.user.username}
+            </h1>
+        </section>
+      </main>
     );
   }
 }

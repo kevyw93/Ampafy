@@ -43,8 +43,10 @@ class Feature extends React.Component {
 
 
       <div className="outer-albs">
-        <div className="all-albums">
+        <div className="all-albums-container">
+          <div className="all-albums">
             {albs}
+          </div>
         </div>
       </div>
 

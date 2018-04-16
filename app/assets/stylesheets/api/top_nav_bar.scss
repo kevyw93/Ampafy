@@ -2,19 +2,25 @@ $text-grey: #ababaf;
 $spot-green: #1ed760;
 .nav-link-container {
   width: 450px;
+  margin: 25px auto;
 }
 
 .inner-nav-bar-container {
   display:flex;
-  justify-content: space-between;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+}
+.new-playlist-button{
+  width:100%;
+  display:flex;
+  justify-content: center;
 }
 .nav-bars {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  width: 100%;
+  flex:wrap;
   justify-content: center;
-  // width: 70%;
-  min-width: 500px;
   margin: 0 auto;
   position: relative;
   box-shadow: 10px 5px 5px linear-gradient(rgb(7, 61, 92), rgb(4, 6, 2) 85%);
@@ -23,7 +29,7 @@ $spot-green: #1ed760;
     font-size: 0.8rem;
     letter-spacing: 1px;
     font-weight: 300;
-    color: $text-grey;
+    color: hsla(0,0%,100%,.6);
     text-transform: uppercase;
     transition: color,0.6s;
     &:hover {
@@ -33,25 +39,25 @@ $spot-green: #1ed760;
   }
   button{
     background: $spot-green;
+    opacity: 0.8;
     font-size: 0.7rem;
     font-weight: light;
     text-transform: uppercase;
     width: 150px;
     height: 30px;
     border-radius: 17.5px;
-    letter-spacing: 1px;
-    position: absolute;
+    letter-spacing: 0.5px;
     right: 2em;
     &:hover{
       width: 155px;
       font-size: 0.73rem;
       background: lighten($spot-green, 5%);
+      opacity: 1;
     }
   }
-    height: 30px;
+    height: 135px;
     margin: 20px auto;
     padding: 10px;
-    // border: 1px solid red;
 }
 
 .top-of-form{
