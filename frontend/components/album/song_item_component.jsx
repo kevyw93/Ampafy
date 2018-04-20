@@ -27,8 +27,10 @@ class SongItemComponent extends React.Component{
 
   handleAdd() {
     if ( this.props.currentSongId === this.props.song.id && this.props.status === 'playing') {
+      this.props.togglePausePlay();
       this.props.receivePause();
-    }else if(this.props.currentSongId=== this.props.song.id  && this.props.status === 'paused'){
+    }else if(this.props.currentSongId === this.props.song.id  && this.props.status === 'paused'){
+      this.props.togglePausePlay();
       this.props.receivePlay();
     }else {
       this.props.receiveCurrentSong({songId: this.props.song.id, albumImg: this.props.song.albumImg});

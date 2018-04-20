@@ -20,7 +20,8 @@ const mapStateToProps = (state, ownProps) => {
     status: state.ui.status,
     song,
     albumImg: state.player.albumImg,
-    visitingStatus: state.ui.visiting
+    visitingStatus: state.ui.visiting,
+    pause: state.player.pause
   };
 };
 
