@@ -1,7 +1,8 @@
  import { RECEIVE_CURRENT_SONG,
   RECEIVE_QUE_LENGTH,
   INCREMENT_CURRENT_SONG_INDEX,
-  DECREMENT_CURRENT_SONG_INDEX
+  DECREMENT_CURRENT_SONG_INDEX,
+  TOGGLE_PAUSE_PLAY
   }
   from '../actions/player_actions';
 import { PLAY_ALBUM, RECEIVE_PLAYER_ALBUM, RECEIVE_ALBUM, VISIT_PLAYER_ALBUM } from '../actions/album_actions';
@@ -26,7 +27,8 @@ const preloadedState = {
   endQue: false,
   albumImg: null,
   visitingSongs: [],
-  visitingQueLength: null
+  visitingQueLength: null,
+  pause: false
 };
 
 const playerReducer = (state = preloadedState, action) => {
@@ -43,7 +45,7 @@ const playerReducer = (state = preloadedState, action) => {
     case RECEIVE_PLAYER_ALBUM:
       const queOfSongs = action.songs ? Object.keys(action.songs) : null;
       const queLength = queOfSongs ? queOfSongs.length : [];
-      newState = Object.assign({}, state, {albumImg: Object.values(action.album)[0].albumImg, queOfSongs: queOfSongs,
+      newState = Object.assign({}, state, {queOfSongs: queOfSongs,
          queLength: queLength});
       return newState;
     case VISIT_PLAYER_ALBUM:
@@ -77,6 +79,9 @@ const playerReducer = (state = preloadedState, action) => {
         playAlbum = false;
       }
       newState = Object.assign({}, state, {currentSongIndex: currentSongIndex, currentSongId: state.queOfSongs[currentSongIndex], endQue: endQue, playAlbum: playAlbum});
+      return newState;
+    case TOGGLE_PAUSE_PLAY:
+      newState = Object.assign({}, state, {pause: !state.pause});
       return newState;
     case RECEIVE_QUE_LENGTH:
       newState = Object.assign({}, state, {queLength: action.queLength});

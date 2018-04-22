@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import SongItemComponent from './song_item_component';
 import {receiveModalSong, receiveSongId, receivePlay,receivePause, toggleSameThreeDots } from '../../actions/ui_actions';
-import { receiveCurrentSong} from "../../actions/player_actions";
+import { receiveCurrentSong, togglePausePlay} from "../../actions/player_actions";
 import { fetchAllPlaylist, addSongToPlaylist} from "../../actions/playlist_actions";
 
 
@@ -18,6 +18,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
+    togglePausePlay: () => dispatch(togglePausePlay()),
     toggleSameThreeDots: () => dispatch(toggleSameThreeDots),
     receiveCurrentSong: (payload) => dispatch(receiveCurrentSong(payload)),
     addSongToPlaylist: (payload) => dispatch(addSongToPlaylist(payload)),
