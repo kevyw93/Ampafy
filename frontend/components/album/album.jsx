@@ -25,7 +25,6 @@ render(){
     songs=
       <SongIndexContainer
       albImg = {this.props.album.albumImg}
-
       songs={this.props.songs} />;
   }
 
@@ -46,7 +45,6 @@ render(){
     return (
       <div className="album-outmost-container">
         <div className="margin-container">
-
           {alb}
         </div>
         <div className="alb-songs">

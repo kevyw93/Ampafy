@@ -16,8 +16,6 @@ class Feature extends React.Component {
     this.props.playAlbum();
   }
 
-
-
   render() {
 
     const albs = Object.values(this.props.albums).map(

@@ -33,12 +33,13 @@
 .all-albums {
   background: transparent;
   display: grid;
-  height: 100%;
+  height: 250px;
   box-sizing: border-box;
   width: 100%;
 
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 15px;
+  grid-row-gap: 40px;
   .single-album{
     width:217px;
     height:217px;
