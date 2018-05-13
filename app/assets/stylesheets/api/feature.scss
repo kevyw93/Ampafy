@@ -16,7 +16,8 @@
 }
 
 .darken-on-hover:hover, .img-hover-div:hover + .darken-on-hover{
-  visibility: visible;
+  // visibility: visible;
+  display: initial;
 }
 
 .darken-on-hover{
@@ -27,7 +28,8 @@
   background: black;
   opacity: 0.5;
   bottom: 0;
-  visibility: hidden;
+  // visibility: hidden;
+  display: none;
 }
 
 .all-albums {
