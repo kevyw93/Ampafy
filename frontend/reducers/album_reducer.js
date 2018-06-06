@@ -2,9 +2,7 @@ import {RECEIVE_ALL_ALBUMS, RECEIVE_ALBUM } from '../actions/album_actions';
 import {RECEIVE_SEARCH_ITEM} from '../actions/search_actions';
 import merge from 'lodash/merge';
 
-const preloadedState = {
-  albums: null,
-};
+
 
 const albumReducer = (state = {}, action) => {
   let newState;
