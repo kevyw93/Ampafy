@@ -5,6 +5,7 @@
   TOGGLE_PAUSE_PLAY
   }
   from '../actions/player_actions';
+import { RECEIVE_PLAY, RECEIVE_STOP, RECEIVE_PAUSE} from '../actions/ui_actions';
 import { PLAY_ALBUM, RECEIVE_PLAYER_ALBUM, RECEIVE_ALBUM, VISIT_PLAYER_ALBUM } from '../actions/album_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
@@ -38,6 +39,12 @@ const playerReducer = (state = preloadedState, action) => {
   let playAlbum;
 
   switch (action.type) {
+    case RECEIVE_PLAY:
+      newState = Object.assign({}, state, {pause: false});
+      return newState;
+    case RECEIVE_PAUSE:
+      newState = Object.assign({}, state, {pause: true});
+      return newState;
     case RECEIVE_CURRENT_SONG:
       const newSongIndex = state.queOfSongs.indexOf(action.songId.toString());
       newState = Object.assign({}, state, {currentSongId: action.songId, playAlbum: true, currentSongIndex: newSongIndex, albumImg: action.albumImg});
@@ -53,6 +60,7 @@ const playerReducer = (state = preloadedState, action) => {
       const visitingQueLength = visitingSongs ? visitingSongs.length : [];
       newState = Object.assign({}, state, {visitingSongs: visitingSongs, visitingQueLength : visitingQueLength });
       return newState;
+
     case PLAY_ALBUM:
       newState = Object.assign({}, state, {playAlbum: !state.playAlbum});
       return newState;
