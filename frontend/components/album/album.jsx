@@ -1,7 +1,7 @@
 import React from 'react';
 import Player from '../player/player';
 import Modal from 'react-modal';
-import PlaylistDropDown from '../playlist/playlist_drop_down';
+
 import SongItemComponent from './song_item_component';
 import SongIndexContainer from './song_index_container';
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import NewPlaylistFormContainer from './new_playlist_form_container';
-import PlaylistDropDownContainer from '../playlist/playlist_drop_down_container';
 
 class SongItemComponent extends React.Component{
   constructor(props){

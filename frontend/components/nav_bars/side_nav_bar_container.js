@@ -6,8 +6,6 @@ import {receiveSearchBool, searchDatabase} from '../../actions/search_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
-
-
   return {
     user: state.entities.session.currentUser,
   };

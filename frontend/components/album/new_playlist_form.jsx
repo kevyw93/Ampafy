@@ -1,7 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
 import {Link} from 'react-router-dom';
-import PlaylistDropDownContainer from '../playlist/playlist_drop_down_container';
 
 class NewPlaylistForm extends React.Component {
 

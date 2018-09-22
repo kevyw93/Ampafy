@@ -95,18 +95,18 @@ const playerReducer = (state = preloadedState, action) => {
       newState = Object.assign({}, state, {queLength: action.queLength});
       return newState;
     case RECEIVE_CURRENT_USER:
-      newState = Object.assign({}, state,
-        {
-        currentSongId: null,
-        playAlbum: false,
-        queOfSongs: [],
-        currentSongIndex: 0,
-        queLength: null,
-        endQue: false,
-        albumImg: null,
-        visitingSongs: [],
-        visitingQueLength: null
-      });
+      newState = Object.assign({}, state, preloadedState);
+      //   {
+      //   currentSongId: null,
+      //   playAlbum: false,
+      //   queOfSongs: [],
+      //   currentSongIndex: 0,
+      //   queLength: null,
+      //   endQue: false,
+      //   albumImg: null,
+      //   visitingSongs: [],
+      //   visitingQueLength: null
+      // });
       return newState;
     default:
       return state;
