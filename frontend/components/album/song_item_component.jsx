@@ -52,7 +52,7 @@ class SongItemComponent extends React.Component{
       songTitle = this.props.song.title;
       author = this.props.song.author;
       album = this.props.song.album;
-
+      debugger
     }
 
     return(
@@ -72,7 +72,7 @@ class SongItemComponent extends React.Component{
 
       </div>
     );
-      //<button onClick={this.handleOpenClose}>Three button</button>
+
   }
 }
 
