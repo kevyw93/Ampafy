@@ -27,6 +27,7 @@ export const receivePlayerAlbum = (payload) => {
   };
 };
 
+
 export const receiveVisitPlayerAlbum = (payload) => {
   return {
     type: VISIT_PLAYER_ALBUM,

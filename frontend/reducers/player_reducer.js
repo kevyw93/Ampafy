@@ -6,7 +6,7 @@
   }
   from '../actions/player_actions';
 import { RECEIVE_PLAY, RECEIVE_STOP, RECEIVE_PAUSE} from '../actions/ui_actions';
-import { PLAY_ALBUM, RECEIVE_PLAYER_ALBUM, RECEIVE_ALBUM, VISIT_PLAYER_ALBUM } from '../actions/album_actions';
+import { PLAY_ALBUM, RECEIVE_PLAYER_ALBUM, RECEIVE_ALBUM, VISIT_PLAYER_ALBUM, PLAY_FULL_ALBUM } from '../actions/album_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
 
@@ -29,7 +29,7 @@ const preloadedState = {
   albumImg: null,
   visitingSongs: [],
   visitingQueLength: null,
-  pause: false
+  pause: false,
 };
 
 const playerReducer = (state = preloadedState, action) => {
@@ -44,7 +44,7 @@ const playerReducer = (state = preloadedState, action) => {
       return newState;
     case RECEIVE_PAUSE:
       newState = Object.assign({}, state, {pause: true});
-      return newState;
+      return newState
     case RECEIVE_CURRENT_SONG:
       const newSongIndex = state.queOfSongs.indexOf(action.songId.toString());
       newState = Object.assign({}, state, {currentSongId: action.songId, playAlbum: true, currentSongIndex: newSongIndex, albumImg: action.albumImg});
@@ -108,6 +108,7 @@ const playerReducer = (state = preloadedState, action) => {
       //   visitingQueLength: null
       // });
       return newState;
+
     default:
       return state;
 
