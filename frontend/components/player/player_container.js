@@ -16,7 +16,6 @@ const mapStateToProps = (state, ownProps) => {
   }else if ( state.entities.songs[state.player.currentSongId]) {
      song =  state.entities.songs[state.player.currentSongId];
    }
-   debugger
   return {
     status: state.ui.status,
     song,
