@@ -7,7 +7,7 @@ class SongIndex extends React.Component{
   }
 
   componentDidMount(){
-    if (this.props.willPlayAlbum && this.props.pathName !== "/browse/songs") {
+    if (this.props.willPlayAlbum && this.props.pathName.match("/browse/album") ) {
       this.props.receiveCurrentSong({songId: this.props.songs[0].id, albumImg: this.props.albImg});
       this.props.playAlbum();
     }
