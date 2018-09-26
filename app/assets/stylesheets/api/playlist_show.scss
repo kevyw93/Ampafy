@@ -1,7 +1,17 @@
 .playlist-show-title{
   font-size: 50px;
-  // color:
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  margin-left: 15px;
 }
 .whole-playlist-show {
   overflow: scroll;
+}
+
+.playlist-title-delete-container{
+  display:flex;
+  justify-content: space-between;
+  margin-right: 15px;
 }
