@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import MainPage from './main_page';
 import { getAllAlbums } from "../../actions/album_actions";
-import { fetchSong } from "../../actions/song_actions";
+import { fetchSong, fetchAllSongs } from "../../actions/song_actions";
 
 const mapStateToProps = (state,ownProps) => {
   return {

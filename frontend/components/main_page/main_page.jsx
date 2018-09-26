@@ -11,6 +11,7 @@ class MainPage extends React.Component {
     super(props);
   }
 
+  
 
   render() {
     // switch case here for top nav bar its going to be feature browse discover

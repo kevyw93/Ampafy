@@ -32,7 +32,6 @@ class PlaylistShow extends React.Component {
     if (this.props.playlist) {
       title = this.props.playlist.title;
 
-
       songs = <SongIndexContainer display={"playlist"} playlistId={this.props.playlist.id} songs={this.props.songs} />;
 
       return (

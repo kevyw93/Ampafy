@@ -50,9 +50,8 @@ class SongItemComponent extends React.Component{
         songId={this.props.song.id} />
       : null;
       songTitle = this.props.song.title;
-      author = this.props.song.author;
-      album = this.props.song.album;
-      debugger
+      author = this.props.albums[this.props.albumId].author;
+      album = this.props.albums[this.props.albumId].title;
     }
 
     return(

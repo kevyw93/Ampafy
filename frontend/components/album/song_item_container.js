@@ -7,12 +7,14 @@ import { fetchAllPlaylist, addSongToPlaylist} from "../../actions/playlist_actio
 
 const mapStateToProps = (state, ownProps) => {
 
+  debugger
   return {
     songCurrentIndex: ownProps.index,
     status: state.ui.status,
     songs: state.entities.songs,
     songId: state.ui.id,
     currentSongId: state.player.currentSongId,
+    albums: state.entities.albums
   };
 };
 
