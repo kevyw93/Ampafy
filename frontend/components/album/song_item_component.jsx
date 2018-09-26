@@ -41,7 +41,7 @@ class SongItemComponent extends React.Component{
     let form;
     let songTitle;
     let author;
-    let album;
+    let albumTitle;
     if (this.props.song) {
       form = this.state.bool && this.props.songId === this.props.song.id ?
       <NewPlaylistFormContainer
@@ -50,8 +50,14 @@ class SongItemComponent extends React.Component{
         songId={this.props.song.id} />
       : null;
       songTitle = this.props.song.title;
-      author = this.props.albums[this.props.albumId].author;
-      album = this.props.albums[this.props.albumId].title;
+      if(this.props.song.albumAuthor && this.props.song.albumTitle){
+        author = this.props.song.albumAuthor;
+        albumTitle = this.props.song.albumTitle;
+      }else{
+        author = this.props.albums[this.props.albumId].author;
+        albumTitle = this.props.albums[this.props.albumId].title;
+
+      }
     }
 
     return(
@@ -59,7 +65,7 @@ class SongItemComponent extends React.Component{
         <div onClick={this.handleAdd}>
           <h1 className="song-title">{this.props.index + 1}. {songTitle}</h1>
         <h1 className="song-author">{author}</h1>
-        <h1>{album}</h1>
+        <h1>{albumTitle}</h1>
         </div>
         <div className="modal-button">
           <button onClick={this.handleOpenClose}>

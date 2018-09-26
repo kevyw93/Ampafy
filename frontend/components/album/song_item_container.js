@@ -7,7 +7,6 @@ import { fetchAllPlaylist, addSongToPlaylist} from "../../actions/playlist_actio
 
 const mapStateToProps = (state, ownProps) => {
 
-  debugger
   return {
     songCurrentIndex: ownProps.index,
     status: state.ui.status,
