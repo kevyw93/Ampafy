@@ -16,6 +16,7 @@ class LoggedIn extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllSongs();
+    this.props.getAllAlbums();
   }
 
   render() {

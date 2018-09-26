@@ -9,6 +9,7 @@ class SongItemComponent extends React.Component{
     this.state = {bool: false};
   }
 
+
   handleAddSong(songId, playlistId) {
 
     return e => {this.props.addSongToPlaylist(
@@ -54,6 +55,7 @@ class SongItemComponent extends React.Component{
         author = this.props.song.albumAuthor;
         albumTitle = this.props.song.albumTitle;
       }else{
+        debugger
         author = this.props.albums[this.props.albumId].author;
         albumTitle = this.props.albums[this.props.albumId].title;
 
