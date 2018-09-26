@@ -6,7 +6,7 @@
   }
   from '../actions/player_actions';
 import { RECEIVE_PLAY, RECEIVE_STOP, RECEIVE_PAUSE} from '../actions/ui_actions';
-import { PLAY_ALBUM, RECEIVE_PLAYER_ALBUM, RECEIVE_ALBUM, VISIT_PLAYER_ALBUM, PLAY_FULL_ALBUM } from '../actions/album_actions';
+import { PLAY_ALBUM, RECEIVE_PLAYER_ALBUM, RECEIVE_ALBUM, VISIT_PLAYER_ALBUM, TURN_PLAY_ALBUM_OFF } from '../actions/album_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
 
@@ -44,7 +44,7 @@ const playerReducer = (state = preloadedState, action) => {
       return newState;
     case RECEIVE_PAUSE:
       newState = Object.assign({}, state, {pause: true});
-      return newState
+      return newState;
     case RECEIVE_CURRENT_SONG:
       const newSongIndex = state.queOfSongs.indexOf(action.songId.toString());
       newState = Object.assign({}, state, {currentSongId: action.songId, playAlbum: true, currentSongIndex: newSongIndex, albumImg: action.albumImg});
@@ -96,19 +96,9 @@ const playerReducer = (state = preloadedState, action) => {
       return newState;
     case RECEIVE_CURRENT_USER:
       newState = Object.assign({}, state, preloadedState);
-      //   {
-      //   currentSongId: null,
-      //   playAlbum: false,
-      //   queOfSongs: [],
-      //   currentSongIndex: 0,
-      //   queLength: null,
-      //   endQue: false,
-      //   albumImg: null,
-      //   visitingSongs: [],
-      //   visitingQueLength: null
-      // });
       return newState;
-
+    case TURN_PLAY_ALBUM_OFF:
+      return Object.assign({}, state, {playAlbum: false, queLength: null, queOfSongs: [], endQue: true});
     default:
       return state;
 

@@ -9,7 +9,6 @@ class SongItemComponent extends React.Component{
     this.state = {bool: false};
   }
 
-
   handleAddSong(songId, playlistId) {
 
     return e => {this.props.addSongToPlaylist(
@@ -26,6 +25,9 @@ class SongItemComponent extends React.Component{
   }
 
   handleAdd() {
+    if(!this.props.pathName.match(this.props.pathName.match("/browse/album"))) {
+      this.props.turnOffPlayAlbum();
+    }
     if ( this.props.currentSongId === this.props.song.id && this.props.status === 'playing') {
       this.props.togglePausePlay();
       this.props.receivePause();

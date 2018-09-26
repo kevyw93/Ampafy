@@ -2,7 +2,8 @@ export const RECEIVE_ALBUM = 'RECEIVE_ALBUM';
 export const RECEIVE_PLAYER_ALBUM = 'RECEIVE_PLAYER_ALBUM';
 export const VISIT_PLAYER_ALBUM = 'VISIT_PLAYER_ALBUM';
 export const PLAY_ALBUM = 'PLAY_ALBUM';
-export const RECEIVE_ALL_ALBUMS = 'RECEIVE_ALL_ALBUM';
+export const RECEIVE_ALL_ALBUMS = 'RECEIVE_ALL_ALBUMS';
+export const TURN_PLAY_ALBUM_OFF = 'TURN_PLAY_ALBUM_OFF';
 import * as ApiUtil from "../util/album_api_util";
 
 export const receiveAllAlbums = (albums) => {
@@ -39,6 +40,12 @@ export const receiveVisitPlayerAlbum = (payload) => {
 export const playAlbum = () => {
   return {
     type: PLAY_ALBUM,
+  };
+};
+
+export const turnOffPlayAlbum = () => {
+  return {
+    type: TURN_PLAY_ALBUM_OFF
   };
 };
 

@@ -3,7 +3,7 @@ import Player from './player';
 import { receiveCurrentSong, incrementCurrentSongIndex, decrementCurrentSongIndex } from "../../actions/player_actions";
 import {receivePlay, receivePause, receiveStop} from '../../actions/ui_actions';
 import {getAlbum } from '../../actions/album_actions';
-// import { fetchSong } from "../../actions/song_actions";
+import { withRouter } from 'react-router-dom';
 import _ from 'lodash';
 
 const mapStateToProps = (state, ownProps) => {
@@ -16,12 +16,14 @@ const mapStateToProps = (state, ownProps) => {
   }else if ( state.entities.songs[state.player.currentSongId]) {
      song =  state.entities.songs[state.player.currentSongId];
    }
+   debugger
   return {
     status: state.ui.status,
     song,
     albumImg: state.player.albumImg,
     visitingStatus: state.ui.visiting,
-    pause: state.player.pause
+    pause: state.player.pause,
+    willPlayAlbum: state.player.queLength
   };
 };
 
@@ -37,4 +39,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Player);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Player));
