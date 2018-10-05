@@ -12,7 +12,7 @@ class Feature extends React.Component {
     this.props.getAllAlbums();
   }
 
-  handlePlayerAlbum(id){
+  handlePlayerAlbum(){
     this.props.playAlbum();
   }
 
@@ -25,7 +25,7 @@ class Feature extends React.Component {
          <div className="img-div" style={{backgroundImage: `url(${alb.album_img})`}}>
 
          </div>
-         <div onClick={() => {this.handlePlayerAlbum(alb.id)}} className="img-hover-div">
+         <div onClick={() => this.handlePlayerAlbum(alb.id)} className="img-hover-div">
            <div className="albums-play-button">
            </div>
          </div>

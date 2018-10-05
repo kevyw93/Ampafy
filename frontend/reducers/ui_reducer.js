@@ -31,6 +31,7 @@ const uiReducer = (state = initialState, action) => {
       newState = Object.assign({}, state, {status: 'paused'});
       return newState;
     case VISIT_ALBUM:
+    debugger
       newState = Object.assign({}, state, {'visiting': true});
       return newState;
     default:

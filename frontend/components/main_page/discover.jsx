@@ -15,7 +15,6 @@ class Discover extends React.Component {
     if (this.props.playlists) {
     const playlistImg = "https://s3.amazonaws.com/ampafy-seeds/Screen+Shot+2018-01-12+at+12.28.18+PM.png";
       playlist = this.props.playlists.map((play, idx) =>(
-
 // onHover
         <li key={idx} className="single-playlist">
           <Link className="img-hover-cont" to={`/browse/playlist/${play.id}`}>

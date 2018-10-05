@@ -10,9 +10,7 @@ class PlaylistShow extends React.Component {
   }
 
   componentDidMount(){
-
     this.props.fetchPlaylist(parseInt(this.props.match.params.id));
-
   }
   handleDelete(playlistId) {
     return e => {

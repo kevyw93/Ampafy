@@ -14,13 +14,12 @@ const mapStateToProps = (state, ownProps) => {
    songs = selector.albumSongsSelector(album, state);
   }
 
-
   return {
     album,
     currentUserId: state.entities.session.currentUser.id,
     songs: songs || [],
     playlists: Object.values(state.entities.playlists),
-
+    // visting: state.ui.visiting
   };
 };
 
